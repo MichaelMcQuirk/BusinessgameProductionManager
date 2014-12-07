@@ -11,17 +11,17 @@ Engineering facility
 Machines assembly
 0
 Waste plant
-20
+141
 Petrol power plant
-115
+408
 Water well
-237
+1133
 Sawmill
 0
 Oil well
-288
+1630
 Chemical plant
-85
+1479
 Silicon smelter
 0
 Petrochemistry
@@ -30,20 +30,20 @@ Glass container factory
 0
 Generators assembly
 0
-Gears industry
-0
 Oil refinery
-75
+184
 Rubber plant
 0
-Coal mine
-123
-Coal power plant
-105
-Silica mine
+Gears industry
 0
+Coal mine
+586
+Coal power plant
+503
+Silica mine
+25
 Sewage treatment plant
-115
+664
 Microelectronics industry
 0
 Aluminium smelter
@@ -53,7 +53,7 @@ Bauxite mine
 Electric steel mill
 0
 Solar power plant
-500
+833
 Semiconductor fab
 0
 Furnaces assembly
@@ -66,22 +66,22 @@ Wind farm
 0
 Wind turbines assembly
 0
-Wire mill
-0
 Copper mine
 0
-Robotics industry
+Wire mill
 0
 Motors assembly
+0
+Robotics industry
 0
 Rolling mill
 0
 Conveyers assembly
 0
 Uranium mine
-38
+1512
 Uranium mill
-2
+80
 Christmas tree farm
 0
 Ornament factory
@@ -89,10 +89,10 @@ Ornament factory
 Sledge workshop
 0
 Uranium enrichment plant
-0
+120
 Nuclear power plant
 0
 Nuclear storage facility
 0
 Fertilizer facility
-1
+0

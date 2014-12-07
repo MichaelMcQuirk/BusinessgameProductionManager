@@ -219,6 +219,23 @@ namespace WindowsFormsApplication1
             if (BuyMode && Sector[k].units > Sector[k].unitsBeforeBuyMode)
                 lbl.Text = "[" + Sector[k].unitsBeforeBuyMode.ToString() + " + " + (Sector[k].units - Sector[k].unitsBeforeBuyMode).ToString() + "]" + Sector[k].name;
 
+
+            //limits: will only work for sectors that have a single outputer/inputer
+            if (BuyMode && chkBxChainAutoBuy.Checked)
+                for (int f = 0; f < 20; f++)
+                {
+                    for (int iSec = 0; iSec < Sector.Count; iSec++)
+                    {
+                        if (Sector[iSec].units > 0)
+                        {
+                            Sector[iSec].units += getNumberOfUnitsToFufullRequirements(iSec);
+
+                            if (Sector[iSec].units > Sector[iSec].unitsBeforeBuyMode)
+                                label[iSec].Text = "[" + Sector[iSec].unitsBeforeBuyMode.ToString() + " + " + (Sector[iSec].units - Sector[iSec].unitsBeforeBuyMode).ToString() + "]" + Sector[iSec].name;
+                        }
+                    }
+                }
+
             disposeNets();
             refreshProductionNets();
             drawNets();
@@ -355,10 +372,31 @@ namespace WindowsFormsApplication1
                 int id = getProductID(Sector[s].Output[i].name);
                 if (maxID == -1)
                     maxID = getPosofProductInList(Sector[s].Output, Product[id].name);
-                if (Sector[s].Output[i].amount * Product[id].price > Sector[s].Output[maxID].amount * Product[getProductID(Sector[s].Output[maxID].name)].price)
-                    maxID = id;
+                else
+                    if (Sector[s].Output[i].amount * Product[id].price > Sector[s].Output[maxID].amount * Product[getProductID(Sector[s].Output[maxID].name)].price)
+                        maxID = getPosofProductInList(Sector[s].Output, Product[id].name);
             }
+            if (maxID == -1)
+                return -1;
             return getPosofProductInList(Product, Sector[s].Output[maxID].name);
+        }
+
+        public int getMainInputProductID(int sectorID)
+        {
+            int s = sectorID;
+            int maxID = -1;
+            for (int i = 0; i < Sector[s].Input.Count; i++)
+            {
+                int id = getProductID(Sector[s].Input[i].name);
+                if (maxID == -1)
+                    maxID = getPosofProductInList(Sector[s].Input, Product[id].name);
+                else
+                    if (Sector[s].Input[i].amount * Product[id].price < Sector[s].Input[maxID].amount * Product[getProductID(Sector[s].Input[maxID].name)].price)
+                        maxID = getPosofProductInList(Sector[s].Input, Product[id].name);
+            }
+            if (maxID == -1)
+                return -1;
+            return getPosofProductInList(Product, Sector[s].Input[maxID].name);
         }
 
         public int getPosofProductInList(List<TProduct> list, string prodName)
@@ -372,12 +410,44 @@ namespace WindowsFormsApplication1
         public int getNumberOfUnitsToFufullRequirements(int sectorID)
         {
             refreshProductionNets();
+
             int mainOutputProductID = getMainOutputProductID(sectorID);
-            double requiredPerHour = Product[mainOutputProductID].amount;
-            if (requiredPerHour > 0) requiredPerHour = 0;
-            requiredPerHour *= -1;
-            int unitsRequired = (int)Math.Ceiling(requiredPerHour / Sector[sectorID].Output[getPosofProductInList(Sector[sectorID].Output, Product[mainOutputProductID].name)].amount);
-            return unitsRequired;
+            int mainInputProductID = getMainInputProductID(sectorID);
+
+            double requiredOutPerHour = 0;
+            double requiredInPerHour = 0;
+            double requiredOutCost = 0;
+            double requiredInCost = 0;
+            double valueOut = 0;
+            double valueIn = 0;
+
+            if (mainOutputProductID != -1)
+            {
+                requiredOutPerHour = -1 * Product[mainOutputProductID].amount;
+                requiredOutCost = requiredOutPerHour * Product[mainOutputProductID].price;
+                valueOut = Sector[sectorID].Output[getPosofProductInList(Sector[sectorID].Output, Product[mainOutputProductID].name)].amount * Product[mainOutputProductID].price;
+            }
+            if (mainInputProductID != -1)
+            {
+                requiredInPerHour = -1 * Product[mainInputProductID].amount;
+                requiredInCost = requiredInPerHour * Product[mainInputProductID].price;
+                valueIn = Sector[sectorID].Input[getPosofProductInList(Sector[sectorID].Input, Product[mainInputProductID].name)].amount * Product[mainInputProductID].price;
+            }
+
+            int unitsRequired;
+
+            if (mainOutputProductID == -1)
+                unitsRequired = (int)Math.Floor((requiredInPerHour * -1) / Sector[sectorID].Input[getPosofProductInList(Sector[sectorID].Input, Product[mainInputProductID].name)].amount);
+            else if (mainInputProductID == -1)
+                unitsRequired = (int)Math.Ceiling(requiredOutPerHour / Sector[sectorID].Output[getPosofProductInList(Sector[sectorID].Output, Product[mainOutputProductID].name)].amount);
+            else
+                if (valueIn >= 0)
+                    unitsRequired = (int)Math.Ceiling(requiredOutPerHour / Sector[sectorID].Output[getPosofProductInList(Sector[sectorID].Output, Product[mainOutputProductID].name)].amount);
+                else
+                    unitsRequired = (int)Math.Floor((requiredInPerHour * -1 ) / Sector[sectorID].Input[getPosofProductInList(Sector[sectorID].Input, Product[mainInputProductID].name)].amount);
+                if (requiredOutCost < 0 && requiredInCost < 0)
+                    unitsRequired = 0;
+                return unitsRequired;
         }
 
         public double getMultiplierValue(string productName, bool productionManager, bool wasteManager, bool output)
