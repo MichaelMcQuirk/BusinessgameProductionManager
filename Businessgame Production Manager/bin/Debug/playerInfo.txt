@@ -1,0 +1,283 @@
+8D : 0H : 0M
+Fixes: 2344
+Total Fixed: 20084963077.25
+ID: 8
+Cash: 2704066775.96309
+Sector: Sawmill
+Units: 111773
+Profits: 7874473261.91484
+Expenses: 5171156485.95175
+Net Worth: 7926660663.81514
+------------------------
+ID: 16
+Cash: 3519131357.55395
+Sector: Oil refinery
+Units: 32123
+Profits: 5340112790.96893
+Expenses: 1821731433.41499
+Net Worth: 5391099645.406
+------------------------
+ID: 27
+Cash: 2158004286.04223
+Sector: Semiconductor fab
+Units: 48002
+Profits: 5770200958.05702
+Expenses: 3612946672.01479
+Net Worth: 5788216001.39428
+------------------------
+ID: 28
+Cash: 2491300920.79223
+Sector: Furnaces assembly
+Units: 27831
+Profits: 3673419974.51383
+Expenses: 1182869053.7216
+Net Worth: 3680659168.64428
+------------------------
+ID: 29
+Cash: 2230655060.72279
+Sector: Pumps assembly
+Units: 22734
+Profits: 3548694593.35332
+Expenses: 1318789532.63054
+Net Worth: 3561447048.57484
+------------------------
+ID: 4
+Cash: 2554933731.69557
+Sector: Machines assembly
+Units: 12950
+Profits: 3491191503.99445
+Expenses: 937007772.298885
+Net Worth: 3489082444.54762
+------------------------
+ID: 3
+Cash: 2285445191.60188
+Sector: Engineering facility
+Units: 17864
+Profits: 3360404233.51964
+Expenses: 1075709041.91775
+Net Worth: 3386493294.45393
+------------------------
+ID: 23
+Cash: 2595850279.65784
+Sector: Aluminium smelter
+Units: 35196
+Profits: 5250131421.66556
+Expenses: 2655031142.00772
+Net Worth: 5264798618.50989
+------------------------
+ID: 2
+Cash: 2075953928.45065
+Sector: Screws factory
+Units: 44464
+Profits: 4969687542.57583
+Expenses: 2894483614.12518
+Net Worth: 5512132311.3027
+Product: Screws : 451309600
+Product: Trash : 90261920
+------------------------
+ID: 12
+Cash: 2230552601.86325
+Sector: Petrochemistry
+Units: 63805
+Profits: 6476204732.5248
+Expenses: 4246402130.66155
+Net Worth: 6531648114.7153
+------------------------
+ID: 19
+Cash: 394118968.600813
+Sector: Coal power plant
+Units: 6759
+Profits: 920119229.15
+Expenses: 526750260.549187
+Net Worth: 1334102010.20286
+Product: Energy : 248139787.5
+Product: Wastewater : 165426525
+------------------------
+ID: 1
+Cash: 316913260.306504
+Sector: Steel mill
+Units: 7045
+Profits: 827456307.655277
+Expenses: 511293047.348772
+Net Worth: 905597445.658554
+Product: Steel : 57666847.5
+Product: Trash : 16168275
+------------------------
+ID: 25
+Cash: 279106056.00211
+Sector: Electric steel mill
+Units: 5423
+Profits: 775014416.797
+Expenses: 496658360.79489
+Net Worth: 842013918.85416
+Product: Wastewater : 21366620
+Product: Electric steel : 42733240
+------------------------
+ID: 14
+Cash: 104541289.93408
+Sector: Generators assembly
+Units: 3997
+Profits: 354594352.12124
+Expenses: 250803062.18716
+Net Worth: 372768431.78613
+Product: Electric generators : 17674734
+------------------------
+ID: 6
+Cash: 111279833.94501
+Sector: Petrol power plant
+Units: 1258
+Profits: 374279504.7
+Expenses: 263749670.75499
+Net Worth: 464173827.79706
+Product: Energy : 69267996
+Product: Wastewater : 20832480
+------------------------
+ID: 22
+Cash: 84057357.0876142
+Sector: Microelectronics industry
+Units: 2451
+Profits: 244112566.787417
+Expenses: 160805209.699803
+Net Worth: 271051962.939664
+Product: Trash : 1891559.25
+Product: Microchips : 22968933.75
+------------------------
+ID: 11
+Cash: 5721049.17114
+Sector: Silicon smelter
+Units: 463
+Profits: 40201019.44055
+Expenses: 35229970.26941
+Net Worth: 53558672.02319
+Product: Silicon : 10695300
+Product: Trash : 1458450
+------------------------
+ID: 10
+Cash: 5947331.68288
+Sector: Chemical plant
+Units: 221
+Profits: 50187643.78115
+Expenses: 44990312.09827
+Net Worth: 54108114.53493
+Product: Chemicals : 2632110
+------------------------
+ID: 21
+Cash: 1296653.24617666
+Sector: Sewage treatment plant
+Units: 296
+Profits: 34156176.8166667
+Expenses: 33609523.57049
+Net Worth: 45034076.0982267
+Product: Water : 7648640
+Product: Trash : 2024640
+------------------------
+ID: 9
+Cash: 4275225.89626666
+Sector: Oil well
+Units: 251
+Profits: 34349329.9027667
+Expenses: 30824104.0065
+Net Worth: 39455588.0429833
+Product: Trash : 760530
+Product: Crude oil : 2704106.66666667
+------------------------
+ID: 7
+Cash: 4241317.46725
+Sector: Water well
+Units: 347
+Profits: 32979451.6375
+Expenses: 29488134.17025
+Net Worth: 42311977.48055
+Product: Water : 6398680
+Product: Trash : 799835
+------------------------
+ID: 18
+Cash: 2480205.00875
+Sector: Coal mine
+Units: 230
+Profits: 24024066.45
+Expenses: 22293861.44125
+Net Worth: 31087945.7691333
+Product: Trash : 305133.333333333
+Product: Coals : 5492400
+Product: Wastewater : 457700
+------------------------
+ID: 17
+Cash: 6647491.20291
+Sector: Rubber plant
+Units: 159
+Profits: 17574528.91875
+Expenses: 11677037.71584
+Net Worth: 22904114.05496
+Product: Rubber : 5537970
+------------------------
+ID: 24
+Cash: 1966361.04141667
+Sector: Bauxite mine
+Units: 94
+Profits: 11697786.9841667
+Expenses: 10481425.94275
+Net Worth: 14598102.3284667
+Product: Trash : 189880
+Product: Wastewater : 474700
+Product: Bauxite : 1898800
+------------------------
+ID: 15
+Cash: 21161420.109065
+Sector: Gears industry
+Units: 81
+Profits: 29712686.837
+Expenses: 9301266.727935
+Net Worth: 35920771.461115
+Product: Gears : 7468200
+Product: Trash : 4611613.5
+------------------------
+ID: 26
+Cash: 62038.4699999997
+Sector: Solar power plant
+Units: 18
+Profits: 2940828.075
+Expenses: 3628789.605
+Net Worth: 3805322.32205
+Product: Energy : 147096
+------------------------
+ID: 13
+Cash: 891678.881855
+Sector: Glass container factory
+Units: 3
+Profits: 3497236.067325
+Expenses: 3355557.18547
+Net Worth: 3414211.733905
+Product: Glass : 225720
+------------------------
+ID: 5
+Cash: 1665730.26798333
+Sector: Waste plant
+Units: 8
+Profits: 935826.559233333
+Expenses: 20096.2912499999
+Net Worth: 2328801.12003333
+Product: Steel : 13048
+Product: Wastewater : 27960
+------------------------
+ID: 20
+Cash: 43390.1100000001
+Sector: Silica mine
+Units: 3
+Profits: 803120.5
+Expenses: 1509730.39
+Net Worth: 1248566.97455
+Product: Trash : 84300
+Product: Silica : 351250
+Product: Wastewater : 28100
+------------------------
+ID: 0
+Cash: 572417.8575
+Sector: Iron mine
+Units: 1
+Profits: 0
+Expenses: 177582.1425
+Net Worth: 760603.84955
+Product: Water : 1299
+Product: Energy : 1799
+------------------------

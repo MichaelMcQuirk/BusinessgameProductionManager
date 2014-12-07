@@ -1,0 +1,55 @@
+E:\Users\michael\Documents\Visual Studio 2008\Projects\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\ResolveAssemblyReference.cache
+E:\Users\michael\Documents\Visual Studio 2008\Projects\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\WindowsFormsApplication1.Form1.resources
+E:\Users\michael\Documents\Visual Studio 2008\Projects\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+E:\Users\michael\Documents\Visual Studio 2008\Projects\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\Businessgame Production Manager.csproj.GenerateResource.Cache
+E:\Users\michael\Documents\Visual Studio 2008\Projects\Businessgame Production Manager\Businessgame Production Manager\bin\Debug\Businessgame Production Manager.exe
+E:\Users\michael\Documents\Visual Studio 2008\Projects\Businessgame Production Manager\Businessgame Production Manager\bin\Debug\Businessgame Production Manager.pdb
+E:\Users\michael\Documents\Visual Studio 2008\Projects\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\Businessgame Production Manager.exe
+E:\Users\michael\Documents\Visual Studio 2008\Projects\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\Businessgame Production Manager.pdb
+H:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\Businessgame Production Manager.exe
+H:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\Businessgame Production Manager.pdb
+H:\C#\Businessgame Production Manager\Businessgame Production Manager\bin\Debug\Businessgame Production Manager.exe
+H:\C#\Businessgame Production Manager\Businessgame Production Manager\bin\Debug\Businessgame Production Manager.pdb
+H:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\ResolveAssemblyReference.cache
+H:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\WindowsFormsApplication1.Form1.resources
+H:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+H:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\GenerateResource-ResGen.read.1.tlog
+H:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\GenerateResource-ResGen.write.1.tlog
+G:\C#\Businessgame Production Manager\Businessgame Production Manager\bin\Debug\Businessgame Production Manager.exe.config
+G:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\Businessgame Production Manager.exe
+G:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\ResolveAssemblyReference.cache
+G:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\WindowsFormsApplication1.Form1.resources
+G:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+G:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\GenerateResource-ResGen.read.1.tlog
+G:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\GenerateResource.read.1.tlog
+G:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\GenerateResource-ResGen.write.1.tlog
+G:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\GenerateResource.write.1.tlog
+G:\C#\Businessgame Production Manager\Businessgame Production Manager\bin\Debug\Businessgame Production Manager.exe
+G:\C#\Businessgame Production Manager\Businessgame Production Manager\bin\Debug\Businessgame Production Manager.pdb
+G:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\Businessgame Production Manager.pdb
+E:\C#\Businessgame Production Manager\Businessgame Production Manager\bin\Debug\Businessgame Production Manager.exe.config
+E:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\Businessgame Production Manager.exe
+E:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\Businessgame Production Manager.pdb
+E:\C#\Businessgame Production Manager\Businessgame Production Manager\bin\Debug\Businessgame Production Manager.exe
+E:\C#\Businessgame Production Manager\Businessgame Production Manager\bin\Debug\Businessgame Production Manager.pdb
+E:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\ResolveAssemblyReference.cache
+E:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\WindowsFormsApplication1.Form1.resources
+E:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+E:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\GenerateResource-ResGen.read.1.tlog
+E:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\GenerateResource.read.1.tlog
+E:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\GenerateResource-ResGen.write.1.tlog
+E:\C#\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\GenerateResource.write.1.tlog
+E:\Users\Michael\Desktop\Businessgame Production Manager\Businessgame Production Manager\bin\Debug\Businessgame Production Manager.exe.config
+E:\Users\Michael\Desktop\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\Businessgame Production Manager.exe
+E:\Users\Michael\Desktop\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\Businessgame Production Manager.pdb
+E:\Users\Michael\Desktop\Businessgame Production Manager\Businessgame Production Manager\bin\Debug\Businessgame Production Manager.exe
+E:\Users\Michael\Desktop\Businessgame Production Manager\Businessgame Production Manager\bin\Debug\Businessgame Production Manager.pdb
+E:\Users\Michael\Desktop\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\Businessgame Production Manager.csprojResolveAssemblyReference.cache
+E:\Users\Michael\Desktop\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\WindowsFormsApplication1.Form1.resources
+E:\Users\Michael\Desktop\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+E:\Users\Michael\Desktop\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\Businessgame Production Manager.csproj.GenerateResource.Cache
+E:\Users\Michael\Desktop\Businessgame Production Manager\Businessgame Production Manager\bin\Debug\Businessgame Production Manager.exe.manifest
+E:\Users\Michael\Desktop\Businessgame Production Manager\Businessgame Production Manager\bin\Debug\Businessgame Production Manager.application
+E:\Users\Michael\Desktop\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\Businessgame Production Manager.TrustInfo.xml
+E:\Users\Michael\Desktop\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\Businessgame Production Manager.exe.manifest
+E:\Users\Michael\Desktop\Businessgame Production Manager\Businessgame Production Manager\obj\Debug\Businessgame Production Manager.application
