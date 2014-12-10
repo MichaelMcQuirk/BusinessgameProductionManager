@@ -6,7 +6,7 @@ using System.IO;
 
 namespace WindowsFormsApplication1
 {
-    class TPerson
+    public class TPerson
     {
         public List<TProduct> Product = new List<TProduct>();
         public List<TSector> Sector = new List<TSector>();

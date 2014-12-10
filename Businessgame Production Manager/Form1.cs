@@ -13,47 +13,47 @@ namespace WindowsFormsApplication1
     {
         #region Fields
 
-        private string BStatus = "";
+        public string BStatus = "";
 
-        private List<TProduct> Product = new List<TProduct>();
-        private List<TSector> Sector = new List<TSector>();
-        private List<TSector> SectorsToBuy = new List<TSector>();
-        private List<Label> label = new List<Label>();
-        private List<Color> labelColors = new List<Color>();
-        private List<TrackBar> trackBar = new List<TrackBar>();
-        private List<string> netProduct = new List<string>();
-        private List<Label> netProduction = new List<Label>();
-        private List<Label> netIncome = new List<Label>();
-        private List<Label> netName = new List<Label>();
-        private int iLeft = 120;
-        private int iTop = 5;
-        private int iTop2 = 5;
-        private int iInterval = 16;
-        private double totalProduction = 0;
-        private double totalIncome = 0;
-        private String selectedSector = "";
-        private Label netTotalProduction = new Label();
-        private Label netTotalIncome = new Label();
-        private Label netTotalName = new Label();
-        private Label netLabel = new Label();
-        private Label sectorLabel = new Label();
-        private TrackBar ScaleBar;
-        private Boolean bSectorsDrawn = false;
-        private int Multiplier = 1;
+        public List<TProduct> Product = new List<TProduct>();
+        public List<TSector> Sector = new List<TSector>();
+        public List<TSector> SectorsToBuy = new List<TSector>();
+        public List<Label> label = new List<Label>();
+        public List<Color> labelColors = new List<Color>();
+        public List<TrackBar> trackBar = new List<TrackBar>();
+        public List<string> netProduct = new List<string>();
+        public List<Label> netProduction = new List<Label>();
+        public List<Label> netIncome = new List<Label>();
+        public List<Label> netName = new List<Label>();
+        public int iLeft = 120;
+        public int iTop = 5;
+        public int iTop2 = 5;
+        public int iInterval = 16;
+        public double totalProduction = 0;
+        public double totalIncome = 0;
+        public String selectedSector = "";
+        public Label netTotalProduction = new Label();
+        public Label netTotalIncome = new Label();
+        public Label netTotalName = new Label();
+        public Label netLabel = new Label();
+        public Label sectorLabel = new Label();
+        public TrackBar ScaleBar;
+        public Boolean bSectorsDrawn = false;
+        public int Multiplier = 1;
 
-        private bool BuyMode = false;
-        private List<Label> buyModeLabels1 = new List<Label>();
-        private List<Label> buyModeLabels2 = new List<Label>();
+        public bool BuyMode = false;
+        public List<Label> buyModeLabels1 = new List<Label>();
+        public List<Label> buyModeLabels2 = new List<Label>();
 
-        private TMarket Market;
+        public TMarket Market;
 
-        private Thread AutoLoadThread;
-        private Label LoadingLabel1 = new Label();
-        private Label LoadingLabel2 = new Label();
-        private bool isLoading = false;
-        private int dotCount = 0;
+        public Thread AutoLoadThread;
+        public Label LoadingLabel1 = new Label();
+        public Label LoadingLabel2 = new Label();
+        public bool isLoading = false;
+        public int dotCount = 0;
 
-        private bool isTransitionizing = false;
+        public bool isTransitionizing = false;
 
         #endregion Fields
 
@@ -226,6 +226,7 @@ namespace WindowsFormsApplication1
                 {
                     for (int iSec = 0; iSec < Sector.Count; iSec++)
                     {
+                        if (!(getPosofProductInList(Sector[iSec].Output, "Energy") != -1 && Sector[iSec].name != cbxPowerSource.Text))
                         if (Sector[iSec].units > 0)
                         {
                             Sector[iSec].units += getNumberOfUnitsToFufullRequirements(iSec);
@@ -694,7 +695,6 @@ namespace WindowsFormsApplication1
             #endregion Sectors
 
             isLoading = false;
-
             Market = new TMarket(this.Controls, this, label1, progressBar1, Sector, Product, 0, wBrowser, DisposeRecalculateAndDrawNets);
         }
 
@@ -976,7 +976,7 @@ namespace WindowsFormsApplication1
 
         #region Other
 
-        private void button7_Click(object sender, EventArgs e)
+        public void button7_Click(object sender, EventArgs e)
         {
             foreach (TSector sector in Sector)
             {
@@ -989,7 +989,7 @@ namespace WindowsFormsApplication1
             Save();
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        public void richTextBox1_TextChanged(object sender, EventArgs e)
         {
             //if (richTextBox1.Text.Length > 20)
             //{
@@ -998,7 +998,7 @@ namespace WindowsFormsApplication1
             //richTextBox1.Clear();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        public void button6_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("How to use Smart Load:\n1)In your browser, go to the units page.\n2)Press 'Ctrl + A' to select everything on the page.\n3)Press 'Ctrl + C' to copy everything to the clipboard.\n-In the white text box that will apear when you close this message:\n4)Paste the text into the box by pressing 'Ctrl + V'.\n5)Wait a second or two!");
             //string OriginalData = Microsoft.VisualBasic.Interaction.InputBox("Contents of Units Page:","Smart Load (Beta)","");
@@ -1009,12 +1009,12 @@ namespace WindowsFormsApplication1
             Market.LoadUsersUnitsData();
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+        public void button2_Click_1(object sender, EventArgs e)
         {
             MessageBox.Show("How to use BPM:\n-Tick 'display web-browser' and log in. Untick when you are done.\n-To change the number of units you have in a sector:\n  -Move mouse over sector, use scroll wheel to change value\n  -Double click to enter amount manually \n - Click one of the products in the middle pannel to highlight related sectors");
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        public void label1_Click(object sender, EventArgs e)
         {
         }
 
@@ -1023,7 +1023,7 @@ namespace WindowsFormsApplication1
             TrackBar trackbar = (TrackBar)sender;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        public void button3_Click(object sender, EventArgs e)
         {
             if (!BuyMode)
             {
@@ -1039,52 +1039,52 @@ namespace WindowsFormsApplication1
             else
             {
                 MessageBox.Show("NOTE: This feature has been temporarily disabled due to complications arising from the introduction of 'shipments'");
-                //int unitsToBuy = 0;
-                //int iActions = 1;
-                //List<string> productnames = new List<string>();
-                //List<double> productamounts = new List<double>();
-                //List<string> sectornames = new List<string>();
-                //List<int> sectoramounts = new List<int>();
+                int unitsToBuy = 0;
+                int iActions = 1;
+                List<string> productnames = new List<string>();
+                List<double> productamounts = new List<double>();
+                List<string> sectornames = new List<string>();
+                List<int> sectoramounts = new List<int>();
 
-                //foreach (TSector sector in Sector)
-                //{
-                //    unitsToBuy = sector.units - sector.unitsBeforeBuyMode;
-                //    if (unitsToBuy > 0)
-                //    {
-                //        iActions++;
-                //        sectornames.Add(sector.name);
-                //        sectoramounts.Add(unitsToBuy);
-                //        foreach (TProduct product in sector.Machinery)
-                //        {
-                //            bool productfound = false;
-                //            foreach (string name in productnames)
-                //            {
-                //                if (name.Equals(product.name))
-                //                {
-                //                    productfound = true;
-                //                    productamounts[productnames.IndexOf(name)] += product.amount * unitsToBuy;
-                //                }
-                //            }
-                //            if (!productfound)
-                //            {
-                //                productnames.Add(product.name);
-                //                productamounts.Add(product.amount * unitsToBuy);
-                //            }
-                //        }
-                //    }
-                //}
-                //if (productnames.Count != 0)
-                //    Market.PerformActionBuyUnits(productnames, productamounts, sectornames,sectoramounts, iActions);
+                foreach (TSector sector in Sector)
+                {
+                    unitsToBuy = sector.units - sector.unitsBeforeBuyMode;
+                    if (unitsToBuy > 0)
+                    {
+                        iActions++;
+                        sectornames.Add(sector.name);
+                        sectoramounts.Add(unitsToBuy);
+                        foreach (TProduct product in sector.Machinery)
+                        {
+                            bool productfound = false;
+                            foreach (string name in productnames)
+                            {
+                                if (name.Equals(product.name))
+                                {
+                                    productfound = true;
+                                    productamounts[productnames.IndexOf(name)] += product.amount * unitsToBuy;
+                                }
+                            }
+                            if (!productfound)
+                            {
+                                productnames.Add(product.name);
+                                productamounts.Add(product.amount * unitsToBuy);
+                            }
+                        }
+                    }
+                }
+                if (productnames.Count != 0)
+                    Market.PerformActionBuyUnits(productnames, productamounts, sectornames, sectoramounts, iActions);
 
-                //if (Market.ErrorFound)
-                //    foreach (TSector sector in Sector) //ROLLBACK
-                //    {
-                //        sector.unitsBeforeBuyMode = sector.units;
-                //    }
+                if (Market.ErrorFound)
+                    foreach (TSector sector in Sector) //ROLLBACK
+                    {
+                        sector.unitsBeforeBuyMode = sector.units;
+                    }
 
-                //button3.Text = "EnterBuy Mode";
-                //button4.Visible = false;
-                //BuyMode = false;
+                button3.Text = "EnterBuy Mode";
+                button4.Visible = false;
+                BuyMode = false;
 
                 drawSectors();
                 disposeNets();
@@ -1094,7 +1094,7 @@ namespace WindowsFormsApplication1
             Save();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        public void button4_Click(object sender, EventArgs e)
         {
             foreach (TSector sector in Sector)
             {
@@ -1109,12 +1109,12 @@ namespace WindowsFormsApplication1
             Save();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        public void button5_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Businessgame Production Manager\nDevelped by Michael McQuirk!\n\nContact: michaelcmcquirk@gmail.com\nVersion 0.8 (Cornflower Blue 1) - 26 November 2014");
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void Form1_Load(object sender, EventArgs e)
         {
             Application.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
             labelColors = new List<Color>();
@@ -1124,7 +1124,7 @@ namespace WindowsFormsApplication1
             loadingTimer.Enabled = true;
         }
 
-        private void loadingTimer_Tick(object sender, EventArgs e)
+        public void loadingTimer_Tick(object sender, EventArgs e)
         {
             if (isLoading)
             {
@@ -1175,53 +1175,64 @@ namespace WindowsFormsApplication1
 
                     label2.Visible = false;
                     label3.Visible = false;
+
+                    cbxPowerSource.Items.Clear();
+                    foreach (TSector s in Sector)
+                    {
+                        if (getPosofProductInList(s.Output, "Energy") != -1)
+                        {
+                            cbxPowerSource.Items.Add(s.name);
+                            if (s.units > 0)
+                                cbxPowerSource.Text = s.name;
+                        }
+                    }
                 }
             }
         }
 
-        private void wBrowser_Navigating(object sender, WebBrowserNavigatingEventArgs e)
+        public void wBrowser_Navigating(object sender, WebBrowserNavigatingEventArgs e)
         {
             if (Market != null)
                 Market.BrowserStatus = "Navigating";
             BStatus = "Navigating";
         }
 
-        private void wBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        public void wBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             if (Market != null)
                 Market.BrowserStatus = "Complete";
             BStatus = "Complete";
         }
 
-        private void cbxWasteManager_CheckedChanged(object sender, EventArgs e)
+        public void cbxWasteManager_CheckedChanged(object sender, EventArgs e)
         {
             disposeNets();
             refreshProductionNets();
             drawNets();
         }
 
-        private void cbxProductionManager_CheckedChanged(object sender, EventArgs e)
+        public void cbxProductionManager_CheckedChanged(object sender, EventArgs e)
         {
             disposeNets();
             refreshProductionNets();
             drawNets();
         }
 
-        private void cbxWasteManager_MouseClick(object sender, MouseEventArgs e)
+        public void cbxWasteManager_MouseClick(object sender, MouseEventArgs e)
         {
             Save();
         }
 
-        private void cbxProductionManager_MouseClick(object sender, MouseEventArgs e)
+        public void cbxProductionManager_MouseClick(object sender, MouseEventArgs e)
         {
             Save();
         }
 
-        private void templateLBL_MouseHover(object sender, EventArgs e)
+        public void templateLBL_MouseHover(object sender, EventArgs e)
         {
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        public void timer1_Tick(object sender, EventArgs e)
         {
             if (Market != null && BStatus == "Complete")
             {
@@ -1253,7 +1264,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        public void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
                 wBrowser.Visible = true;
@@ -1261,43 +1272,25 @@ namespace WindowsFormsApplication1
                 wBrowser.Visible = false;
         }
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        public void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             //Market.ActionThread.Abort();
             AutoLoadThread.Abort();
         }
 
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        public void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
             iTop = 5 - vScrollBar1.Value;
             drawSectors();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        public void button8_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(
-            String s = "";
-            foreach (TSector t in Sector)
-            {
-                double price = 0;
-                foreach (TProduct p in t.Machinery)
-                    price += p.amount * getProductPrice(p.name);
-                price += t.price;
-
-                double profit = 0;
-                foreach (TProduct p in t.Output)
-                    profit += p.amount * getProductPrice(p.name);
-                foreach (TProduct p in t.Input)
-                    profit -= p.amount * getProductPrice(p.name);
-
-                s = s + "\n" + t.name + ": $/h " + profit + "\t Payback Hours = " + price / profit;
-            }
-
-            MessageBox.Show(s);
+            
         }
 
         public Form1()
@@ -1306,5 +1299,11 @@ namespace WindowsFormsApplication1
         }
 
         #endregion Other
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2(this);
+            f2.Show();
+        }
     }
 }

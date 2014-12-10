@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace WindowsFormsApplication1
 {
-    class TMarket
+    public class TMarket
     {
         public List<TProduct> Product = new List<TProduct>();
         public List<TSector> Sector = new List<TSector>();
@@ -152,9 +152,18 @@ namespace WindowsFormsApplication1
                 if (WBrowser.Document.All["warning1"] != null)
                 text = WBrowser.Document.All["warning1"].InnerText;
             });
+
             if (text.Contains("You have bought")) return true;
-            text = WBrowser.Document.Body.InnerText;
+
+            Control.Invoke((MethodInvoker)delegate
+            {
+                //text = WBrowser.Document.Body.InnerText;
+                if (WBrowser.Document.All["warning success"] != null)
+                    text = "You have bought";
+            });
+            
             if (text.Contains("You have bought")) return true;
+
             return false;
         }
 
@@ -191,6 +200,8 @@ namespace WindowsFormsApplication1
             Thread.Sleep(1000);
             Control.Invoke((MethodInvoker)delegate { StatusMessageLabel.Text = "Operation Commencing...."; });
             BuyProduct(productNames, amounts);
+            //Thread.Sleep(8000);
+            WaitForBrowserToLoad();
             iActioncount++;
             Control.Invoke((MethodInvoker)delegate
             {
@@ -210,30 +221,34 @@ namespace WindowsFormsApplication1
                 ErrorFound = true;
             }
             else
-            for (int i = 0; i < sectorNames.Count; i++)
+            //***********************************************************************************************************
             {
-                BuyUnits(sectorNames[i], sectorAmounts[i]);
-                Control.Invoke((MethodInvoker)delegate
+
+                for (int i = 0; i < sectorNames.Count; i++)
                 {
-                    PGBar.Maximum = iActions;
-                    PGBar.Increment(iActioncount - PGBar.Value);
-                    PGBar.Update();
-                    PGBar.Refresh();
-                    Control.Refresh();
-                });
-                if (!CheckForSuccess())
-                {
-                    Log("ERROR! NOT ENOUGH CASH.");
+                    BuyUnits(sectorNames[i], sectorAmounts[i]);
                     Control.Invoke((MethodInvoker)delegate
                     {
-                        PGBar.ForeColor = System.Drawing.Color.Red;
+                        PGBar.Maximum = iActions;
+                        PGBar.Increment(iActioncount - PGBar.Value);
+                        PGBar.Update();
+                        PGBar.Refresh();
+                        Control.Refresh();
                     });
-                    ErrorFound = true;
-                    for (int k = 0; k < i - 1; k++)
+                    if (!CheckForSuccess())
                     {
-                        ForeignSectors[getSectorID(sectorNames[k])].units += sectorAmounts[k];
+                        Log("ERROR! NOT ENOUGH CASH.");
+                        Control.Invoke((MethodInvoker)delegate
+                        {
+                            PGBar.ForeColor = System.Drawing.Color.Red;
+                        });
+                        ErrorFound = true;
+                        for (int k = 0; k < i - 1; k++)
+                        {
+                            ForeignSectors[getSectorID(sectorNames[k])].units += sectorAmounts[k];
+                        }
+                        break;
                     }
-                    break;
                 }
             }
             Thread.Sleep(300);
@@ -429,8 +444,8 @@ namespace WindowsFormsApplication1
                 adaptedSectorName = adaptedSectorName.Remove(pos, 1);
                 adaptedSectorName = adaptedSectorName.Insert(pos, "%20");
             }
-            
 
+            WaitForBrowserToLoad();
             Control.Invoke((MethodInvoker)delegate
             {
                 WBrowser.Navigate("businessgame.be/sector/" + adaptedSectorName);
@@ -469,15 +484,15 @@ namespace WindowsFormsApplication1
                 }
             });
             WaitForBrowserToLoad();
-            Control.Invoke((MethodInvoker)delegate
-            {
-                textbox = WBrowser.Document.GetElementById("buyUnits");
-            });
-
 
             int retries = 0;
         reTryBuyUnits:
             retries++;
+            WaitForBrowserToLoad();
+            Control.Invoke((MethodInvoker)delegate
+            {
+                textbox = WBrowser.Document.GetElementById("buyUnits");
+            });
             if (textbox != null)
             {
                 Control.Invoke((MethodInvoker)delegate
@@ -499,17 +514,24 @@ namespace WindowsFormsApplication1
                     }
                 });
                 WaitForBrowserToLoad();
+                Thread.Sleep(3000);
                 if (retries < 60 && CheckForSuccess() == false)
                 {
-                    Thread.Sleep(60000);
+                    for (int i = 60; i > 0; i += -5)
+                    {
+                        Log("Waiting " + i + " seconds!");
+                        Thread.Sleep(5000);
+                    }
+
                     Control.Invoke((MethodInvoker)delegate
                     {
                         WBrowser.Navigate("businessgame.be/sector/" + adaptedSectorName);
                     });
+                    WaitForBrowserToLoad();
 
                     if (retries > 0)
                         Log("(Attempt " + retries + ") Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.");
-                    WaitForBrowserToLoad();
+                    
                     goto reTryBuyUnits;
                 }
 

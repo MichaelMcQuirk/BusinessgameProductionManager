@@ -6,7 +6,7 @@ using System.Text;
 
 namespace WindowsFormsApplication1
 {
-    class TSector
+    public class TSector
     {
         public string name = "";
         public double price = 0.00;

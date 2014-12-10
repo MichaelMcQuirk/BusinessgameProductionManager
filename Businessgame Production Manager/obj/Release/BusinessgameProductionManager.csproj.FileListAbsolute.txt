@@ -26,3 +26,4 @@ G:\Programming\Businessgame Production Manager 3\Businessgame Production Manager
 G:\Programming\Businessgame Production Manager 3\Businessgame Production Manager\obj\Release\Businessgame Production Manager.TrustInfo.xml
 G:\Programming\Businessgame Production Manager 3\Businessgame Production Manager\obj\Release\Businessgame Production Manager.exe.manifest
 G:\Programming\Businessgame Production Manager 3\Businessgame Production Manager\obj\Release\Businessgame Production Manager.application
+G:\Programming\Businessgame Production Manager 3\Businessgame Production Manager\obj\Release\WindowsFormsApplication1.Form2.resources
