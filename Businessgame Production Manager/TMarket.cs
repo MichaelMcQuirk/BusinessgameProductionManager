@@ -105,7 +105,7 @@ namespace WindowsFormsApplication1
         {
             (new Thread(() => {
                 Control.Invoke((MethodInvoker)delegate
-            { WBrowser.Navigate("businessgame.be/units"); });
+            { WBrowser.Navigate("businessgame.be/sectors"); });
                 WaitForBrowserToLoad();
                 string originalData = "";
                 Control.Invoke((MethodInvoker)delegate { originalData = WBrowser.Document.Body.InnerText; });
@@ -169,6 +169,7 @@ namespace WindowsFormsApplication1
 
         public void WaitForBrowserToLoad()
         {
+            Thread.Sleep(2000);
             string status = "";
             loop:
             Thread.Sleep(250);
@@ -200,7 +201,7 @@ namespace WindowsFormsApplication1
             Thread.Sleep(1000);
             Control.Invoke((MethodInvoker)delegate { StatusMessageLabel.Text = "Operation Commencing...."; });
             BuyProduct(productNames, amounts);
-            //Thread.Sleep(8000);
+            Thread.Sleep(1000);
             WaitForBrowserToLoad();
             iActioncount++;
             Control.Invoke((MethodInvoker)delegate
@@ -223,7 +224,6 @@ namespace WindowsFormsApplication1
             else
             //***********************************************************************************************************
             {
-
                 for (int i = 0; i < sectorNames.Count; i++)
                 {
                     BuyUnits(sectorNames[i], sectorAmounts[i]);
@@ -433,6 +433,63 @@ namespace WindowsFormsApplication1
             WaitForBrowserToLoad();
         }
 
+
+        public int getUnitsCount(string sectorName)
+        {
+            string adaptedSectorName = sectorName; //note: the name in the url has spaces replaced with %20 's
+            while (adaptedSectorName.IndexOf(' ') != -1)
+            {
+                int pos = adaptedSectorName.IndexOf(' ');
+                adaptedSectorName = adaptedSectorName.Remove(pos, 1);
+                adaptedSectorName = adaptedSectorName.Insert(pos, "%20");
+            }
+
+            WaitForBrowserToLoad();
+            Control.Invoke((MethodInvoker)delegate
+            {
+                WBrowser.Navigate("businessgame.be/sector/" + adaptedSectorName);
+            });
+            WaitForBrowserToLoad();
+
+            string BrowserInnerText = "";
+
+            Control.Invoke((MethodInvoker)delegate
+            {
+                BrowserInnerText = WBrowser.Document.Body.InnerText;
+            });
+
+            if (!BrowserInnerText.Contains("units installed"))
+                return 0;
+
+            try
+            {
+                int position = BrowserInnerText.IndexOf(sectorName);
+                while (position != -1 && BrowserInnerText.IndexOf("units installed") > position)
+                {
+                    BrowserInnerText = BrowserInnerText.Remove(0, position + sectorName.Length);//remove everything before the number
+                    position = BrowserInnerText.IndexOf(sectorName);
+                }
+
+                BrowserInnerText = BrowserInnerText.Remove(BrowserInnerText.IndexOf("units installed"));//remove everything after the number
+                BrowserInnerText = RemoveSpaces(BrowserInnerText);
+
+                char[] listOfNumbers = new char[]{'0','1','2','3','4','5','6','7','8','9'};
+                for (int i = BrowserInnerText.Length -1; i >= 0; i--) //remove everything thats not a number
+                    if (!listOfNumbers.Contains(BrowserInnerText[i]))
+                        BrowserInnerText.Remove(i, 1);
+
+                if (BrowserInnerText.Length > 0)
+                {
+                    return int.Parse(BrowserInnerText);
+                }
+                    
+            }
+            catch { return -1; }
+
+            return -1;
+
+        }
+
         public void BuyUnits(string sectorName, int amount)
         {
             Log("Buying " + amount + "units for the " + sectorName + " sector");
@@ -444,6 +501,11 @@ namespace WindowsFormsApplication1
                 adaptedSectorName = adaptedSectorName.Remove(pos, 1);
                 adaptedSectorName = adaptedSectorName.Insert(pos, "%20");
             }
+
+            
+            //////////////////////////////////
+            int unitsBefore = getUnitsCount(sectorName);
+            /////////////////////////////////
 
             WaitForBrowserToLoad();
             Control.Invoke((MethodInvoker)delegate
@@ -480,19 +542,29 @@ namespace WindowsFormsApplication1
                         Log("Activating sector");
                         element.InvokeMember("click");
                         Log("Sector activated");
+
+                        unitsBefore = getUnitsCount(sectorName);
                     }
                 }
             });
             WaitForBrowserToLoad();
 
-            int retries = 0;
+            int trys = 0;
         reTryBuyUnits:
-            retries++;
+            trys++;
+
+            if (trys > 1)
+            {
+                if (getUnitsCount(sectorName) == unitsBefore + amount)//if we now have the number of units we originally wanted, do not buy again...
+                    return;
+            }
+
             WaitForBrowserToLoad();
             Control.Invoke((MethodInvoker)delegate
             {
                 textbox = WBrowser.Document.GetElementById("buyUnits");
             });
+
             if (textbox != null)
             {
                 Control.Invoke((MethodInvoker)delegate
@@ -513,9 +585,10 @@ namespace WindowsFormsApplication1
                         }
                     }
                 });
+                Thread.Sleep(500);
                 WaitForBrowserToLoad();
-                Thread.Sleep(3000);
-                if (retries < 60 && CheckForSuccess() == false)
+
+                if (trys < 60 && CheckForSuccess() == false)
                 {
                     for (int i = 60; i > 0; i += -5)
                     {
@@ -529,8 +602,8 @@ namespace WindowsFormsApplication1
                     });
                     WaitForBrowserToLoad();
 
-                    if (retries > 0)
-                        Log("(Attempt " + retries + ") Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.");
+                    if (trys > 0)
+                        Log("(Attempt " + trys + ") Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.");
                     
                     goto reTryBuyUnits;
                 }
@@ -641,7 +714,7 @@ namespace WindowsFormsApplication1
             string BrowserContents = "";
             Control.Invoke((MethodInvoker)delegate
             {
-                WBrowser.Navigate("businessgame.be/units");
+                WBrowser.Navigate("businessgame.be/sectors");
             });
             WaitForBrowserToLoad();
 
@@ -722,7 +795,15 @@ namespace WindowsFormsApplication1
                     position = Data.IndexOf(sector.name);
                     if (position != -1)
                     {
-                        Data = Data.Remove(0, position + sector.name.Length);//remove everything before the number
+                        //Data = Data.Remove(0, position + sector.name.Length);//remove everything before the number
+                        //position = Data.IndexOf(sector.name);
+
+                        while (position != -1) //repeatedly remove any further sector names (for the special case of petrochemistry)
+                        {
+                            Data = Data.Remove(0, position + sector.name.Length);
+                            position = Data.IndexOf(sector.name);
+                        }
+
                         position = Data.IndexOf("units installed");
                         Data = Data.Remove(position);//remove everything after the number
                         Data = RemoveSpaces(Data);

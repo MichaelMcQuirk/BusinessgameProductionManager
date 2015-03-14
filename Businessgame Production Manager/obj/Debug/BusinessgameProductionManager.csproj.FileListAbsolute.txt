@@ -57,3 +57,6 @@ G:\Programming\Businessgame Production Manager 2\Businessgame Production Manager
 G:\Programming\Businessgame Production Manager 2\Businessgame Production Manager\obj\Debug\Businessgame Production Manager.TrustInfo.xml
 G:\Programming\Businessgame Production Manager 2\Businessgame Production Manager\obj\Debug\Businessgame Production Manager.exe.manifest
 G:\Programming\Businessgame Production Manager 2\Businessgame Production Manager\obj\Debug\Businessgame Production Manager.application
+G:\6. Programming Stuff\Businessgame Production Manager 3\Businessgame Production Manager\bin\Debug\Businessgame Production Manager.exe.config
+G:\6. Programming Stuff\Businessgame Production Manager 3\Businessgame Production Manager\obj\Debug\Businessgame Production Manager.exe
+G:\6. Programming Stuff\Businessgame Production Manager 3\Businessgame Production Manager\obj\Debug\Businessgame Production Manager.pdb

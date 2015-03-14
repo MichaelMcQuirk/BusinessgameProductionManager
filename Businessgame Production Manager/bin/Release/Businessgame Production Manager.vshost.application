@@ -14,14 +14,14 @@
     <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Businessgame Production Manager.exe.manifest" size="4656">
+    <dependentAssembly dependencyType="install" codebase="Businessgame Production Manager.exe.manifest" size="6387">
       <assemblyIdentity name="Businessgame Production Manager.exe" version="1.8.1.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>+9erCpV+/uDaM0fvEws1rAIgvmY=</dsig:DigestValue>
+        <dsig:DigestValue>Z2ZvtgH8rsUEM8yiMPGE5SXS2Gw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -41,6 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // templateLBL
@@ -57,12 +58,13 @@
             // 
             this.lbxSchedualedSales.FormattingEnabled = true;
             this.lbxSchedualedSales.Items.AddRange(new object[] {
-            "142m -> Copper : 200 CBM",
-            "150m ->Nuclear Waste: 5000 CBM"});
+            " "});
             this.lbxSchedualedSales.Location = new System.Drawing.Point(15, 28);
             this.lbxSchedualedSales.Name = "lbxSchedualedSales";
             this.lbxSchedualedSales.Size = new System.Drawing.Size(189, 186);
             this.lbxSchedualedSales.TabIndex = 4;
+            this.lbxSchedualedSales.SelectedIndexChanged += new System.EventHandler(this.lbxSchedualedSales_SelectedIndexChanged);
+            this.lbxSchedualedSales.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbxSchedualedSales_MouseDoubleClick);
             // 
             // cbxProductName
             // 
@@ -148,13 +150,24 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(354, 227);
+            this.button2.Location = new System.Drawing.Point(522, 273);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(26, 23);
             this.button2.TabIndex = 13;
-            this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(330, 158);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form2
             // 
@@ -162,6 +175,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Crimson;
             this.ClientSize = new System.Drawing.Size(560, 351);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -174,7 +188,7 @@
             this.Controls.Add(this.lbxSchedualedSales);
             this.Controls.Add(this.templateLBL);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Businessgame.be - Production Manager - Code Red";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -195,5 +209,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

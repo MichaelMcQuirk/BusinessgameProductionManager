@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010 Express for Windows Phone
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessgameProductionManager", "Businessgame Production Manager\BusinessgameProductionManager.csproj", "{7A2EB4AE-BDE1-4229-80B0-87474CC684BB}"
 EndProject
 Global

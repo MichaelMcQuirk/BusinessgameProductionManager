@@ -31,7 +31,7 @@ namespace WindowsFormsApplication1
         public int iInterval = 16;
         public double totalProduction = 0;
         public double totalIncome = 0;
-        public String selectedSector = "";
+        public String selectedSector = "all";
         public Label netTotalProduction = new Label();
         public Label netTotalIncome = new Label();
         public Label netTotalName = new Label();
@@ -104,7 +104,61 @@ namespace WindowsFormsApplication1
 
             if (!bSectorsDrawn)
             {
-                bSectorsDrawn = true;
+                
+                sectorLabel.Dispose();
+                sectorLabel = new Label();
+                sectorLabel.Text = "[Units] Sector Name";
+                sectorLabel.Font = new System.Drawing.Font(templateLBL.Font, FontStyle.Underline | FontStyle.Bold);
+                sectorLabel.AutoSize = true;
+                sectorLabel.Location = new System.Drawing.Point(iLeft, (iTop - 4));
+                Controls.Add(sectorLabel);
+                netLabel.Dispose();
+                netLabel = new Label();
+                netLabel.Text = "Net Productions";
+                netLabel.Font = new System.Drawing.Font(templateLBL.Font, FontStyle.Underline | FontStyle.Bold);
+                netLabel.AutoSize = true;
+                netLabel.Location = new System.Drawing.Point(iLeft + 360, (5 - 4));
+                if (selectedSector == "all")
+                {
+                    netLabel.ForeColor = Color.Yellow;
+                    for (int z = 0; z < Sector.Count; z++)
+                    {
+                        if (Sector[z].units != 0)
+                            labelColors[z] = Color.Orange;
+                        else
+                            labelColors[z] = Color.Black;
+                    }
+                }
+                else
+                    netLabel.ForeColor = Color.Black;
+                netLabel.MouseClick += (object sender, MouseEventArgs e) =>
+                {
+                    if (selectedSector == "all")
+                    {
+                        netLabel.ForeColor = Color.Black;
+                        selectedSector = "";
+                        for (int z = 0; z < Sector.Count; z++)
+                            labelColors[z] = Color.Black;
+                    }
+                    else
+                    {
+                        netLabel.ForeColor = Color.Yellow;
+                        selectedSector = "all";
+
+                        for (int z = 0; z < Sector.Count; z++)
+                        {
+                            if (Sector[z].units != 0)
+                                labelColors[z] = Color.Orange;
+                            else
+                                labelColors[z] = Color.Black;
+                        }
+                    }
+                    DisposeRecalculateAndDrawNets();
+                };
+                Controls.Add(netLabel);
+
+
+                
                 for (int k = 0; k <= Sector.Count - 1; k++)
                 {
                     iLeft = 20;//temporary, cuz we removed the trackbars
@@ -132,56 +186,7 @@ namespace WindowsFormsApplication1
 
                     Controls.Add(label[k]);
                 }
-                sectorLabel.Dispose();
-                sectorLabel = new Label();
-                sectorLabel.Text = "[Units] Sector Name";
-                sectorLabel.Font = new System.Drawing.Font(templateLBL.Font, FontStyle.Underline | FontStyle.Bold);
-                sectorLabel.AutoSize = true;
-                sectorLabel.Location = new System.Drawing.Point(iLeft, (iTop - 4));
-                Controls.Add(sectorLabel);
-                netLabel.Dispose();
-                netLabel = new Label();
-                netLabel.Text = "Net Productions";
-                netLabel.Font = new System.Drawing.Font(templateLBL.Font, FontStyle.Underline | FontStyle.Bold);
-                netLabel.AutoSize = true;
-                netLabel.Location = new System.Drawing.Point(iLeft + 360, (iTop - 4));
-                if (selectedSector == "all")
-                    netLabel.ForeColor = Color.Yellow;
-                else
-                    netLabel.ForeColor = Color.Black;
-                netLabel.MouseClick += (object sender, MouseEventArgs e) =>
-                {
-                    if (netLabel.ForeColor == Color.Yellow)
-                    {
-                        netLabel.ForeColor = Color.Black;
-                        selectedSector = "";
-                        for (int z = 0; z < Sector.Count; z++)
-                            labelColors[z] = Color.Black;
-                    }
-                    else
-                    {
-                        netLabel.ForeColor = Color.Yellow;
-                        selectedSector = "all";
-
-                        for (int z = 0; z < Sector.Count; z++)
-                        {
-                            //  bool posBalance
-
-                            if (Sector[z].units != 0)
-                                labelColors[z] = Color.Orange;
-                            else
-                                labelColors[z] = Color.Black;
-                            //if (Product[z].amount < 0)
-                            //    labelColors[z] = Color.Red;
-                            //else if (Product[z].amount > 0)
-                            //    labelColors[z] = Color.GreenYellow;
-                            //else
-                            //    labelColors[z] = Color.Black;
-                        }
-                    }
-                    DisposeRecalculateAndDrawNets();
-                };
-                Controls.Add(netLabel);
+                bSectorsDrawn = true;
             }
             else
             {
@@ -219,7 +224,6 @@ namespace WindowsFormsApplication1
             if (BuyMode && Sector[k].units > Sector[k].unitsBeforeBuyMode)
                 lbl.Text = "[" + Sector[k].unitsBeforeBuyMode.ToString() + " + " + (Sector[k].units - Sector[k].unitsBeforeBuyMode).ToString() + "]" + Sector[k].name;
 
-
             //limits: will only work for sectors that have a single outputer/inputer
             if (BuyMode && chkBxChainAutoBuy.Checked)
                 for (int f = 0; f < 20; f++)
@@ -227,13 +231,13 @@ namespace WindowsFormsApplication1
                     for (int iSec = 0; iSec < Sector.Count; iSec++)
                     {
                         if (!(getPosofProductInList(Sector[iSec].Output, "Energy") != -1 && Sector[iSec].name != cbxPowerSource.Text))
-                        if (Sector[iSec].units > 0)
-                        {
-                            Sector[iSec].units += getNumberOfUnitsToFufullRequirements(iSec);
+                            if (Sector[iSec].units > 0)
+                            {
+                                Sector[iSec].units += Math.Max(getNumberOfUnitsToFufullRequirements(iSec),0);
 
-                            if (Sector[iSec].units > Sector[iSec].unitsBeforeBuyMode)
-                                label[iSec].Text = "[" + Sector[iSec].unitsBeforeBuyMode.ToString() + " + " + (Sector[iSec].units - Sector[iSec].unitsBeforeBuyMode).ToString() + "]" + Sector[iSec].name;
-                        }
+                                if (Sector[iSec].units > Sector[iSec].unitsBeforeBuyMode)
+                                    label[iSec].Text = "[" + Sector[iSec].unitsBeforeBuyMode.ToString() + " + " + (Sector[iSec].units - Sector[iSec].unitsBeforeBuyMode).ToString() + "]" + Sector[iSec].name;
+                            }
                     }
                 }
 
@@ -251,7 +255,7 @@ namespace WindowsFormsApplication1
             if (e.Button == System.Windows.Forms.MouseButtons.Middle)
             {
                 lbl.Text = "hi";
-                Sector[k].units += getNumberOfUnitsToFufullRequirements(k);
+                Sector[k].units += Math.Max(getNumberOfUnitsToFufullRequirements(k), 0);
 
                 lbl.Text = "[" + Sector[k].units.ToString() + "]" + Sector[k].name;
 
@@ -261,8 +265,6 @@ namespace WindowsFormsApplication1
                 DisposeRecalculateAndDrawNets();
                 Save();
             }
-
-
         }
 
         public void onSectorDoubleClick(object sender, EventArgs e)
@@ -330,8 +332,8 @@ namespace WindowsFormsApplication1
         {
             disposeNets();
             refreshProductionNets();
-            drawSectors();
             drawNets();
+            drawSectors();
         }
 
         public void refreshProductionNets()
@@ -445,10 +447,10 @@ namespace WindowsFormsApplication1
                 if (valueIn >= 0)
                     unitsRequired = (int)Math.Ceiling(requiredOutPerHour / Sector[sectorID].Output[getPosofProductInList(Sector[sectorID].Output, Product[mainOutputProductID].name)].amount);
                 else
-                    unitsRequired = (int)Math.Floor((requiredInPerHour * -1 ) / Sector[sectorID].Input[getPosofProductInList(Sector[sectorID].Input, Product[mainInputProductID].name)].amount);
-                if (requiredOutCost < 0 && requiredInCost < 0)
-                    unitsRequired = 0;
-                return unitsRequired;
+                    unitsRequired = (int)Math.Floor((requiredInPerHour * -1) / Sector[sectorID].Input[getPosofProductInList(Sector[sectorID].Input, Product[mainInputProductID].name)].amount);
+            if (requiredOutCost < 0 && requiredInCost < 0)
+                unitsRequired = 0;
+            return unitsRequired;
         }
 
         public double getMultiplierValue(string productName, bool productionManager, bool wasteManager, bool output)
@@ -500,8 +502,7 @@ namespace WindowsFormsApplication1
                     netName[k].Text = netProduct[k];
                     netName[k].Font = templateLBL.Font;
                     netName[k].Location = new System.Drawing.Point(iLeft + 360, iTop2 + iInterval * (k + 1));
-                    if (netName[k].Text == selectedSector)
-                        netName[k].ForeColor = Color.Yellow;
+                    
                     netProduction.Add(new Label());
                     netProduction[k].Name = k.ToString();
                     netProduction[k].AutoSize = true;
@@ -562,6 +563,26 @@ namespace WindowsFormsApplication1
                             netName[pos].ForeColor = newColor;
                             DisposeRecalculateAndDrawNets();
                         };
+
+                    if (Product[i].amount > 0)
+                    {
+                        netName[k].ForeColor = Color.Black;
+                        netIncome[k].ForeColor = Color.Black;
+                        netProduction[k].ForeColor = Color.Black;
+                    }
+                    else
+                    {
+                        netName[k].ForeColor = Color.GhostWhite;
+                        netIncome[k].ForeColor = Color.GhostWhite;
+                        netProduction[k].ForeColor = Color.GhostWhite;
+                    }
+
+                    if (netName[k].Text == selectedSector)
+                    {
+                        netName[k].ForeColor = Color.Yellow;
+                        netIncome[k].ForeColor = Color.Yellow;
+                        netProduction[k].ForeColor = Color.Yellow;
+                    }
 
                     Controls.Add(netName[k]);
                     Controls.Add(netProduction[k]);
@@ -1005,13 +1026,16 @@ namespace WindowsFormsApplication1
             //string OriginalData = richTextBox1.Text;
             //richTextBox1.Visible = true;
             //richTextBox1.Focus();
+            button7_Click(this, null);
+
             Market.ForeignSectors = Sector;
             Market.LoadUsersUnitsData();
         }
 
         public void button2_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("How to use BPM:\n-Tick 'display web-browser' and log in. Untick when you are done.\n-To change the number of units you have in a sector:\n  -Move mouse over sector, use scroll wheel to change value\n  -Double click to enter amount manually \n - Click one of the products in the middle pannel to highlight related sectors");
+            MessageBox.Show("How to use BPM:\n-Tick 'display web-browser' and log in. Untick when you are done. \n-To load your private data (the units you have for each sector) click 'Load Private Data'. [you need to be logged in for this to work]\n-To change the number of units you have in a sector:\n  -Move mouse over sector, use scroll wheel to change value\n  -Double click to enter amount manually \n- Click one of the products in the middle pannel to highlight related sectors \n"
+                + "\nHow to use Buy Mode: \n1) Click 'Enter Buy Mode' \n(opt pt1) Enable 'Chain AutoBuys' to keep closed systems 'closed' \n(opt pt2) Select your primary power source [bottom right] that the chain autobuy will use. \n2) Increase the unit values for the sectors you want to buy from [use the steps above to change unit values] \n3)Click 'Buy' \n4) Wait until the progress bar at the top is finished and disappears [this might take anywhere from a few minutes to an hour] \n Depending on how many units you bought and how fast your incoming shipment speed is.");
         }
 
         public void label1_Click(object sender, EventArgs e)
@@ -1032,64 +1056,82 @@ namespace WindowsFormsApplication1
                 {
                     sector.unitsBeforeBuyMode = sector.units;
                 }
-                button3.Text = "Purchase / Exit";
+                button3.Text = "Purchase";
                 button4.Visible = true;
                 BuyMode = true;
             }
             else
             {
-                MessageBox.Show("NOTE: This feature has been temporarily disabled due to complications arising from the introduction of 'shipments'");
-                int unitsToBuy = 0;
-                int iActions = 1;
-                List<string> productnames = new List<string>();
-                List<double> productamounts = new List<double>();
-                List<string> sectornames = new List<string>();
-                List<int> sectoramounts = new List<int>();
-
-                foreach (TSector sector in Sector)
+                DialogResult result = MessageBox.Show("The AutoBuy feature is still in the testing phase and has a (very) small chance of  stopping prematurely (leaving some sectors unbought, with their needed input goods bought).\n\n<USE AT YOUR OWN RISK>\nWould you like to proceed?",
+                    "Critical Warning",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.RightAlign,
+                    false);
+                switch (result)
                 {
-                    unitsToBuy = sector.units - sector.unitsBeforeBuyMode;
-                    if (unitsToBuy > 0)
-                    {
-                        iActions++;
-                        sectornames.Add(sector.name);
-                        sectoramounts.Add(unitsToBuy);
-                        foreach (TProduct product in sector.Machinery)
+                    case DialogResult.No:
                         {
-                            bool productfound = false;
-                            foreach (string name in productnames)
+                            break;
+                        }
+                    case DialogResult.Yes:
+                        {
+                            int unitsToBuy = 0;
+                            int iActions = 1;
+                            List<string> productnames = new List<string>();
+                            List<double> productamounts = new List<double>();
+                            List<string> sectornames = new List<string>();
+                            List<int> sectoramounts = new List<int>();
+
+                            foreach (TSector sector in Sector)
                             {
-                                if (name.Equals(product.name))
+                                unitsToBuy = sector.units - sector.unitsBeforeBuyMode;
+                                if (unitsToBuy > 0)
                                 {
-                                    productfound = true;
-                                    productamounts[productnames.IndexOf(name)] += product.amount * unitsToBuy;
+                                    iActions++;
+                                    sectornames.Add(sector.name);
+                                    sectoramounts.Add(unitsToBuy);
+                                    foreach (TProduct product in sector.Machinery)
+                                    {
+                                        bool productfound = false;
+                                        foreach (string name in productnames)
+                                        {
+                                            if (name.Equals(product.name))
+                                            {
+                                                productfound = true;
+                                                productamounts[productnames.IndexOf(name)] += product.amount * unitsToBuy;
+                                            }
+                                        }
+                                        if (!productfound)
+                                        {
+                                            productnames.Add(product.name);
+                                            productamounts.Add(product.amount * unitsToBuy);
+                                        }
+                                    }
                                 }
                             }
-                            if (!productfound)
-                            {
-                                productnames.Add(product.name);
-                                productamounts.Add(product.amount * unitsToBuy);
-                            }
+                            if (productnames.Count != 0)
+                                Market.PerformActionBuyUnits(productnames, productamounts, sectornames, sectoramounts, iActions);
+
+                            if (Market.ErrorFound)
+                                foreach (TSector sector in Sector) //ROLLBACK
+                                {
+                                    sector.unitsBeforeBuyMode = sector.units;
+                                }
+
+                            button3.Text = "Enter Buy Mode";
+                            button4.Visible = false;
+                            BuyMode = false;
+
+                            drawSectors();
+                            disposeNets();
+                            refreshProductionNets();
+                            drawNets();
+
+                            break;
                         }
-                    }
-                }
-                if (productnames.Count != 0)
-                    Market.PerformActionBuyUnits(productnames, productamounts, sectornames, sectoramounts, iActions);
-
-                if (Market.ErrorFound)
-                    foreach (TSector sector in Sector) //ROLLBACK
-                    {
-                        sector.unitsBeforeBuyMode = sector.units;
-                    }
-
-                button3.Text = "EnterBuy Mode";
-                button4.Visible = false;
-                BuyMode = false;
-
-                drawSectors();
-                disposeNets();
-                refreshProductionNets();
-                drawNets();
+                } //switch end
             }
             Save();
         }
@@ -1100,8 +1142,12 @@ namespace WindowsFormsApplication1
             {
                 sector.units = sector.unitsBeforeBuyMode;
             }
-            drawSectors();
 
+            button3.Text = "Enter Buy Mode";
+            button4.Visible = false;
+            BuyMode = false;
+
+            drawSectors();
             disposeNets();
             refreshProductionNets();
             drawNets();
@@ -1111,7 +1157,7 @@ namespace WindowsFormsApplication1
 
         public void button5_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Businessgame Production Manager\nDevelped by Michael McQuirk!\n\nContact: michaelcmcquirk@gmail.com\nVersion 0.8 (Cornflower Blue 1) - 26 November 2014");
+            MessageBox.Show("Businessgame Production Manager\nDevelped by Michael McQuirk!\n\nContact: michaelcmcquirk@gmail.com\nVersion 1.8.1 (Code Red - Patch 1) - 8 February 2015");
         }
 
         public void Form1_Load(object sender, EventArgs e)
@@ -1157,11 +1203,23 @@ namespace WindowsFormsApplication1
                     LoadingLabel2.Dispose();
 
                     LoadAutoSave();
+
+                    selectedSector = "all";
+                    for (int z = 0; z < Sector.Count; z++)
+                    {
+                        if (Sector[z].units != 0)
+                            labelColors[z] = Color.Orange;
+                        else
+                            labelColors[z] = Color.Black;
+                    }
+
                     drawSectors();
                     disposeNets();
+
                     refreshProductionNets();
                     drawNets();
 
+                    button1.Visible = true;
                     button2.Visible = true;
                     button3.Visible = true;
                     button5.Visible = true;
@@ -1170,11 +1228,17 @@ namespace WindowsFormsApplication1
 
                     cbxProductionManager.Visible = true;
                     cbxWasteManager.Visible = true;
+                    cbxPowerSource.Visible = true;
 
                     loadingTimer.Enabled = false;
 
                     label2.Visible = false;
                     label3.Visible = false;
+                    label4.Visible = true;
+
+                    checkBox1.Visible = true;
+                    cbxPowerSource.Visible = true;
+                    chkBxChainAutoBuy.Visible = true;
 
                     cbxPowerSource.Items.Clear();
                     foreach (TSector s in Sector)
@@ -1290,7 +1354,6 @@ namespace WindowsFormsApplication1
 
         public void button8_Click(object sender, EventArgs e)
         {
-            
         }
 
         public Form1()
@@ -1304,6 +1367,11 @@ namespace WindowsFormsApplication1
         {
             Form2 f2 = new Form2(this);
             f2.Show();
+        }
+
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

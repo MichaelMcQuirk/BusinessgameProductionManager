@@ -27,3 +27,21 @@ G:\Programming\Businessgame Production Manager 3\Businessgame Production Manager
 G:\Programming\Businessgame Production Manager 3\Businessgame Production Manager\obj\Release\Businessgame Production Manager.exe.manifest
 G:\Programming\Businessgame Production Manager 3\Businessgame Production Manager\obj\Release\Businessgame Production Manager.application
 G:\Programming\Businessgame Production Manager 3\Businessgame Production Manager\obj\Release\WindowsFormsApplication1.Form2.resources
+I:\6. Programming Stuff\Businessgame Production Manager 3\Businessgame Production Manager\bin\Release\Businessgame Production Manager.exe.config
+I:\6. Programming Stuff\Businessgame Production Manager 3\Businessgame Production Manager\obj\Release\Businessgame Production Manager.exe
+I:\6. Programming Stuff\Businessgame Production Manager 3\Businessgame Production Manager\obj\Release\Businessgame Production Manager.pdb
+G:\6. Programming Stuff\Businessgame Production Manager 3\Businessgame Production Manager\bin\Release\Businessgame Production Manager.exe.config
+G:\6. Programming Stuff\Businessgame Production Manager 3\Businessgame Production Manager\obj\Release\Businessgame Production Manager.exe
+G:\6. Programming Stuff\Businessgame Production Manager 3\Businessgame Production Manager\obj\Release\Businessgame Production Manager.pdb
+G:\6. Programming Stuff\Businessgame Production Manager 3\Businessgame Production Manager\bin\Release\Businessgame Production Manager.exe.manifest
+G:\6. Programming Stuff\Businessgame Production Manager 3\Businessgame Production Manager\bin\Release\Businessgame Production Manager.application
+G:\6. Programming Stuff\Businessgame Production Manager 3\Businessgame Production Manager\bin\Release\Businessgame Production Manager.exe
+G:\6. Programming Stuff\Businessgame Production Manager 3\Businessgame Production Manager\bin\Release\Businessgame Production Manager.pdb
+G:\6. Programming Stuff\Businessgame Production Manager 3\Businessgame Production Manager\obj\Release\BusinessgameProductionManager.csprojResolveAssemblyReference.cache
+G:\6. Programming Stuff\Businessgame Production Manager 3\Businessgame Production Manager\obj\Release\WindowsFormsApplication1.Form1.resources
+G:\6. Programming Stuff\Businessgame Production Manager 3\Businessgame Production Manager\obj\Release\WindowsFormsApplication1.Form2.resources
+G:\6. Programming Stuff\Businessgame Production Manager 3\Businessgame Production Manager\obj\Release\WindowsFormsApplication1.Properties.Resources.resources
+G:\6. Programming Stuff\Businessgame Production Manager 3\Businessgame Production Manager\obj\Release\BusinessgameProductionManager.csproj.GenerateResource.Cache
+G:\6. Programming Stuff\Businessgame Production Manager 3\Businessgame Production Manager\obj\Release\Businessgame Production Manager.TrustInfo.xml
+G:\6. Programming Stuff\Businessgame Production Manager 3\Businessgame Production Manager\obj\Release\Businessgame Production Manager.exe.manifest
+G:\6. Programming Stuff\Businessgame Production Manager 3\Businessgame Production Manager\obj\Release\Businessgame Production Manager.application

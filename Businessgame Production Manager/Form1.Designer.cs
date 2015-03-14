@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.templateLBL = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -56,6 +57,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.cbxPowerSource = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // templateLBL
@@ -88,7 +92,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(108, 22);
             this.button4.TabIndex = 8;
-            this.button4.Text = "Clear Purchases";
+            this.button4.Text = "Cancel";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Visible = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -128,7 +132,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(444, 633);
+            this.button7.Location = new System.Drawing.Point(446, 633);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 13;
@@ -160,7 +164,7 @@
             this.progressBar1.BackColor = System.Drawing.Color.DarkTurquoise;
             this.progressBar1.Location = new System.Drawing.Point(170, 8);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(525, 23);
+            this.progressBar1.Size = new System.Drawing.Size(402, 23);
             this.progressBar1.TabIndex = 15;
             this.progressBar1.Value = 38;
             this.progressBar1.Visible = false;
@@ -212,6 +216,7 @@
             this.btnLogIn.Text = "Log In";
             this.btnLogIn.UseVisualStyleBackColor = true;
             this.btnLogIn.Visible = false;
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
             // edtUsername
             // 
@@ -264,6 +269,7 @@
             this.checkBox1.TabIndex = 24;
             this.checkBox1.Text = "Display WebBrowser";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.Visible = false;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // label2
@@ -304,6 +310,7 @@
             this.chkBxChainAutoBuy.TabIndex = 30;
             this.chkBxChainAutoBuy.Text = "Chain Autobuys";
             this.chkBxChainAutoBuy.UseVisualStyleBackColor = true;
+            this.chkBxChainAutoBuy.Visible = false;
             // 
             // button1
             // 
@@ -313,6 +320,7 @@
             this.button1.TabIndex = 31;
             this.button1.Text = "More>>";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // cbxPowerSource
@@ -322,6 +330,7 @@
             this.cbxPowerSource.Name = "cbxPowerSource";
             this.cbxPowerSource.Size = new System.Drawing.Size(132, 21);
             this.cbxPowerSource.TabIndex = 32;
+            this.cbxPowerSource.Visible = false;
             // 
             // label4
             // 
@@ -332,6 +341,26 @@
             this.label4.Size = new System.Drawing.Size(135, 13);
             this.label4.TabIndex = 33;
             this.label4.Text = "Primary Power Source:";
+            this.label4.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(578, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(143, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 34;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(192, 650);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(255, 13);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Note: For best results, have a waste staff level of 0...";
             // 
             // Form1
             // 
@@ -339,6 +368,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Crimson;
             this.ClientSize = new System.Drawing.Size(847, 664);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbxPowerSource);
             this.Controls.Add(this.button1);
@@ -364,11 +394,13 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.templateLBL);
+            this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.Name = "Form1";
-            this.Text = "Businessgame.be - Production Manager - Code Red";
+            this.Text = "Businessgame.be - Production Manager - Code Red    (Patch 1)";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,6 +435,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cbxPowerSource;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label5;
     }
 }
 

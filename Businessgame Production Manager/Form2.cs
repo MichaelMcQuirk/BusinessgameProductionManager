@@ -110,10 +110,31 @@ namespace WindowsFormsApplication1
                 foreach (TProduct p in t.Input)
                     profit -= p.amount * MainForm.getProductPrice(p.name);
 
-                s = s + "\n" + t.name + ": $/h " + profit + "\t Payback Hours = " + price / profit;
+                //s = s + "\n" + t.name + ": $/h " + profit + "\t Payback Hours = " + price / profit;
+                s = s + "\n" + t.name;
             }
-
+            tbxAmount.Text = s;
             MessageBox.Show(s);
+        }
+
+        private void lbxSchedualedSales_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void lbxSchedualedSales_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (lbxSchedualedSales.SelectedIndex != -1)
+            {
+                SchedualedSales.RemoveAt(lbxSchedualedSales.SelectedIndex);
+                lbxSchedualedSales.Items.RemoveAt(lbxSchedualedSales.SelectedIndex);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
