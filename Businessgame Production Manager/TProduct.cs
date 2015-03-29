@@ -13,6 +13,7 @@ namespace WindowsFormsApplication1
         public double minimum = 0;
         public double maximum = 0;
         public double amount = 0;
+        public double amountOwnedByPlayer = 0;
         //history here
         public double OriginalPrice = 0;
         public double PreviousePrice = 0;

@@ -59,6 +59,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.cbxUseMyMachines = new System.Windows.Forms.CheckBox();
+            this.cbxNoWarnings = new System.Windows.Forms.CheckBox();
+            this.lblWarningMessage = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,12 +92,13 @@
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button4.Location = new System.Drawing.Point(727, 40);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(108, 22);
             this.button4.TabIndex = 8;
             this.button4.Text = "Cancel";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Visible = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -172,7 +177,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(272, 34);
+            this.label1.Location = new System.Drawing.Point(213, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(344, 13);
             this.label1.TabIndex = 16;
@@ -183,7 +188,7 @@
             // 
             this.cbxProductionManager.AutoSize = true;
             this.cbxProductionManager.Enabled = false;
-            this.cbxProductionManager.Location = new System.Drawing.Point(543, 610);
+            this.cbxProductionManager.Location = new System.Drawing.Point(51, 646);
             this.cbxProductionManager.Name = "cbxProductionManager";
             this.cbxProductionManager.Size = new System.Drawing.Size(122, 17);
             this.cbxProductionManager.TabIndex = 17;
@@ -197,7 +202,7 @@
             // 
             this.cbxWasteManager.AutoSize = true;
             this.cbxWasteManager.Enabled = false;
-            this.cbxWasteManager.Location = new System.Drawing.Point(444, 610);
+            this.cbxWasteManager.Location = new System.Drawing.Point(42, 632);
             this.cbxWasteManager.Name = "cbxWasteManager";
             this.cbxWasteManager.Size = new System.Drawing.Size(102, 17);
             this.cbxWasteManager.TabIndex = 18;
@@ -299,6 +304,7 @@
             this.vScrollBar1.Name = "vScrollBar1";
             this.vScrollBar1.Size = new System.Drawing.Size(14, 636);
             this.vScrollBar1.TabIndex = 27;
+            this.vScrollBar1.Visible = false;
             this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
             // 
             // chkBxChainAutoBuy
@@ -311,6 +317,7 @@
             this.chkBxChainAutoBuy.Text = "Chain Autobuys";
             this.chkBxChainAutoBuy.UseVisualStyleBackColor = true;
             this.chkBxChainAutoBuy.Visible = false;
+            this.chkBxChainAutoBuy.CheckedChanged += new System.EventHandler(this.chkBxChainAutoBuy_CheckedChanged);
             // 
             // button1
             // 
@@ -361,13 +368,59 @@
             this.label5.Size = new System.Drawing.Size(255, 13);
             this.label5.TabIndex = 35;
             this.label5.Text = "Note: For best results, have a waste staff level of 0...";
+            this.label5.Visible = false;
+            // 
+            // cbxUseMyMachines
+            // 
+            this.cbxUseMyMachines.AutoSize = true;
+            this.cbxUseMyMachines.Location = new System.Drawing.Point(446, 608);
+            this.cbxUseMyMachines.Name = "cbxUseMyMachines";
+            this.cbxUseMyMachines.Size = new System.Drawing.Size(111, 17);
+            this.cbxUseMyMachines.TabIndex = 36;
+            this.cbxUseMyMachines.Text = "Use My Machines";
+            this.cbxUseMyMachines.UseVisualStyleBackColor = true;
+            this.cbxUseMyMachines.Visible = false;
+            this.cbxUseMyMachines.CheckedChanged += new System.EventHandler(this.cbxUseMyMachines_CheckedChanged);
+            // 
+            // cbxNoWarnings
+            // 
+            this.cbxNoWarnings.AutoSize = true;
+            this.cbxNoWarnings.Location = new System.Drawing.Point(578, 610);
+            this.cbxNoWarnings.Name = "cbxNoWarnings";
+            this.cbxNoWarnings.Size = new System.Drawing.Size(109, 17);
+            this.cbxNoWarnings.TabIndex = 37;
+            this.cbxNoWarnings.Text = "Disable Warnings";
+            this.cbxNoWarnings.UseVisualStyleBackColor = true;
+            this.cbxNoWarnings.Visible = false;
+            this.cbxNoWarnings.CheckedChanged += new System.EventHandler(this.cbxNoWarnings_CheckedChanged);
+            // 
+            // lblWarningMessage
+            // 
+            this.lblWarningMessage.AutoSize = true;
+            this.lblWarningMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWarningMessage.ForeColor = System.Drawing.Color.Gold;
+            this.lblWarningMessage.Location = new System.Drawing.Point(724, 65);
+            this.lblWarningMessage.Name = "lblWarningMessage";
+            this.lblWarningMessage.Size = new System.Drawing.Size(106, 13);
+            this.lblWarningMessage.TabIndex = 38;
+            this.lblWarningMessage.Text = "Not Enough Cash";
+            this.lblWarningMessage.Visible = false;
+            // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 500;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Crimson;
+            this.BackColor = System.Drawing.Color.Green;
             this.ClientSize = new System.Drawing.Size(847, 664);
+            this.Controls.Add(this.lblWarningMessage);
+            this.Controls.Add(this.cbxNoWarnings);
+            this.Controls.Add(this.cbxUseMyMachines);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbxPowerSource);
@@ -396,8 +449,9 @@
             this.Controls.Add(this.templateLBL);
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Businessgame.be - Production Manager - Code Red    (Patch 1)";
+            this.Text = "Businessgame.be - Production Manager - Leaf Green";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -437,6 +491,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.CheckBox cbxUseMyMachines;
+        public System.Windows.Forms.CheckBox cbxNoWarnings;
+        private System.Windows.Forms.Label lblWarningMessage;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 

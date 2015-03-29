@@ -25,7 +25,7 @@ namespace WindowsFormsApplication1
         public List<Label> netProduction = new List<Label>();
         public List<Label> netIncome = new List<Label>();
         public List<Label> netName = new List<Label>();
-        public int iLeft = 120;
+        public int iLeft = 20;
         public int iTop = 5;
         public int iTop2 = 5;
         public int iInterval = 16;
@@ -54,6 +54,9 @@ namespace WindowsFormsApplication1
         public int dotCount = 0;
 
         public bool isTransitionizing = false;
+        public bool busySavingOrLoading = false;
+
+        public string warningMessage = "";
 
         #endregion Fields
 
@@ -117,7 +120,7 @@ namespace WindowsFormsApplication1
                 netLabel.Text = "Net Productions";
                 netLabel.Font = new System.Drawing.Font(templateLBL.Font, FontStyle.Underline | FontStyle.Bold);
                 netLabel.AutoSize = true;
-                netLabel.Location = new System.Drawing.Point(iLeft + 360, (5 - 4));
+                netLabel.Location = new System.Drawing.Point(iLeft + 330, (5 - 4));
                 if (selectedSector == "all")
                 {
                     netLabel.ForeColor = Color.Yellow;
@@ -242,6 +245,7 @@ namespace WindowsFormsApplication1
                 }
 
             disposeNets();
+            drawSectors();
             refreshProductionNets();
             drawNets();
             Save();
@@ -501,7 +505,7 @@ namespace WindowsFormsApplication1
                     netName[k].AutoSize = true;
                     netName[k].Text = netProduct[k];
                     netName[k].Font = templateLBL.Font;
-                    netName[k].Location = new System.Drawing.Point(iLeft + 360, iTop2 + iInterval * (k + 1));
+                    netName[k].Location = new System.Drawing.Point(iLeft + 330, iTop2 + iInterval * (k + 1));
                     
                     netProduction.Add(new Label());
                     netProduction[k].Name = k.ToString();
@@ -517,13 +521,14 @@ namespace WindowsFormsApplication1
                     if (Product[i].amount * Product[i].price > 0)
                     {
                         netIncome[k].Text = netIncome[k].Text.Insert(0, "€");
-                        netIncome[k].Location = new System.Drawing.Point(netName[k].Left + 120, iTop2 + iInterval * (k + 1)); //alligns to the left and on the right of netName[k]
+                        netIncome[k].Location = new System.Drawing.Point(netName[k].Left + 90, iTop2 + iInterval * (k + 1)); //alligns to the left and on the right of netName[k]
                     }
                     else
                     {
                         netIncome[k].Text = netIncome[k].Text.Insert(1, "€");
-                        netIncome[k].Location = new System.Drawing.Point(netName[k].Left + 120 - 5, iTop2 + iInterval * (k + 1));
+                        netIncome[k].Location = new System.Drawing.Point(netName[k].Left + 90 - 5, iTop2 + iInterval * (k + 1));
                     }
+
 
                     //color highlighting
                     netName[k].MouseClick += (object sender, MouseEventArgs e) =>
@@ -553,7 +558,7 @@ namespace WindowsFormsApplication1
                                             isOut = true;
 
                                     if (isIn)
-                                        labelColors[z] = Color.DeepSkyBlue;
+                                        labelColors[z] = Color.OrangeRed;
                                     else if (isOut)
                                         labelColors[z] = Color.GreenYellow;
                                     else
@@ -594,7 +599,7 @@ namespace WindowsFormsApplication1
             netTotalName.AutoSize = true;
             netTotalName.Text = "Total";
             netTotalName.Font = templateLBL.Font;
-            netTotalName.Location = new System.Drawing.Point(iLeft + 360, iTop2 + iInterval * (k + 2));
+            netTotalName.Location = new System.Drawing.Point(iLeft + 330, iTop2 + iInterval * (k + 2));
             netTotalProduction = new Label();
             netTotalProduction.AutoSize = true;
             netTotalProduction.Font = templateLBL.Font;
@@ -607,13 +612,13 @@ namespace WindowsFormsApplication1
             if (totalIncome >= 0)
             {
                 netTotalIncome.Text = "€" + totalIncome.ToString();
-                netTotalIncome.Location = new System.Drawing.Point(netTotalName.Left + 120, iTop2 + iInterval * (k + 2));
+                netTotalIncome.Location = new System.Drawing.Point(netTotalName.Left + 90, iTop2 + iInterval * (k + 2));
             }
             else
             {
                 netTotalIncome.Text = totalIncome.ToString();
                 netTotalIncome.Text = netTotalIncome.Text.Insert(1, "€");
-                netTotalIncome.Location = new System.Drawing.Point(netTotalName.Left + 120 - 5, iTop2 + iInterval * (k + 2));
+                netTotalIncome.Location = new System.Drawing.Point(netTotalName.Left + 90 - 5, iTop2 + iInterval * (k + 2));
             }
 
             Controls.Add(netTotalIncome);
@@ -717,6 +722,8 @@ namespace WindowsFormsApplication1
 
             isLoading = false;
             Market = new TMarket(this.Controls, this, label1, progressBar1, Sector, Product, 0, wBrowser, DisposeRecalculateAndDrawNets);
+            Market.UploadLog(TMarket.LogCodes.ProgramStartup);
+
         }
 
         public void StartLoadingDataFiles()
@@ -834,6 +841,7 @@ namespace WindowsFormsApplication1
                 List<int> requirementQuantity = new List<int>();
                 double TotalMachinesCost = 0;
                 double TotalUnitsCost = 0;
+                double totalStorageSpaceRequired = 0;
                 foreach (TSector sector in Sector)
                 {
                     int iPurchaseCount = sector.units - sector.unitsBeforeBuyMode;
@@ -844,6 +852,7 @@ namespace WindowsFormsApplication1
                             if (requirements.Contains(requirement.name))
                             {
                                 requirementQuantity[requirements.IndexOf(requirement.name)] += (int)(iPurchaseCount * requirement.amount);//we know that all machine requirements are integers
+                                totalStorageSpaceRequired += iPurchaseCount * requirement.amount;
                             }
                             else
                             {
@@ -855,35 +864,41 @@ namespace WindowsFormsApplication1
                         TotalUnitsCost += sector.price * iPurchaseCount;
                     }
                 }
-                for (int k = 0; k < requirements.Count; k++)
+
+                //Checking if user has enough cash + warehouse space
+                double TotalMachinesCostWithoutExistingMachines = TotalMachinesCost;
+                if (cbxUseMyMachines.Checked)
                 {
-                    buyModeLabels1.Add(new Label());
-                    buyModeLabels1[k].Text = requirements[k];
-                    buyModeLabels1[k].AutoSize = true;
-                    buyModeLabels1[k].Location = new System.Drawing.Point(this.Width - 180, (k + 1) * (iInterval - 3) * 3 + iTop);//(iInterval - 3) just to group them nicely
-                    buyModeLabels1[k].Font = templateLBL.Font;
-
-                    buyModeLabels2.Add(new Label());
-                    buyModeLabels2[k].Text = requirementQuantity[k].ToString();
-                    buyModeLabels2[k].AutoSize = true;
-                    buyModeLabels2[k].Location = new System.Drawing.Point(this.Width - 180, (k + 1) * (iInterval - 3) * 3 + 17 + iTop);
-                    buyModeLabels2[k].Font = templateLBL.Font;
-
-                    Controls.Add(buyModeLabels1[k]);
-                    Controls.Add(buyModeLabels2[k]);
+                    for (int i = 0; i < requirements.Count; i++)
+                    {
+                        foreach (TProduct p in Market.Product)
+                            if (p.name == requirements[i])
+                            {
+                                TotalMachinesCostWithoutExistingMachines -= Math.Min(p.amountOwnedByPlayer, requirementQuantity[i]) * p.price;
+                            }
+                    }
                 }
+                if (TotalMachinesCostWithoutExistingMachines + TotalUnitsCost > Market.PlayerCash && Market.PlayerCash != -1)
+                    warningMessage = "Not Enough Cash";
+                else if (totalStorageSpaceRequired >= Market.RemainingWarehouseSpace)
+                    warningMessage = "Not Enough Space";
+                else
+                    warningMessage = "";
 
-                int m = buyModeLabels1.Count;
+                int mod = 0;
+                if (cbxUseMyMachines.Checked) mod = 1;
+
+                int m = 0;
                 buyModeLabels1.Add(new Label());
                 buyModeLabels1[m].Text = "Total Machines Cost: ";
                 buyModeLabels1[m].AutoSize = true;
-                buyModeLabels1[m].Location = new System.Drawing.Point(this.Width - 180, (m + 1) * (iInterval - 3) * 3 + iTop);
+                buyModeLabels1[m].Location = new System.Drawing.Point(this.Width - 200, (m + 1) * (iInterval - 3) * 3 + button4.Top);
                 buyModeLabels1[m].Font = templateLBL.Font;
 
                 buyModeLabels2.Add(new Label());
-                buyModeLabels2[m].Text = "€" + TotalMachinesCost.ToString();
+                buyModeLabels2[m].Text = "€" + (TotalMachinesCost * (1 - mod) + mod * TotalMachinesCostWithoutExistingMachines).ToString();
                 buyModeLabels2[m].AutoSize = true;
-                buyModeLabels2[m].Location = new System.Drawing.Point(this.Width - 180, (m + 1) * (iInterval - 3) * 3 + 17 + iTop);
+                buyModeLabels2[m].Location = new System.Drawing.Point(this.Width - 200, (m + 1) * (iInterval - 3) * 3 + 17 + button4.Top);
                 buyModeLabels2[m].Font = templateLBL.Font;
 
                 Controls.Add(buyModeLabels1[m]);
@@ -893,13 +908,13 @@ namespace WindowsFormsApplication1
                 buyModeLabels1.Add(new Label());
                 buyModeLabels1[m].Text = "Total Units Cost: ";
                 buyModeLabels1[m].AutoSize = true;
-                buyModeLabels1[m].Location = new System.Drawing.Point(this.Width - 180, (m + 1) * (iInterval - 3) * 3 + iTop);
+                buyModeLabels1[m].Location = new System.Drawing.Point(this.Width - 200, (m + 1) * (iInterval - 3) * 3 + button4.Top);
                 buyModeLabels1[m].Font = templateLBL.Font;
 
                 buyModeLabels2.Add(new Label());
                 buyModeLabels2[m].Text = "€" + TotalUnitsCost.ToString();
                 buyModeLabels2[m].AutoSize = true;
-                buyModeLabels2[m].Location = new System.Drawing.Point(this.Width - 180, (m + 1) * (iInterval - 3) * 3 + 17 + iTop);
+                buyModeLabels2[m].Location = new System.Drawing.Point(this.Width - 200, (m + 1) * (iInterval - 3) * 3 + 17 + button4.Top);
                 buyModeLabels2[m].Font = templateLBL.Font;
 
                 Controls.Add(buyModeLabels1[m]);
@@ -909,17 +924,39 @@ namespace WindowsFormsApplication1
                 buyModeLabels1.Add(new Label());
                 buyModeLabels1[m].Text = "Grand Total: ";
                 buyModeLabels1[m].AutoSize = true;
-                buyModeLabels1[m].Location = new System.Drawing.Point(this.Width - 180, (m + 1) * (iInterval - 3) * 3 + iTop);
+                buyModeLabels1[m].Location = new System.Drawing.Point(this.Width - 200, (m + 1) * (iInterval - 3) * 3 + button4.Top);
                 buyModeLabels1[m].Font = templateLBL.Font;
 
                 buyModeLabels2.Add(new Label());
-                buyModeLabels2[m].Text = "€" + (TotalUnitsCost + TotalMachinesCost).ToString();
+                buyModeLabels2[m].Text = "€" + (TotalUnitsCost + TotalMachinesCost - mod * (TotalMachinesCost - TotalMachinesCostWithoutExistingMachines)).ToString();
                 buyModeLabels2[m].AutoSize = true;
-                buyModeLabels2[m].Location = new System.Drawing.Point(this.Width - 180, (m + 1) * (iInterval - 3) * 3 + 17 + iTop);
+                buyModeLabels2[m].Location = new System.Drawing.Point(this.Width - 200, (m + 1) * (iInterval - 3) * 3 + 17 + button4.Top);
                 buyModeLabels2[m].Font = templateLBL.Font;
 
                 Controls.Add(buyModeLabels1[m]);
                 Controls.Add(buyModeLabels2[m]);
+
+                for (int k = 0; k < requirements.Count; k++)
+                {
+                    m++;
+
+                    buyModeLabels1.Add(new Label());
+                    buyModeLabels1[m].Text = requirements[k];
+                    buyModeLabels1[m].AutoSize = true;
+                    buyModeLabels1[m].Location = new System.Drawing.Point(this.Width - 190, (m + 1) * (iInterval - 3) * 3 + button4.Top);//(iInterval - 3) just to group them nicely
+                    buyModeLabels1[m].Font = templateLBL.Font;
+                                        
+                    buyModeLabels2.Add(new Label());
+                    buyModeLabels2[m].Text = Math.Max(0,(requirementQuantity[k] - mod * Market.Product[getPosofProductInList(Market.Product,requirements[k])].amountOwnedByPlayer)).ToString();
+                    buyModeLabels2[m].AutoSize = true;
+                    buyModeLabels2[m].Location = new System.Drawing.Point(this.Width - 190, (m + 1) * (iInterval - 3) * 3 + 17 + button4.Top);
+                    buyModeLabels2[m].Font = templateLBL.Font;
+
+                    Controls.Add(buyModeLabels1[m]);
+                    Controls.Add(buyModeLabels2[m]);
+                }
+
+                
             }
         }
 
@@ -951,45 +988,65 @@ namespace WindowsFormsApplication1
 
         public void Save()
         {
-            StreamWriter SW = new StreamWriter("BPM AutoSave");
-            try
+            if (!busySavingOrLoading)
             {
-                SW.WriteLine(cbxProductionManager.Checked.ToString());
-                SW.WriteLine(cbxWasteManager.Checked.ToString());
-
-                for (int k = 0; k < Sector.Count; k++)
+                busySavingOrLoading = true;
+                StreamWriter SW = new StreamWriter("BPM AutoSave");
+                try
                 {
-                    SW.WriteLine(Sector[k].name);
-                    SW.WriteLine(Sector[k].units);
+                    SW.WriteLine(cbxProductionManager.Checked.ToString());
+                    SW.WriteLine(cbxWasteManager.Checked.ToString());
+                    SW.WriteLine(cbxNoWarnings.Checked.ToString());
+                    SW.WriteLine(cbxUseMyMachines.Checked.ToString());
+                    SW.WriteLine(chkBxChainAutoBuy.Checked.ToString());
+                    SW.WriteLine(cbxPowerSource.Text);
+
+                    for (int k = 0; k < Sector.Count; k++)
+                    {
+                        SW.WriteLine(Sector[k].name);
+                        SW.WriteLine(Sector[k].units);
+                    }
                 }
+                catch { }
+                SW.Close();
+                busySavingOrLoading = false;
             }
-            catch { }
-            SW.Close();
         }
 
         public void LoadAutoSave()
         {
-            string name;
-            if (File.Exists("BPM AutoSave"))
+            if (!busySavingOrLoading)
             {
-                StreamReader SR = new StreamReader("BPM AutoSave");
-
-                if (!SR.EndOfStream)
+                busySavingOrLoading = true;
+                string name;
+                if (File.Exists("BPM AutoSave"))
                 {
-                    cbxProductionManager.Checked = (SR.ReadLine() == "True");
-                    cbxWasteManager.Checked = (SR.ReadLine() == "True");
-                }
+                    StreamReader SR = new StreamReader("BPM AutoSave");
 
-                while (!SR.EndOfStream)
-                {
-                    try
+                    if (!SR.EndOfStream)
                     {
-                        name = SR.ReadLine();
-                        Sector[GetSectorID(name)].units = int.Parse(SR.ReadLine());
+                        cbxProductionManager.Checked = (SR.ReadLine() == "True");
+                        cbxWasteManager.Checked = (SR.ReadLine() == "True");
+                        cbxNoWarnings.Checked = (SR.ReadLine() == "True");
+                        cbxUseMyMachines.Checked = (SR.ReadLine() == "True");
+                        chkBxChainAutoBuy.Checked = (SR.ReadLine() == "True");
+                        cbxPowerSource.Text = SR.ReadLine();
+
                     }
-                    catch { }
+
+                    while (!SR.EndOfStream)
+                    {
+                        try
+                        {
+                            name = SR.ReadLine();
+                            Sector[GetSectorID(name)].units = int.Parse(SR.ReadLine());
+                        }
+                        catch { }
+                    }
+                    SR.Close();
                 }
-                SR.Close();
+
+                busySavingOrLoading = false;
             }
         }
 
@@ -999,15 +1056,20 @@ namespace WindowsFormsApplication1
 
         public void button7_Click(object sender, EventArgs e)
         {
-            foreach (TSector sector in Sector)
+            if (BuyMode)
+                MessageBox.Show("You cannot zero units while in buy mode.");
+            else
             {
-                sector.units = 0;
+                foreach (TSector sector in Sector)
+                {
+                    sector.units = 0;
+                }
+                drawSectors();
+                disposeNets();
+                refreshProductionNets();
+                drawNets();
+                Save();
             }
-            drawSectors();
-            disposeNets();
-            refreshProductionNets();
-            drawNets();
-            Save();
         }
 
         public void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -1026,10 +1088,17 @@ namespace WindowsFormsApplication1
             //string OriginalData = richTextBox1.Text;
             //richTextBox1.Visible = true;
             //richTextBox1.Focus();
-            button7_Click(this, null);
 
-            Market.ForeignSectors = Sector;
-            Market.LoadUsersUnitsData();
+            if (BuyMode)
+                MessageBox.Show("You cannot load private data while in buy mode.");
+            else
+            {
+                button7_Click(this, null);
+                Market.UploadLog(TMarket.LogCodes.LoadPrivateData);
+
+                Market.ForeignSectors = Sector;
+                Market.LoadUserData();
+            }
         }
 
         public void button2_Click_1(object sender, EventArgs e)
@@ -1062,7 +1131,7 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                DialogResult result = MessageBox.Show("The AutoBuy feature is still in the testing phase and has a (very) small chance of  stopping prematurely (leaving some sectors unbought, with their needed input goods bought).\n\n<USE AT YOUR OWN RISK>\nWould you like to proceed?",
+                 DialogResult result = MessageBox.Show("DISCLAIMER:\n\n Although this feature works 90-95% of the time without a hitch, it has been noticed that it gets buggy (and sometimes crashes) on PCs with a very slow internet connection (<1-2Mb/s)\n\n If the AutoBuy feature stops prematurely then some sectors might remain unbought, with their needed input goods already bought. \n (this can somewhat be resolved, by waiting for the shipments to arrive and then to load private data, enable 'use my machines' and retry)\n\n Would you like to proceed?",
                     "Critical Warning",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Warning,
@@ -1077,6 +1146,7 @@ namespace WindowsFormsApplication1
                         }
                     case DialogResult.Yes:
                         {
+                            Market.UploadLog(TMarket.LogCodes.AutoBuy);
                             int unitsToBuy = 0;
                             int iActions = 1;
                             List<string> productnames = new List<string>();
@@ -1112,7 +1182,7 @@ namespace WindowsFormsApplication1
                                 }
                             }
                             if (productnames.Count != 0)
-                                Market.PerformActionBuyUnits(productnames, productamounts, sectornames, sectoramounts, iActions);
+                                Market.PerformActionBuyUnits(productnames, productamounts, sectornames, sectoramounts, iActions, cbxUseMyMachines.Checked);
 
                             if (Market.ErrorFound)
                                 foreach (TSector sector in Sector) //ROLLBACK
@@ -1157,7 +1227,7 @@ namespace WindowsFormsApplication1
 
         public void button5_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Businessgame Production Manager\nDevelped by Michael McQuirk!\n\nContact: michaelcmcquirk@gmail.com\nVersion 1.8.1 (Code Red - Patch 1) - 8 February 2015");
+            MessageBox.Show("Businessgame Production Manager\nDevelped by Michael McQuirk!\n\nContact: michaelcmcquirk@gmail.com\nVersion 1.9.0 (Leaf Green) - 30 March 2015");
         }
 
         public void Form1_Load(object sender, EventArgs e)
@@ -1225,10 +1295,13 @@ namespace WindowsFormsApplication1
                     button5.Visible = true;
                     button6.Visible = true;
                     button7.Visible = true;
-
-                    cbxProductionManager.Visible = true;
-                    cbxWasteManager.Visible = true;
+                    
+                    vScrollBar1.Visible = true;
+                    label5.Visible = true;
+                    //cbxProductionManager.Visible = true;
+                    //cbxWasteManager.Visible = true;
                     cbxPowerSource.Visible = true;
+                    cbxUseMyMachines.Visible = true;
 
                     loadingTimer.Enabled = false;
 
@@ -1239,6 +1312,7 @@ namespace WindowsFormsApplication1
                     checkBox1.Visible = true;
                     cbxPowerSource.Visible = true;
                     chkBxChainAutoBuy.Visible = true;
+                    cbxNoWarnings.Visible = true;
 
                     cbxPowerSource.Items.Clear();
                     foreach (TSector s in Sector)
@@ -1250,8 +1324,43 @@ namespace WindowsFormsApplication1
                                 cbxPowerSource.Text = s.name;
                         }
                     }
+
+                    addToolTip(cbxUseMyMachines, "If you produce your own machines (electric generators, pumps, etc) then by \n checking this box, you will alow BGPM to use these machines when \n buying new units. [it will still purchase any missing machines]");
+                    addToolTip(cbxPowerSource, "Indicates which power source the chain autobuys will use.");
+                    addToolTip(checkBox1, "Displays the web browser this program uses for getting info and buying units. \n Do not use the browser for anything other than logging in!");
+                    addToolTip(button7, "Sets the unit count for all sectors to zero (will not sell anything).");
+                    addToolTip(button6, "Uses the web browser to load: \n - How many units you have for each sector. \n - How much money you have. \n - How much storage space you have remaining. \n - What resources you have stored in your warehouses.");
+                    addToolTip(button3, "Will automatically buy any units you designate after clicking this button\n (a new 'purchase' button will appear to confirm purchase)");
+                
+                    for (int i = 0; i < Sector.Count; i++)
+                    {
+                        List<int> sortedPositions = getSortedSectorsArray();
+                        String tip = Sector[i].name + ":\n";
+                        tip += "Outputs:\n";
+                        foreach (TProduct p in Sector[i].Output)
+                            tip += "- " + p.name + " : " + p.amount + " CBM\n";
+                        tip += "Inputs:\n";
+                        foreach (TProduct p in Sector[i].Input)
+                            tip += "- " + p.name + " : " + p.amount + " CBM\n";
+                        addToolTip(label[i], tip);
+                    }
                 }
             }
+        }
+
+        public void addToolTip(Control control, String tip)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(control, tip);
+
+            ////yourToolTip.ToolTipIcon = ToolTipIcon.Info;
+            //////yourToolTip.IsBalloon = true;
+            ////yourToolTip.UseAnimation = false;
+            ////yourToolTip.AutomaticDelay = 0;
+            ////yourToolTip.AutoPopDelay = 0;
+            ////yourToolTip.InitialDelay = 0;
+            ////yourToolTip.ReshowDelay = 0;
+            toolTip.ShowAlways = true;
         }
 
         public void wBrowser_Navigating(object sender, WebBrowserNavigatingEventArgs e)
@@ -1326,6 +1435,7 @@ namespace WindowsFormsApplication1
                     btnLogIn.Visible = false;
                 }
             }
+           
         }
 
         public void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -1372,6 +1482,61 @@ namespace WindowsFormsApplication1
         private void btnLogIn_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (!cbxNoWarnings.Checked)
+                if (warningMessage != "")
+                {
+                    if (lblWarningMessage.Visible)
+                        lblWarningMessage.Visible = false;
+                    else
+                        lblWarningMessage.Visible = true;
+                }
+                else
+                    lblWarningMessage.Visible = false;
+            else
+                lblWarningMessage.Visible = false;
+
+            if (Market != null && Market.PGBar != null && Market.PGBar.Visible == true)
+            {
+                button3.Enabled = false;
+                button4.Enabled = false;
+                button6.Enabled = false;
+                button7.Enabled = false;
+                cbxPowerSource.Enabled = false;
+                cbxNoWarnings.Enabled = false;
+                cbxUseMyMachines.Enabled = false;
+                chkBxChainAutoBuy.Enabled = false;
+            }
+            else
+            {
+                button3.Enabled = true;
+                button4.Enabled = true;
+                button6.Enabled = true;
+                button7.Enabled = true;
+                cbxPowerSource.Enabled = true;
+                cbxNoWarnings.Enabled = true;
+                cbxUseMyMachines.Enabled = true;
+                chkBxChainAutoBuy.Enabled = true;
+            }
+        }
+
+        private void cbxUseMyMachines_CheckedChanged(object sender, EventArgs e)
+        {
+            DrawBuyModeStuff();
+            Save();
+        }
+
+        private void chkBxChainAutoBuy_CheckedChanged(object sender, EventArgs e)
+        {
+            Save();
+        }
+
+        private void cbxNoWarnings_CheckedChanged(object sender, EventArgs e)
+        {
+            Save();
         }
     }
 }

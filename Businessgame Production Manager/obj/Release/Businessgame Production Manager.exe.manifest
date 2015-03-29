@@ -63,14 +63,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Businessgame Production Manager.exe" size="195072">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Businessgame Production Manager.exe" size="320000">
       <assemblyIdentity name="Businessgame Production Manager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>oErbDefvm/bSFJteQ3BQW3INavY=</dsig:DigestValue>
+        <dsig:DigestValue>BLUv4xN7LqdXYmnCc1WaOFtvznM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -81,15 +81,6 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>cpzNzlRjZspwKGLNlX6RAlU3880=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="icon.ico" size="25214">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>dRC2OiyfcqhNDJHAG8M2rYbB6w8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="PerfCenterCpl.ico" size="116288">

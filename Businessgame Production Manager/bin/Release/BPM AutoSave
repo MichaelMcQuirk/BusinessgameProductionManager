@@ -1,7 +1,11 @@
 False
 False
+False
+True
+True
+Nuclear power plant
 Iron mine
-0
+74
 Steel mill
 0
 Screws factory
@@ -11,17 +15,17 @@ Engineering facility
 Machines assembly
 0
 Waste plant
-0
+208
 Petrol power plant
-0
+280
 Water well
-0
+888
 Sawmill
-0
+7
 Oil well
-0
+2498
 Chemical plant
-0
+2910
 Silicon smelter
 0
 Petrochemistry
@@ -31,7 +35,7 @@ Glass container factory
 Generators assembly
 0
 Oil refinery
-0
+126
 Rubber plant
 0
 Gears industry
@@ -41,9 +45,9 @@ Coal mine
 Coal power plant
 0
 Silica mine
-0
+53
 Sewage treatment plant
-0
+719
 Microelectronics industry
 0
 Aluminium smelter
@@ -53,7 +57,7 @@ Bauxite mine
 Electric steel mill
 0
 Solar power plant
-0
+132
 Semiconductor fab
 0
 Furnaces assembly
@@ -79,9 +83,9 @@ Rolling mill
 Conveyers assembly
 0
 Uranium mine
-0
+3383
 Uranium mill
-0
+179
 Christmas tree farm
 0
 Ornament factory
@@ -89,9 +93,9 @@ Ornament factory
 Sledge workshop
 0
 Uranium enrichment plant
-0
+330
 Nuclear power plant
-0
+395
 Nuclear storage facility
 0
 Fertilizer facility

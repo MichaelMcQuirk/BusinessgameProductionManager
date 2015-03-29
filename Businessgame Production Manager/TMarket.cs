@@ -57,6 +57,13 @@ namespace WindowsFormsApplication1
 
         public Action DisposeRecalculateAndRedrawNets;
 
+        public double PlayerCash = -1;
+        public double RemainingWarehouseSpace = -1;
+
+        public WebBrowser logBrowser = null;
+        public enum LogCodes {ProgramStartup, LoadPrivateData, AutoBuy };
+
+
 
         public TMarket(Control.ControlCollection controls, Control control, Label statusMessage, ProgressBar pgBar, List<TSector> _sector, List<TProduct> _product, int VirtualPlayers, WebBrowser webBrowser, Action refreshLabels)
         {
@@ -101,17 +108,116 @@ namespace WindowsFormsApplication1
         public delegate void Method();
         public delegate void Method2(List<String> productNames, List<double> amounts, List<string> sectorNames, List<int> sectorAmounts);
 
-        public void LoadUsersUnitsData()
+        public void LoadUserData()
         {
-            (new Thread(() => {
+            (new Thread(() =>
+            {
+                iActions = 3;
+                iActioncount = 0;
                 Control.Invoke((MethodInvoker)delegate
-            { WBrowser.Navigate("businessgame.be/sectors"); });
+                {
+                    PGBar.Visible = true;
+                    PGBar.Maximum = iActions;
+                    PGBar.Value = 0;
+                });
+
+                Thread.Sleep(500);
+
+                Control.Invoke((MethodInvoker)delegate
+                {
+                    PGBar.Increment(1);
+                    PGBar.Update();
+                    PGBar.Refresh();
+                });
+
+                //unit counts
+                Control.Invoke((MethodInvoker)delegate { WBrowser.Navigate("businessgame.be/sectors"); });
                 WaitForBrowserToLoad();
                 string originalData = "";
                 Control.Invoke((MethodInvoker)delegate { originalData = WBrowser.Document.Body.InnerText; });
                 SmartLoad(originalData);
-            })).Start();
+
+                Control.Invoke((MethodInvoker)delegate
+                {
+                    PGBar.Increment(1);
+                    PGBar.Update();
+                    PGBar.Refresh();
+                });
+
+                //cash
+                Control.Invoke((MethodInvoker)delegate { WBrowser.Navigate("businessgame.be/storage"); });
+                WaitForBrowserToLoad();
+
+                string Data = "";
+                Control.Invoke((MethodInvoker)delegate { Data = WBrowser.Document.Body.InnerText; });
+
+                int position = Data.IndexOf("€");
+                if (position != -1)
+                {
+                    Data = Data.Remove(0, position + 1);//remove everything before the euro sign (inc the euro sign)
+                    position = Data.IndexOf(".");
+                    Data = Data.Substring(0, position);//remove everything after the decimal point (a few extra cents makes little difference)
+                    Data = RemoveSpaces(Data);//remove the commas
+                    if (Data.Length > 0)
+                        PlayerCash = double.Parse(Data);
+                }
+
+                //warehouse remaining space
+                WaitForBrowserToLoad();
+                Control.Invoke((MethodInvoker)delegate { Data = WBrowser.Document.Body.InnerText; });
+
+                position = Data.IndexOf("Total capacity");
+                Data = Data.Remove(0, position + "Total capacity is ".Length);                   //"Total capacity is 24,000,000.00 CBM 7,217,549.04 CBM in use (30.07%) ..."
+                double totalCapacity = double.Parse(RemoveSpaces(Data.Substring(0, Data.IndexOf("."))));    //"24,000,000"
+                Data = Data.Remove(0, Data.IndexOf(" CBM") + " CBM\r\n".Length);                                 //"7,217,549.04 CBM in use (30.07%) ..."
+                double usedSpace = double.Parse(RemoveSpaces(Data.Substring(0, Data.IndexOf("."))));        //"7,217,549"
+                RemainingWarehouseSpace = totalCapacity - usedSpace;
+
+                //warehouse contents
+                originalData = "";
+                Control.Invoke((MethodInvoker)delegate { originalData = WBrowser.Document.Body.InnerText; });
+
+                foreach (TProduct product in Product)
+                {
+                    if (product.name.ToLower() != "shipment")
+                    try
+                    {
+                        Data = originalData;
+                        position = Data.IndexOf(product.name + "\r");
+                        if (position != -1)
+                        {
+                            Data = Data.Remove(0, position + product.name.Length + 1);//remove everything before the number
+
+                            position = Data.IndexOf(".");
+                            Data = Data.Substring(0, position);
+                            Data = RemoveSpaces(Data);
+                            if (Data.Length > 0)
+                            {
+                                product.amountOwnedByPlayer = double.Parse(Data);
+                            }
+                        }
+                    }
+                    catch { MessageBox.Show("An error has occured whilst trying to load warehouse contents. Rest of program that does not use warehouse contents should still work fine."); }
+                }
+
+                Control.Invoke((MethodInvoker)delegate
+                {
+                    PGBar.Increment(1);
+                    PGBar.Update();
+                    PGBar.Refresh();
+                });
+
+                Thread.Sleep(1000);
+
+                Control.Invoke((MethodInvoker)delegate
+                {
+                    PGBar.Visible = false;
+                });
+
+            }
+            )).Start();
         }
+
 
         public void PerformAction(Method method)
         {
@@ -120,7 +226,7 @@ namespace WindowsFormsApplication1
             ActionThread.Start();
         }
 
-        public void PerformActionBuyUnits(List<String> productNames, List<double> amounts, List<string> sectorNames, List<int> sectorAmounts, int iactions)
+        public void PerformActionBuyUnits(List<String> productNames, List<double> amounts, List<string> sectorNames, List<int> sectorAmounts, int iactions, bool useMyMachines)
         {
             iActions = iactions;
             iActioncount = 0;
@@ -130,6 +236,22 @@ namespace WindowsFormsApplication1
                 PGBar.Increment(iActioncount - PGBar.Value);
                 PGBar.Update();
                 PGBar.Refresh();
+
+                if (useMyMachines)
+                {
+                    for (int i = 0; i < productNames.Count; i++)
+                    {
+                        foreach (TProduct p in Product)
+                        {
+                            if (p.name == productNames[i])
+                            {
+                                double amountBeingUsed = amounts[i];
+                                amounts[i] = Math.Max(0, amountBeingUsed - p.amountOwnedByPlayer);
+                                p.amountOwnedByPlayer -= amountBeingUsed;
+                            }
+                        }
+                    }
+                }
                 
             });
             Method2 method = (List<String> productNames2, List<double> amounts2, List<string> sectorNames2, List<int> sectorAmounts2) => BuyUnitsAndProducts(productNames2, amounts2, sectorNames2,sectorAmounts2);
@@ -194,13 +316,21 @@ namespace WindowsFormsApplication1
                 StatusMessageLabel.Text = "Operation Commencing.";
                 StatusMessageLabel.Visible = true;
             });
+
             Thread.Sleep(1000);
             Control.Invoke((MethodInvoker)delegate { StatusMessageLabel.Text = "Operation Commencing.."; });
             Thread.Sleep(1000);
             Control.Invoke((MethodInvoker)delegate { StatusMessageLabel.Text = "Operation Commencing..."; });
             Thread.Sleep(1000);
             Control.Invoke((MethodInvoker)delegate { StatusMessageLabel.Text = "Operation Commencing...."; });
-            BuyProduct(productNames, amounts);
+
+            bool thereAreMachinesToBuy = false;
+            foreach (double d in amounts)
+                if (d > 0)
+                    thereAreMachinesToBuy = true;
+
+            if (thereAreMachinesToBuy)
+                BuyProduct(productNames, amounts);
             Thread.Sleep(1000);
             WaitForBrowserToLoad();
             iActioncount++;
@@ -210,7 +340,7 @@ namespace WindowsFormsApplication1
                 PGBar.Update();
                 PGBar.Refresh();
             });
-            if (!CheckForSuccess())
+            if (thereAreMachinesToBuy && !CheckForSuccess())
             {
                 Log("ERROR! NOT ENOUGH CASH.");
                 Control.Invoke((MethodInvoker)delegate
@@ -837,6 +967,37 @@ namespace WindowsFormsApplication1
                 Data = Data.Remove(Data.IndexOf(","), 1);
             }
             return Data;
+        }
+
+        
+
+        public void UploadLog(String errorText)
+        {
+            Thread T = new Thread(() =>
+            {
+                logBrowser = new WebBrowser();
+                logBrowser.Navigate(@"http://businessgame.be/ajax/bpm/log.php?error=" + System.Web.HttpUtility.UrlEncode(errorText));
+            });
+            T.SetApartmentState(ApartmentState.STA);
+            T.Start();
+            
+        }
+
+        public void UploadLog(LogCodes code)
+        {
+            int iCode = -1;
+            if (code == LogCodes.ProgramStartup) iCode = 1;
+            if (code == LogCodes.LoadPrivateData) iCode = 2;
+            if (code == LogCodes.AutoBuy) iCode = 3;
+            if (iCode == -1) MessageBox.Show("ERROR: UploadLog() Unknown log code!");
+            
+            Thread T = new Thread(() =>
+            {
+                logBrowser = new WebBrowser();
+                logBrowser.Navigate(@"http://businessgame.be/ajax/bpm/log.php?log=" + iCode);
+            });
+            T.SetApartmentState(ApartmentState.STA);
+            T.Start();
         }
 
 

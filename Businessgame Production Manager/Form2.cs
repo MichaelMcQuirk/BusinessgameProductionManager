@@ -136,5 +136,12 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MainForm.Market.UploadLog(richTextBox1.Text);
+            richTextBox1.Enabled = false;
+            MessageBox.Show("Thank you, your message has been sent.");
+        }
     }
 }
