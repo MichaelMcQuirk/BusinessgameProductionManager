@@ -878,7 +878,9 @@ namespace WindowsFormsApplication1
                             }
                     }
                 }
-                if (TotalMachinesCostWithoutExistingMachines + TotalUnitsCost > Market.PlayerCash && Market.PlayerCash != -1)
+                if (Market.PlayerCash == -1)
+                    warningMessage = "Load private data";
+                else if (TotalMachinesCostWithoutExistingMachines + TotalUnitsCost > Market.PlayerCash)
                     warningMessage = "Not Enough Cash";
                 else if (totalStorageSpaceRequired >= Market.RemainingWarehouseSpace)
                     warningMessage = "Not Enough Space";
@@ -890,20 +892,22 @@ namespace WindowsFormsApplication1
 
                 int m = 0;
                 buyModeLabels1.Add(new Label());
-                buyModeLabels1[m].Text = "Total Machines Cost: ";
+                buyModeLabels1[m].Text = "Grand Total: ";
                 buyModeLabels1[m].AutoSize = true;
                 buyModeLabels1[m].Location = new System.Drawing.Point(this.Width - 200, (m + 1) * (iInterval - 3) * 3 + button4.Top);
                 buyModeLabels1[m].Font = templateLBL.Font;
+                buyModeLabels1[m].ForeColor = Color.LemonChiffon;
 
                 buyModeLabels2.Add(new Label());
-                buyModeLabels2[m].Text = "€" + (TotalMachinesCost * (1 - mod) + mod * TotalMachinesCostWithoutExistingMachines).ToString();
+                buyModeLabels2[m].Text = "€" + (TotalUnitsCost + TotalMachinesCost - mod * (TotalMachinesCost - TotalMachinesCostWithoutExistingMachines)).ToString();
                 buyModeLabels2[m].AutoSize = true;
                 buyModeLabels2[m].Location = new System.Drawing.Point(this.Width - 200, (m + 1) * (iInterval - 3) * 3 + 17 + button4.Top);
                 buyModeLabels2[m].Font = templateLBL.Font;
+                buyModeLabels2[m].ForeColor = Color.LemonChiffon;
 
                 Controls.Add(buyModeLabels1[m]);
                 Controls.Add(buyModeLabels2[m]);
-
+                
                 m++;
                 buyModeLabels1.Add(new Label());
                 buyModeLabels1[m].Text = "Total Units Cost: ";
@@ -922,13 +926,13 @@ namespace WindowsFormsApplication1
 
                 m++;
                 buyModeLabels1.Add(new Label());
-                buyModeLabels1[m].Text = "Grand Total: ";
+                buyModeLabels1[m].Text = "Total Machines Cost: ";
                 buyModeLabels1[m].AutoSize = true;
                 buyModeLabels1[m].Location = new System.Drawing.Point(this.Width - 200, (m + 1) * (iInterval - 3) * 3 + button4.Top);
                 buyModeLabels1[m].Font = templateLBL.Font;
 
                 buyModeLabels2.Add(new Label());
-                buyModeLabels2[m].Text = "€" + (TotalUnitsCost + TotalMachinesCost - mod * (TotalMachinesCost - TotalMachinesCostWithoutExistingMachines)).ToString();
+                buyModeLabels2[m].Text = "€" + (TotalMachinesCost * (1 - mod) + mod * TotalMachinesCostWithoutExistingMachines).ToString();
                 buyModeLabels2[m].AutoSize = true;
                 buyModeLabels2[m].Location = new System.Drawing.Point(this.Width - 200, (m + 1) * (iInterval - 3) * 3 + 17 + button4.Top);
                 buyModeLabels2[m].Font = templateLBL.Font;
@@ -1064,6 +1068,9 @@ namespace WindowsFormsApplication1
                 {
                     sector.units = 0;
                 }
+                for (int i = 0; i < labelColors.Count; i++)
+                    labelColors[i] = Color.Black;
+
                 drawSectors();
                 disposeNets();
                 refreshProductionNets();
@@ -1216,6 +1223,8 @@ namespace WindowsFormsApplication1
             button3.Text = "Enter Buy Mode";
             button4.Visible = false;
             BuyMode = false;
+
+            warningMessage = "";
 
             drawSectors();
             disposeNets();
@@ -1489,6 +1498,7 @@ namespace WindowsFormsApplication1
             if (!cbxNoWarnings.Checked)
                 if (warningMessage != "")
                 {
+                    lblWarningMessage.Text = warningMessage;
                     if (lblWarningMessage.Visible)
                         lblWarningMessage.Visible = false;
                     else

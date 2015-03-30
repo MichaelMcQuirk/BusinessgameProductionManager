@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading;
+using System.Drawing;
 
 namespace WindowsFormsApplication1
 {
@@ -315,6 +316,7 @@ namespace WindowsFormsApplication1
                 PGBar.Refresh();
                 StatusMessageLabel.Text = "Operation Commencing.";
                 StatusMessageLabel.Visible = true;
+                StatusMessageLabel.ForeColor = Color.White;
             });
 
             Thread.Sleep(1000);

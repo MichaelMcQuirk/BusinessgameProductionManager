@@ -177,9 +177,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(213, 45);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(215, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(344, 13);
+            this.label1.Size = new System.Drawing.Size(461, 15);
             this.label1.TabIndex = 16;
             this.label1.Text = "(1/3) Buying 100 Generators, 3000 Turbines, 2000 Pipes,  60 Machines";
             this.label1.Visible = false;
