@@ -125,7 +125,7 @@ namespace WindowsFormsApplication1
 
             int iRandomSector = ID;
             MySector = Sector[Market.getSectorID("Wind turbines assembly")];//assigns AI to a specific sector
-            Market.Log("New Player: " + ID.ToString() + " - " + MySector.name);
+            Market.Log_High("New Player: " + ID.ToString() + " - " + MySector.name);
         }
     }
 }

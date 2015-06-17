@@ -63,13 +63,16 @@
             this.cbxNoWarnings = new System.Windows.Forms.CheckBox();
             this.lblWarningMessage = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // templateLBL
             // 
             this.templateLBL.AutoSize = true;
+            this.templateLBL.BackColor = System.Drawing.Color.Gold;
             this.templateLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.templateLBL.ForeColor = System.Drawing.Color.DeepPink;
             this.templateLBL.Location = new System.Drawing.Point(614, 74);
             this.templateLBL.Name = "templateLBL";
             this.templateLBL.Size = new System.Drawing.Size(51, 16);
@@ -399,7 +402,7 @@
             // 
             this.lblWarningMessage.AutoSize = true;
             this.lblWarningMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWarningMessage.ForeColor = System.Drawing.Color.Gold;
+            this.lblWarningMessage.ForeColor = System.Drawing.Color.Blue;
             this.lblWarningMessage.Location = new System.Drawing.Point(724, 65);
             this.lblWarningMessage.Name = "lblWarningMessage";
             this.lblWarningMessage.Size = new System.Drawing.Size(106, 13);
@@ -413,11 +416,17 @@
             this.timer2.Interval = 500;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // timer3
+            // 
+            this.timer3.Enabled = true;
+            this.timer3.Interval = 50;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Green;
+            this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(847, 664);
             this.Controls.Add(this.lblWarningMessage);
             this.Controls.Add(this.cbxNoWarnings);
@@ -452,7 +461,7 @@
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Businessgame.be - Production Manager - Leaf Green";
+            this.Text = "Businessgame.be - Production Manager - Bullion Gold";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -496,6 +505,7 @@
         public System.Windows.Forms.CheckBox cbxNoWarnings;
         private System.Windows.Forms.Label lblWarningMessage;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer3;
     }
 }
 

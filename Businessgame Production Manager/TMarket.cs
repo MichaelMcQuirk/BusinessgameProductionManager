@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using System.Drawing;
+using System.IO;
 
 namespace WindowsFormsApplication1
 {
@@ -64,6 +65,8 @@ namespace WindowsFormsApplication1
         public WebBrowser logBrowser = null;
         public enum LogCodes {ProgramStartup, LoadPrivateData, AutoBuy };
 
+        public BuyModeInfo buyModeInfoForm = null;
+
 
 
         public TMarket(Control.ControlCollection controls, Control control, Label statusMessage, ProgressBar pgBar, List<TSector> _sector, List<TProduct> _product, int VirtualPlayers, WebBrowser webBrowser, Action refreshLabels)
@@ -102,8 +105,14 @@ namespace WindowsFormsApplication1
             Player = new TPerson(0, Product, Sector, this, 800000);
             Controls = controls;
 
-            
+            control.Invoke(new Method(() =>
+            {
+               // buyModeInfoForm = new BuyModeInfo();
+               // buyModeInfoForm.Show();
+                ////temperorily removed until completed
+            }));
 
+            Log_Low("market object created");
         }
 
         public delegate void Method();
@@ -111,6 +120,7 @@ namespace WindowsFormsApplication1
 
         public void LoadUserData()
         {
+            Log_Low("starting to load user data");
             (new Thread(() =>
             {
                 iActions = 3;
@@ -138,6 +148,11 @@ namespace WindowsFormsApplication1
                 Control.Invoke((MethodInvoker)delegate { originalData = WBrowser.Document.Body.InnerText; });
                 SmartLoad(originalData);
 
+                List<String> amounts = new List<string>();
+                foreach (TSector s in ForeignSectors)
+                    if (s.units != 0) amounts.Add(s.name + " : " + s.units);
+                Log_Low("(1/4) units loaded", amounts.ToArray());
+
                 Control.Invoke((MethodInvoker)delegate
                 {
                     PGBar.Increment(1);
@@ -163,16 +178,29 @@ namespace WindowsFormsApplication1
                         PlayerCash = double.Parse(Data);
                 }
 
-                //warehouse remaining space
-                WaitForBrowserToLoad();
-                Control.Invoke((MethodInvoker)delegate { Data = WBrowser.Document.Body.InnerText; });
+                Log_Low("(2/4) cash loaded", PlayerCash.ToString());
 
-                position = Data.IndexOf("Total capacity");
-                Data = Data.Remove(0, position + "Total capacity is ".Length);                   //"Total capacity is 24,000,000.00 CBM 7,217,549.04 CBM in use (30.07%) ..."
-                double totalCapacity = double.Parse(RemoveSpaces(Data.Substring(0, Data.IndexOf("."))));    //"24,000,000"
-                Data = Data.Remove(0, Data.IndexOf(" CBM") + " CBM\r\n".Length);                                 //"7,217,549.04 CBM in use (30.07%) ..."
-                double usedSpace = double.Parse(RemoveSpaces(Data.Substring(0, Data.IndexOf("."))));        //"7,217,549"
-                RemainingWarehouseSpace = totalCapacity - usedSpace;
+                try
+                {
+
+                    //warehouse remaining space
+                    WaitForBrowserToLoad();
+                    Control.Invoke((MethodInvoker)delegate { Data = WBrowser.Document.Body.InnerText; });
+
+                    position = Data.IndexOf("Total capacity");
+                    Data = Data.Remove(0, position + "Total capacity is ".Length);                   //"Total capacity is 24,000,000.00 CBM 7,217,549.04 CBM in use (30.07%) ..."
+                    double totalCapacity = double.Parse(RemoveSpaces(Data.Substring(0, Data.IndexOf("."))));    //"24,000,000"
+                    Data = Data.Remove(0, Data.IndexOf(" CBM") + " CBM\r\n".Length);                                 //"7,217,549.04 CBM in use (30.07%) ..."
+                    double usedSpace = double.Parse(RemoveSpaces(Data.Substring(0, Data.IndexOf("."))));        //"7,217,549"
+                    RemainingWarehouseSpace = totalCapacity - usedSpace;
+
+                    Log_Low("(3/4) remaining warehouse space loaded", "" + RemainingWarehouseSpace);
+
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("ERROR: " + e.Message);
+                }
 
                 //warehouse contents
                 originalData = "";
@@ -201,6 +229,11 @@ namespace WindowsFormsApplication1
                     catch { MessageBox.Show("An error has occured whilst trying to load warehouse contents. Rest of program that does not use warehouse contents should still work fine."); }
                 }
 
+                List<string> prdkts = new List<string>();
+                foreach(TProduct p in Product)
+                    if (p.amountOwnedByPlayer != 0) prdkts.Add(p.name + " " + p.amountOwnedByPlayer);
+                Log_Low("(4/4) warehouse contents loaded", prdkts.ToArray()); 
+
                 Control.Invoke((MethodInvoker)delegate
                 {
                     PGBar.Increment(1);
@@ -214,6 +247,8 @@ namespace WindowsFormsApplication1
                 {
                     PGBar.Visible = false;
                 });
+
+                Log_Low("load private data complete");
 
             }
             )).Start();
@@ -229,6 +264,13 @@ namespace WindowsFormsApplication1
 
         public void PerformActionBuyUnits(List<String> productNames, List<double> amounts, List<string> sectorNames, List<int> sectorAmounts, int iactions, bool useMyMachines)
         {
+            List<String> s1 = new List<string>();
+            for (int i = 0; i < productNames.Count; i++)
+                s1.Add(productNames[i] + " : " + amounts[i]);
+            for (int i = 0; i < sectorNames.Count; i++)
+                s1.Add(sectorNames[i] + " : " + sectorAmounts[i]);
+            Log_Low("PerformActionBuyUnits()", s1.ToArray());
+
             iActions = iactions;
             iActioncount = 0;
             Control.Invoke((MethodInvoker)delegate
@@ -294,17 +336,26 @@ namespace WindowsFormsApplication1
         {
             Thread.Sleep(2000);
             string status = "";
+            int timeSpentWaiting = 2000;
             loop:
             Thread.Sleep(250);
             Control.Invoke((MethodInvoker)delegate
             {
                 status = BrowserStatus;
             });
+            timeSpentWaiting += 250;
+            if (timeSpentWaiting > 5000) ///IMPORTANT!!!!!!!! : This is a quick fix for an issue users are facing (browser not completely loading). Find a better solution!
+            {
+                Control.Invoke((MethodInvoker)delegate
+                { WBrowser.Stop(); });
+                return;
+            }
             if (status != "Complete") goto loop;
         }
 
         public void BuyUnitsAndProducts(List<String> productNames, List<double> amounts, List<string> sectorNames, List<int> sectorAmounts)
         {
+            Log_Low("BuyUnitsAndProducts()");
             ErrorFound = false;
             Control.Invoke((MethodInvoker)delegate
             {
@@ -331,8 +382,11 @@ namespace WindowsFormsApplication1
                 if (d > 0)
                     thereAreMachinesToBuy = true;
 
+            Log_Low("BuyProduct() - starting");
             if (thereAreMachinesToBuy)
                 BuyProduct(productNames, amounts);
+            Log_Low("BuyProduct() - complete. Beginning success check.");
+
             Thread.Sleep(1000);
             WaitForBrowserToLoad();
             iActioncount++;
@@ -344,7 +398,7 @@ namespace WindowsFormsApplication1
             });
             if (thereAreMachinesToBuy && !CheckForSuccess())
             {
-                Log("ERROR! NOT ENOUGH CASH.");
+                Log_High("ERROR! NOT ENOUGH CASH.");
                 Control.Invoke((MethodInvoker)delegate
                 {
                     PGBar.ForeColor = System.Drawing.Color.Red;
@@ -356,9 +410,13 @@ namespace WindowsFormsApplication1
             else
             //***********************************************************************************************************
             {
+                Log_Low("BuyProduct() - successful");
+
                 for (int i = 0; i < sectorNames.Count; i++)
                 {
+                    Log_Low("BuyUnits()", sectorNames[i] + " : " + sectorAmounts[i]);
                     BuyUnits(sectorNames[i], sectorAmounts[i]);
+
                     Control.Invoke((MethodInvoker)delegate
                     {
                         PGBar.Maximum = iActions;
@@ -369,7 +427,7 @@ namespace WindowsFormsApplication1
                     });
                     if (!CheckForSuccess())
                     {
-                        Log("ERROR! NOT ENOUGH CASH.");
+                        Log_High("ERROR! NOT ENOUGH CASH.");
                         Control.Invoke((MethodInvoker)delegate
                         {
                             PGBar.ForeColor = System.Drawing.Color.Red;
@@ -381,6 +439,7 @@ namespace WindowsFormsApplication1
                         }
                         break;
                     }
+                    Log_Low("BuyUnits() - success");
                 }
             }
             Thread.Sleep(300);
@@ -388,11 +447,12 @@ namespace WindowsFormsApplication1
             Thread.Sleep(2500);
             Thread.Sleep(1000);
             Control.Invoke((MethodInvoker)delegate { StatusMessageLabel.Visible = false; PGBar.Visible = false; });
+            Log_Low("BuyUnitsAndProducts() - complete");
         }
 
         public void BuyProduct(string productName, int amount)
         {
-            Log("Buying " + amount + "CBMs of " + productName);
+            Log_High("Buying " + amount + "CBMs of " + productName);
             Control.Invoke((MethodInvoker)delegate
             {
                 WBrowser.Navigate("businessgame.be/market");
@@ -440,7 +500,7 @@ namespace WindowsFormsApplication1
                 compondedlog += amounts[k] + "CBMs of " + productNames[k] + ", ";
             }
             compondedlog = compondedlog.Remove(compondedlog.Length - 3, 2);
-            Log(compondedlog);
+            Log_High(compondedlog);
             for (int i = 0; i < productNames.Count; i++)
             {
             BuyProduct:
@@ -468,7 +528,7 @@ namespace WindowsFormsApplication1
                 else
                 {
                     // throw new Exception("Sell Product Error!");
-                    Log("ERROR: Something went wrong when buying " + productName + ". Retrying...");
+                    Log_High("ERROR: Something went wrong when buying " + productName + ". Retrying...");
                     goto BuyProduct;
                 }
             }
@@ -482,7 +542,7 @@ namespace WindowsFormsApplication1
         public void SellProduct(string productName, double amount)
         {
             SellProduct:
-            Log("Selling " + amount + "CBMs of " + productName);
+            Log_High("Selling " + amount + "CBMs of " + productName);
             Control.Invoke((MethodInvoker)delegate
             {
                 WBrowser.Navigate("businessgame.be/market");
@@ -511,7 +571,7 @@ namespace WindowsFormsApplication1
             else
             {
                // throw new Exception("Sell Product Error!");
-                Log("ERROR: Something went wrong when selling " + productName + ". Retrying...");
+                Log_High("ERROR: Something went wrong when selling " + productName + ". Retrying...");
                 goto SellProduct;
             }
             Product[ID].amount += amount;
@@ -532,7 +592,7 @@ namespace WindowsFormsApplication1
             SellProduct:
                 string productName = productNames[i];
                 double amount = amounts[i];
-                Log("Selling " + amount + "CBMs of " + productName);
+                Log_High("Selling " + amount + "CBMs of " + productName);
 
                 ID = getProductID(productName);
                 HtmlElement textbox = null;
@@ -554,7 +614,7 @@ namespace WindowsFormsApplication1
                 else
                 {
                     // throw new Exception("Sell Product Error!");
-                    Log("ERROR: Something went wrong when selling " + productName + ". Retrying...");
+                    Log_High("ERROR: Something went wrong when selling " + productName + ". Retrying...");
                     goto SellProduct;
                 }
             }
@@ -624,7 +684,7 @@ namespace WindowsFormsApplication1
 
         public void BuyUnits(string sectorName, int amount)
         {
-            Log("Buying " + amount + "units for the " + sectorName + " sector");
+            Log_High("Buying " + amount + "units for the " + sectorName + " sector");
 
             string adaptedSectorName = sectorName; //note: the name in the url has spaces replaced with %20 's
             while (adaptedSectorName.IndexOf(' ') != -1)
@@ -639,6 +699,7 @@ namespace WindowsFormsApplication1
             int unitsBefore = getUnitsCount(sectorName);
             /////////////////////////////////
 
+            Log_Low("navigating to : " + "businessgame.be/sector/" + adaptedSectorName);
             WaitForBrowserToLoad();
             Control.Invoke((MethodInvoker)delegate
             {
@@ -654,9 +715,9 @@ namespace WindowsFormsApplication1
                 {
                     if (element.GetAttribute("type") == "submit" && element.GetAttribute("value") == "Unlock " + sectorName + " sector")
                     {
-                        Log("Unlocking sector");
+                        Log_High("Unlocking sector");
                         element.InvokeMember("click");
-                        Log("Sector unlocked");
+                        Log_High("Sector unlocked");
                         Thread.Sleep(500);
                         WBrowser.Navigate("businessgame.be/sector/" + adaptedSectorName);
                         break;
@@ -671,9 +732,9 @@ namespace WindowsFormsApplication1
                 {
                     if (element.GetAttribute("type") == "submit" && element.GetAttribute("value") == "Activate " + sectorName)
                     {
-                        Log("Activating sector");
+                        Log_High("Activating sector");
                         element.InvokeMember("click");
-                        Log("Sector activated");
+                        Log_High("Sector activated");
 
                         unitsBefore = getUnitsCount(sectorName);
                     }
@@ -713,7 +774,7 @@ namespace WindowsFormsApplication1
                         if (element.GetAttribute("type") == "submit" && element.GetAttribute("value") == "Buy")
                         {
                             element.InvokeMember("click");
-                            Log("Units bought");
+                            Log_High("Units bought");
                         }
                     }
                 });
@@ -724,7 +785,7 @@ namespace WindowsFormsApplication1
                 {
                     for (int i = 60; i > 0; i += -5)
                     {
-                        Log("Waiting " + i + " seconds!");
+                        Log_High("Waiting " + i + " seconds!");
                         Thread.Sleep(5000);
                     }
 
@@ -735,7 +796,7 @@ namespace WindowsFormsApplication1
                     WaitForBrowserToLoad();
 
                     if (trys > 0)
-                        Log("(Attempt " + trys + ") Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.");
+                        Log_High("(Attempt " + trys + ") Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.");
                     
                     goto reTryBuyUnits;
                 }
@@ -748,11 +809,11 @@ namespace WindowsFormsApplication1
 
         public void UpdateBotData() /////////////////////ALSO UPDATE NO OF UNITS, so we don't have to do saves 'n all!
         {
-            Log("Updating bot data...");
+            Log_High("Updating bot data...");
             UpdateUnitAmounts();
             UpdateCashAmount();
             UpdateProductAmounts();
-            Log("Bot update complete");
+            Log_High("Bot update complete");
 
         }
 
@@ -781,7 +842,7 @@ namespace WindowsFormsApplication1
             });
             Player.Cash = double.Parse(money);
 
-            Log("Cash balance successfully loaded: €" + money.ToString());
+            Log_High("Cash balance successfully loaded: €" + money.ToString());
         }
 
         public void UpdateProductAmounts()
@@ -828,11 +889,11 @@ namespace WindowsFormsApplication1
                             try
                             {
                                 product.amount = Double.Parse(value);
-                                Log("Product amount retrieved: " + product.name + " = " + product.amount.ToString());
+                                Log_High("Product amount retrieved: " + product.name + " = " + product.amount.ToString());
                             }
                             catch
                             {
-                                Log("ERROR: Product amount not retrieved: " + product.name + " = " + product.amount.ToString());
+                                Log_High("ERROR: Product amount not retrieved: " + product.name + " = " + product.amount.ToString());
                             }
                         }
                     }
@@ -857,7 +918,7 @@ namespace WindowsFormsApplication1
 
             SmartLoad(BrowserContents);
 
-            Log("Units successfully loaded, sector: " + Player.MySector.name + ", Units: " + Player.MySector.units.ToString());
+            Log_High("Units successfully loaded, sector: " + Player.MySector.name + ", Units: " + Player.MySector.units.ToString());
         }
 
         public string CleanseOfSymbol(char symbol, string text)
@@ -869,7 +930,7 @@ namespace WindowsFormsApplication1
             return text;
         }
 
-        public void Log(string text)
+        public void Log_High(string text)
         {
             Control.Invoke((MethodInvoker)delegate
             {
@@ -878,7 +939,27 @@ namespace WindowsFormsApplication1
                     StatusMessageLabel.Text = text;
                     StatusMessageLabel.Refresh();
                 }
-            }); 
+
+                if (buyModeInfoForm != null)
+                {
+                    buyModeInfoForm.lblStatus.Text = text;
+                    buyModeInfoForm.lblStatus.Refresh();
+                }
+            });
+
+            Log_Low(text);
+        }
+
+        public void Log_Low(string text, params string[] args)
+        {
+            Control.Invoke((MethodInvoker)delegate
+            {
+                StreamWriter sw = new StreamWriter("BPM_LogFile.txt", true);
+                sw.WriteLine("Y" + DateTime.Now.Year + "M" + DateTime.Now.Month + "D" + DateTime.Now.Day + "S" + DateTime.Now.Second + " : " + text);
+                foreach (String s in args)
+                    sw.WriteLine("  - " + s);
+                sw.Close();
+            });
         }
 
         public int getProductID(string ProductName)

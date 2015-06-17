@@ -58,6 +58,10 @@ namespace WindowsFormsApplication1
 
         public string warningMessage = "";
 
+        public List<int> sectorUnitInc_SectorID = new List<int>();
+        public List<int> sectorUnitInc_changes = new List<int>();
+
+        public Color InvestedSectorColor = Color.DarkGreen;
         #endregion Fields
 
         #region SectorManagement
@@ -127,7 +131,7 @@ namespace WindowsFormsApplication1
                     for (int z = 0; z < Sector.Count; z++)
                     {
                         if (Sector[z].units != 0)
-                            labelColors[z] = Color.Orange;
+                            labelColors[z] = InvestedSectorColor;
                         else
                             labelColors[z] = Color.Black;
                     }
@@ -151,7 +155,7 @@ namespace WindowsFormsApplication1
                         for (int z = 0; z < Sector.Count; z++)
                         {
                             if (Sector[z].units != 0)
-                                labelColors[z] = Color.Orange;
+                                labelColors[z] = InvestedSectorColor;
                             else
                                 labelColors[z] = Color.Black;
                         }
@@ -221,11 +225,18 @@ namespace WindowsFormsApplication1
             Label lbl = (Label)sender;
             int k = int.Parse(lbl.Name); //we use the label's names to store the link(ID) to their respective data.
             int changes = e.Delta / 120;
+
+            sectorUnitInc_changes.Add(changes);
+            sectorUnitInc_SectorID.Add(k);
+        }
+
+        public void incSectorCounts(int k, int changes)
+        {
             Sector[k].units += changes;
 
-            lbl.Text = "[" + Sector[k].units.ToString() + "]" + Sector[k].name;
+            label[k].Text = "[" + Sector[k].units.ToString() + "]" + Sector[k].name;
             if (BuyMode && Sector[k].units > Sector[k].unitsBeforeBuyMode)
-                lbl.Text = "[" + Sector[k].unitsBeforeBuyMode.ToString() + " + " + (Sector[k].units - Sector[k].unitsBeforeBuyMode).ToString() + "]" + Sector[k].name;
+                label[k].Text = "[" + Sector[k].unitsBeforeBuyMode.ToString() + " + " + (Sector[k].units - Sector[k].unitsBeforeBuyMode).ToString() + "]" + Sector[k].name;
 
             //limits: will only work for sectors that have a single outputer/inputer
             if (BuyMode && chkBxChainAutoBuy.Checked)
@@ -236,7 +247,7 @@ namespace WindowsFormsApplication1
                         if (!(getPosofProductInList(Sector[iSec].Output, "Energy") != -1 && Sector[iSec].name != cbxPowerSource.Text))
                             if (Sector[iSec].units > 0)
                             {
-                                Sector[iSec].units += Math.Max(getNumberOfUnitsToFufullRequirements(iSec),0);
+                                Sector[iSec].units += Math.Max(getNumberOfUnitsToFufullRequirements(iSec), 0);
 
                                 if (Sector[iSec].units > Sector[iSec].unitsBeforeBuyMode)
                                     label[iSec].Text = "[" + Sector[iSec].unitsBeforeBuyMode.ToString() + " + " + (Sector[iSec].units - Sector[iSec].unitsBeforeBuyMode).ToString() + "]" + Sector[iSec].name;
@@ -245,7 +256,7 @@ namespace WindowsFormsApplication1
                 }
 
             disposeNets();
-            drawSectors();
+            //drawSectors();
             refreshProductionNets();
             drawNets();
             Save();
@@ -506,7 +517,7 @@ namespace WindowsFormsApplication1
                     netName[k].Text = netProduct[k];
                     netName[k].Font = templateLBL.Font;
                     netName[k].Location = new System.Drawing.Point(iLeft + 330, iTop2 + iInterval * (k + 1));
-                    
+
                     netProduction.Add(new Label());
                     netProduction[k].Name = k.ToString();
                     netProduction[k].AutoSize = true;
@@ -521,12 +532,12 @@ namespace WindowsFormsApplication1
                     if (Product[i].amount * Product[i].price > 0)
                     {
                         netIncome[k].Text = netIncome[k].Text.Insert(0, "€");
-                        netIncome[k].Location = new System.Drawing.Point(netName[k].Left + 90, iTop2 + iInterval * (k + 1)); //alligns to the left and on the right of netName[k]
+                        netIncome[k].Location = new System.Drawing.Point(netName[k].Left + 125, iTop2 + iInterval * (k + 1)); //alligns to the left and on the right of netName[k]
                     }
                     else
                     {
                         netIncome[k].Text = netIncome[k].Text.Insert(1, "€");
-                        netIncome[k].Location = new System.Drawing.Point(netName[k].Left + 90 - 5, iTop2 + iInterval * (k + 1));
+                        netIncome[k].Location = new System.Drawing.Point(netName[k].Left + 125 - 5, iTop2 + iInterval * (k + 1));
                     }
 
 
@@ -558,9 +569,9 @@ namespace WindowsFormsApplication1
                                             isOut = true;
 
                                     if (isIn)
-                                        labelColors[z] = Color.OrangeRed;
+                                        labelColors[z] = Color.Red;
                                     else if (isOut)
-                                        labelColors[z] = Color.GreenYellow;
+                                        labelColors[z] = Color.DarkGreen;
                                     else
                                         labelColors[z] = Color.Black;
                                 }
@@ -592,6 +603,7 @@ namespace WindowsFormsApplication1
                     Controls.Add(netName[k]);
                     Controls.Add(netProduction[k]);
                     Controls.Add(netIncome[k]);
+                    netIncome[k].BringToFront();
                     netProduction[k].Location = new System.Drawing.Point(netName[k].Left - netProduction[k].Width, iTop2 + iInterval * (k + 1)); //alligns to the right and on the left of netName[k]
                 }
             }
@@ -629,6 +641,8 @@ namespace WindowsFormsApplication1
             DrawBuyModeStuff();
 
             vScrollBar1.Maximum = iInterval * Product.Count - (int)Math.Round(Height * 0.8);
+
+            wBrowser.BringToFront();
         }
 
         #endregion NetManagement
@@ -1287,7 +1301,7 @@ namespace WindowsFormsApplication1
                     for (int z = 0; z < Sector.Count; z++)
                     {
                         if (Sector[z].units != 0)
-                            labelColors[z] = Color.Orange;
+                            labelColors[z] = InvestedSectorColor;
                         else
                             labelColors[z] = Color.Black;
                     }
@@ -1547,6 +1561,25 @@ namespace WindowsFormsApplication1
         private void cbxNoWarnings_CheckedChanged(object sender, EventArgs e)
         {
             Save();
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            while(sectorUnitInc_SectorID.Count != 0)
+            {
+                int curID = sectorUnitInc_SectorID[0];
+                int changes = 0;
+                for (int i = 0; i < sectorUnitInc_SectorID.Count; i++)
+                    if (sectorUnitInc_SectorID[i] == curID)
+                        changes += sectorUnitInc_changes[i];
+                incSectorCounts(curID, changes);
+                for (int i = sectorUnitInc_SectorID.Count - 1; i >= 0; i--)
+                    if (sectorUnitInc_SectorID[i] == curID)
+                    {
+                        sectorUnitInc_SectorID.RemoveAt(i);
+                        sectorUnitInc_changes.RemoveAt(i);
+                    }
+            }
         }
     }
 }

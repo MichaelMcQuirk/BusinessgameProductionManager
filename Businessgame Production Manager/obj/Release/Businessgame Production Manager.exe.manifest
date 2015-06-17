@@ -63,14 +63,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Businessgame Production Manager.exe" size="320512">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Businessgame Production Manager.exe" size="326144">
       <assemblyIdentity name="Businessgame Production Manager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>GiC+ku3AcGNktaiQD0ruRlEf7Ck=</dsig:DigestValue>
+        <dsig:DigestValue>3RHjJjhh9OdnZ4quMot2VHLhcZ8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

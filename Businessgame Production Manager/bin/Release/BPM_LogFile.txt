@@ -1,0 +1,3064 @@
+Y2015M4D3S46 : New Player: 0 - Wind turbines assembly
+Y2015M4D3S46 : market object created
+Y2015M4D3S54 : starting to load user data
+Y2015M4D3S57 : (1/4) units loaded
+  - Iron mine : 131
+  - Waste plant : 356
+  - Petrol power plant : 280
+  - Water well : 1527
+  - Sawmill : 7
+  - Oil well : 4177
+  - Chemical plant : 5216
+  - Oil refinery : 126
+  - Silica mine : 95
+  - Sewage treatment plant : 1156
+  - Solar power plant : 133
+  - Uranium mine : 6142
+  - Uranium mill : 325
+  - Uranium enrichment plant : 600
+  - Nuclear power plant : 773
+Y2015M4D3S0 : (2/4) cash loaded
+  - 245055580
+Y2015M4D3S2 : (3/4) remaining warehouse space loaded
+  - 21460787
+Y2015M4D3S2 : (4/4) warehouse contents loaded
+  - Water 579804
+  - Iron 24125
+  - Silicon 0
+  - Steel 194278
+  - Screws 0
+  - Gears 0
+  - Machine parts 0
+  - Energy 43306
+  - Trash 149458
+  - Wood 159832
+  - Crude oil 314136
+  - Gasoline 12792
+  - Rubber 0
+  - Plastic 0
+  - Chemicals 445449
+  - Glass 0
+  - Machines 0
+  - Electric generators 0
+  - Coals 0
+  - Silica 101715
+  - Pumps 0
+  - Industrial drills 0
+  - Wastewater 79343
+  - Furnaces 0
+  - Solar panels 0
+  - Microchips 0
+  - Aluminium 0
+  - Electric steel 0
+  - Bauxite 0
+  - Wind turbines 0
+  - Electric motors 0
+  - Copper 0
+  - Copper wire 0
+  - Conveyer systems 0
+  - Robotics 0
+  - Pipes 0
+  - Shipment 0
+  - Enriched uranium 1960
+  - Uranium ore 65483
+  - Uranium 10833
+  - Christmas tree 0
+  - Fertilizer 0
+  - Christmas ornament 0
+  - Sledge 0
+  - Radioactive waste 83938
+  - Pallets 0
+Y2015M4D3S3 : load private data complete
+Y2015M4D3S35 : PerformActionBuyUnits()
+  - Pumps : 70590
+  - Industrial drills : 20180
+  - Conveyer systems : 19500
+  - Robotics : 40800
+  - Pipes : 90290
+  - Furnaces : 7400
+  - Machines : 140700
+  - Electric motors : 2500
+  - Water : 50000
+  - Enriched uranium : 2000
+  - Iron mine : 1
+  - Waste plant : 2
+  - Oil well : 23
+  - Chemical plant : 32
+  - Silica mine : 1
+  - Sewage treatment plant : 6
+  - Uranium mine : 38
+  - Uranium mill : 2
+  - Uranium enrichment plant : 4
+  - Nuclear power plant : 5
+Y2015M4D3S35 : BuyUnitsAndProducts()
+Y2015M4D3S38 : BuyProduct() - starting
+Y2015M4D3S41 : Buying 70590CBMs of Pumps, 20180CBMs of Industrial drills, 19500CBMs of Conveyer systems, 40800CBMs of Robotics, 90290CBMs of Pipes, 7400CBMs of Furnaces, 140700CBMs of Machines, 2500CBMs of Electric motors, 0CBMs of Water, 40CBMs of Enriched uraniu 
+Y2015M4D3S8 : BuyProduct() - complete. Beginning success check.
+Y2015M4D3S12 : BuyProduct() - successful
+Y2015M4D3S12 : BuyUnits()
+  - Iron mine : 1
+Y2015M4D3S12 : Buying 1units for the Iron mine sector
+Y2015M4D3S17 : navigating to : businessgame.be/sector/Iron%20mine
+Y2015M4D3S31 : Units bought
+Y2015M4D3S34 : Waiting 60 seconds!
+Y2015M4D3S39 : Waiting 55 seconds!
+Y2015M4D3S44 : Waiting 50 seconds!
+Y2015M4D3S49 : Waiting 45 seconds!
+Y2015M4D3S54 : Waiting 40 seconds!
+Y2015M4D3S59 : Waiting 35 seconds!
+Y2015M4D3S4 : Waiting 30 seconds!
+Y2015M4D3S9 : Waiting 25 seconds!
+Y2015M4D3S14 : Waiting 20 seconds!
+Y2015M4D3S19 : Waiting 15 seconds!
+Y2015M4D3S24 : Waiting 10 seconds!
+Y2015M4D3S29 : Waiting 5 seconds!
+Y2015M4D3S36 : (Attempt 1) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D3S45 : Units bought
+Y2015M4D3S48 : BuyUnits() - success
+Y2015M4D3S48 : BuyUnits()
+  - Waste plant : 2
+Y2015M4D3S48 : Buying 2units for the Waste plant sector
+Y2015M4D3S52 : navigating to : businessgame.be/sector/Waste%20plant
+Y2015M4D3S6 : Units bought
+Y2015M4D3S11 : BuyUnits() - success
+Y2015M4D3S11 : BuyUnits()
+  - Oil well : 23
+Y2015M4D3S11 : Buying 23units for the Oil well sector
+Y2015M4D3S16 : navigating to : businessgame.be/sector/Oil%20well
+Y2015M4D3S29 : Units bought
+Y2015M4D3S32 : BuyUnits() - success
+Y2015M4D3S32 : BuyUnits()
+  - Chemical plant : 32
+Y2015M4D3S32 : Buying 32units for the Chemical plant sector
+Y2015M4D3S37 : navigating to : businessgame.be/sector/Chemical%20plant
+Y2015M4D3S50 : Units bought
+Y2015M4D3S54 : BuyUnits() - success
+Y2015M4D3S54 : BuyUnits()
+  - Silica mine : 1
+Y2015M4D3S54 : Buying 1units for the Silica mine sector
+Y2015M4D3S59 : navigating to : businessgame.be/sector/Silica%20mine
+Y2015M4D3S12 : Units bought
+Y2015M4D3S16 : BuyUnits() - success
+Y2015M4D3S16 : BuyUnits()
+  - Sewage treatment plant : 6
+Y2015M4D3S16 : Buying 6units for the Sewage treatment plant sector
+Y2015M4D3S21 : navigating to : businessgame.be/sector/Sewage%20treatment%20plant
+Y2015M4D3S34 : Units bought
+Y2015M4D3S37 : BuyUnits() - success
+Y2015M4D3S37 : BuyUnits()
+  - Uranium mine : 38
+Y2015M4D3S37 : Buying 38units for the Uranium mine sector
+Y2015M4D3S41 : navigating to : businessgame.be/sector/Uranium%20mine
+Y2015M4D3S55 : Units bought
+Y2015M4D3S58 : BuyUnits() - success
+Y2015M4D3S58 : BuyUnits()
+  - Uranium mill : 2
+Y2015M4D3S58 : Buying 2units for the Uranium mill sector
+Y2015M4D3S3 : navigating to : businessgame.be/sector/Uranium%20mill
+Y2015M4D3S16 : Units bought
+Y2015M4D3S20 : BuyUnits() - success
+Y2015M4D3S20 : BuyUnits()
+  - Uranium enrichment plant : 4
+Y2015M4D3S20 : Buying 4units for the Uranium enrichment plant sector
+Y2015M4D3S25 : navigating to : businessgame.be/sector/Uranium%20enrichment%20plant
+Y2015M4D3S38 : Units bought
+Y2015M4D3S42 : BuyUnits() - success
+Y2015M4D3S42 : BuyUnits()
+  - Nuclear power plant : 5
+Y2015M4D3S42 : Buying 5units for the Nuclear power plant sector
+Y2015M4D3S46 : navigating to : businessgame.be/sector/Nuclear%20power%20plant
+Y2015M4D3S0 : Units bought
+Y2015M4D3S3 : BuyUnits() - success
+Y2015M4D3S7 : BuyUnitsAndProducts() - complete
+Y2015M4D5S1 : New Player: 0 - Wind turbines assembly
+Y2015M4D5S2 : market object created
+Y2015M4D5S11 : starting to load user data
+Y2015M4D5S20 : New Player: 0 - Wind turbines assembly
+Y2015M4D5S20 : market object created
+Y2015M4D5S26 : starting to load user data
+Y2015M4D5S31 : (1/4) units loaded
+  - Iron mine : 132
+  - Waste plant : 358
+  - Petrol power plant : 280
+  - Water well : 1527
+  - Sawmill : 7
+  - Oil well : 4200
+  - Chemical plant : 5248
+  - Oil refinery : 126
+  - Silica mine : 96
+  - Sewage treatment plant : 1162
+  - Solar power plant : 133
+  - Uranium mine : 6180
+  - Uranium mill : 327
+  - Uranium enrichment plant : 604
+  - Nuclear power plant : 778
+Y2015M4D5S33 : (2/4) cash loaded
+  - 503208145
+Y2015M4D5S36 : (3/4) remaining warehouse space loaded
+  - 5471613
+Y2015M4D5S36 : (4/4) warehouse contents loaded
+  - Water 132515
+  - Iron 9079
+  - Steel 115662
+  - Energy 273155
+  - Trash 136020
+  - Wood 13135
+  - Crude oil 119117
+  - Gasoline 9825
+  - Chemicals 298404
+  - Silica 122883
+  - Wastewater 77514
+  - Enriched uranium 29687
+  - Uranium ore 65405
+  - Uranium 8058
+  - Radioactive waste 6895
+Y2015M4D5S37 : load private data complete
+Y2015M4D5S40 : PerformActionBuyUnits()
+  - Pumps : 2092610
+  - Industrial drills : 490190
+  - Conveyer systems : 467900
+  - Robotics : 983900
+  - Pipes : 2331880
+  - Furnaces : 175250
+  - Machines : 3386700
+  - Electric motors : 62500
+  - Water : 1250000
+  - Enriched uranium : 50000
+  - Iron mine : 19
+  - Waste plant : 49
+  - Water well : 147
+  - Oil well : 564
+  - Chemical plant : 774
+  - Silica mine : 14
+  - Sewage treatment plant : 147
+  - Uranium mine : 926
+  - Uranium mill : 49
+  - Uranium enrichment plant : 90
+Y2015M4D5S41 : BuyUnitsAndProducts()
+Y2015M4D5S44 : BuyProduct() - starting
+Y2015M4D5S47 : Buying 2092610CBMs of Pumps, 490190CBMs of Industrial drills, 467900CBMs of Conveyer systems, 983900CBMs of Robotics, 2331880CBMs of Pipes, 175250CBMs of Furnaces, 3386700CBMs of Machines, 62500CBMs of Electric motors, 1117485CBMs of Water, 20313CBMs of Enriched uraniu 
+Y2015M4D5S20 : BuyProduct() - complete. Beginning success check.
+Y2015M4D5S24 : ERROR! NOT ENOUGH CASH.
+Y2015M4D5S28 : BuyUnitsAndProducts() - complete
+Y2015M4D5S33 : New Player: 0 - Wind turbines assembly
+Y2015M4D5S33 : market object created
+Y2015M4D5S58 : starting to load user data
+Y2015M4D5S2 : (1/4) units loaded
+  - Iron mine : 132
+  - Waste plant : 358
+  - Petrol power plant : 280
+  - Water well : 1527
+  - Sawmill : 7
+  - Oil well : 4200
+  - Chemical plant : 5248
+  - Oil refinery : 126
+  - Silica mine : 96
+  - Sewage treatment plant : 1162
+  - Solar power plant : 133
+  - Uranium mine : 6180
+  - Uranium mill : 327
+  - Uranium enrichment plant : 604
+  - Nuclear power plant : 778
+Y2015M4D5S4 : (2/4) cash loaded
+  - 502566388
+Y2015M4D5S6 : (3/4) remaining warehouse space loaded
+  - 6047306
+Y2015M4D5S6 : (4/4) warehouse contents loaded
+  - Water 140742
+  - Iron 9207
+  - Steel 118862
+  - Energy 273363
+  - Trash 136350
+  - Wood 15655
+  - Crude oil 119137
+  - Gasoline 9895
+  - Chemicals 298460
+  - Silica 124391
+  - Wastewater 77747
+  - Enriched uranium 36023
+  - Uranium ore 65425
+  - Uranium 8109
+  - Radioactive waste 8296
+Y2015M4D5S7 : load private data complete
+Y2015M4D5S42 : PerformActionBuyUnits()
+  - Pumps : 1728590
+  - Industrial drills : 409520
+  - Conveyer systems : 390700
+  - Robotics : 822200
+  - Pipes : 1942750
+  - Furnaces : 146600
+  - Machines : 2837300
+  - Electric motors : 52000
+  - Water : 1040000
+  - Enriched uranium : 41600
+  - Iron mine : 16
+  - Waste plant : 40
+  - Water well : 114
+  - Oil well : 472
+  - Chemical plant : 648
+  - Silica mine : 11
+  - Sewage treatment plant : 123
+  - Uranium mine : 775
+  - Uranium mill : 41
+  - Uranium enrichment plant : 76
+Y2015M4D5S42 : BuyUnitsAndProducts()
+Y2015M4D5S46 : BuyProduct() - starting
+Y2015M4D5S48 : Buying 1728590CBMs of Pumps, 409520CBMs of Industrial drills, 390700CBMs of Conveyer systems, 822200CBMs of Robotics, 1942750CBMs of Pipes, 146600CBMs of Furnaces, 2837300CBMs of Machines, 52000CBMs of Electric motors, 899258CBMs of Water, 5577CBMs of Enriched uraniu 
+Y2015M4D5S15 : BuyProduct() - complete. Beginning success check.
+Y2015M4D5S19 : ERROR! NOT ENOUGH CASH.
+Y2015M4D5S23 : BuyUnitsAndProducts() - complete
+Y2015M4D5S5 : New Player: 0 - Wind turbines assembly
+Y2015M4D5S6 : market object created
+Y2015M4D5S54 : starting to load user data
+Y2015M4D5S10 : (1/4) units loaded
+  - Iron mine : 132
+  - Waste plant : 358
+  - Petrol power plant : 280
+  - Water well : 1527
+  - Sawmill : 7
+  - Oil well : 4200
+  - Chemical plant : 5248
+  - Oil refinery : 126
+  - Silica mine : 96
+  - Sewage treatment plant : 1162
+  - Solar power plant : 133
+  - Uranium mine : 6180
+  - Uranium mill : 327
+  - Uranium enrichment plant : 604
+  - Nuclear power plant : 778
+Y2015M4D5S12 : (2/4) cash loaded
+  - 400847922
+Y2015M4D5S15 : (3/4) remaining warehouse space loaded
+  - 18705678
+Y2015M4D5S15 : (4/4) warehouse contents loaded
+  - Water 1444671
+  - Iron 29495
+  - Steel 626062
+  - Energy 306267
+  - Trash 188655
+  - Wood 415075
+  - Crude oil 122307
+  - Gasoline 20990
+  - Chemicals 307336
+  - Silica 363409
+  - Wastewater 114728
+  - Enriched uranium 1040323
+  - Uranium ore 68595
+  - Uranium 16141
+  - Radioactive waste 230259
+Y2015M4D5S16 : load private data complete
+Y2015M4D5S4 : PerformActionBuyUnits()
+  - Pumps : 1594400
+  - Industrial drills : 379770
+  - Conveyer systems : 362400
+  - Robotics : 762100
+  - Pipes : 1796990
+  - Furnaces : 135500
+  - Machines : 2621900
+  - Electric motors : 48000
+  - Water : 960000
+  - Enriched uranium : 38400
+  - Iron mine : 15
+  - Waste plant : 37
+  - Water well : 103
+  - Oil well : 437
+  - Chemical plant : 600
+  - Silica mine : 11
+  - Sewage treatment plant : 114
+  - Uranium mine : 718
+  - Uranium mill : 38
+  - Uranium enrichment plant : 70
+Y2015M4D5S4 : BuyUnitsAndProducts()
+Y2015M4D5S7 : BuyProduct() - starting
+Y2015M4D5S30 : Buying 1594400CBMs of Pumps, 379770CBMs of Industrial drills, 362400CBMs of Conveyer systems, 762100CBMs of Robotics, 1796990CBMs of Pipes, 135500CBMs of Furnaces, 2621900CBMs of Machines, 48000CBMs of Electric motors, 0CBMs of Water, 0CBMs of Enriched uraniu 
+Y2015M4D5S11 : BuyProduct() - complete. Beginning success check.
+Y2015M4D5S14 : BuyProduct() - successful
+Y2015M4D5S14 : BuyUnits()
+  - Iron mine : 15
+Y2015M4D5S14 : Buying 15units for the Iron mine sector
+Y2015M4D5S19 : navigating to : businessgame.be/sector/Iron%20mine
+Y2015M4D5S33 : Units bought
+Y2015M4D5S45 : Waiting 60 seconds!
+Y2015M4D5S50 : Waiting 55 seconds!
+Y2015M4D5S55 : Waiting 50 seconds!
+Y2015M4D5S0 : Waiting 45 seconds!
+Y2015M4D5S5 : Waiting 40 seconds!
+Y2015M4D5S10 : Waiting 35 seconds!
+Y2015M4D5S15 : Waiting 30 seconds!
+Y2015M4D5S20 : Waiting 25 seconds!
+Y2015M4D5S25 : Waiting 20 seconds!
+Y2015M4D5S30 : Waiting 15 seconds!
+Y2015M4D5S35 : Waiting 10 seconds!
+Y2015M4D5S40 : Waiting 5 seconds!
+Y2015M4D5S57 : (Attempt 1) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D5S6 : Units bought
+Y2015M4D5S9 : BuyUnits() - success
+Y2015M4D5S9 : BuyUnits()
+  - Waste plant : 37
+Y2015M4D5S9 : Buying 37units for the Waste plant sector
+Y2015M4D5S14 : navigating to : businessgame.be/sector/Waste%20plant
+Y2015M4D5S27 : Units bought
+Y2015M4D5S38 : BuyUnits() - success
+Y2015M4D5S38 : BuyUnits()
+  - Water well : 103
+Y2015M4D5S38 : Buying 103units for the Water well sector
+Y2015M4D5S43 : navigating to : businessgame.be/sector/Water%20well
+Y2015M4D5S56 : Units bought
+Y2015M4D5S11 : BuyUnits() - success
+Y2015M4D5S11 : BuyUnits()
+  - Oil well : 437
+Y2015M4D5S11 : Buying 437units for the Oil well sector
+Y2015M4D5S15 : navigating to : businessgame.be/sector/Oil%20well
+Y2015M4D5S31 : Units bought
+Y2015M4D5S42 : Waiting 60 seconds!
+Y2015M4D5S47 : Waiting 55 seconds!
+Y2015M4D5S52 : Waiting 50 seconds!
+Y2015M4D5S57 : Waiting 45 seconds!
+Y2015M4D5S2 : Waiting 40 seconds!
+Y2015M4D5S7 : Waiting 35 seconds!
+Y2015M4D5S12 : Waiting 30 seconds!
+Y2015M4D5S17 : Waiting 25 seconds!
+Y2015M4D5S22 : Waiting 20 seconds!
+Y2015M4D5S27 : Waiting 15 seconds!
+Y2015M4D5S32 : Waiting 10 seconds!
+Y2015M4D5S37 : Waiting 5 seconds!
+Y2015M4D5S51 : (Attempt 1) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D5S0 : Units bought
+Y2015M4D5S3 : Waiting 60 seconds!
+Y2015M4D5S8 : Waiting 55 seconds!
+Y2015M4D5S13 : Waiting 50 seconds!
+Y2015M4D5S18 : Waiting 45 seconds!
+Y2015M4D5S23 : Waiting 40 seconds!
+Y2015M4D5S28 : Waiting 35 seconds!
+Y2015M4D5S33 : Waiting 30 seconds!
+Y2015M4D5S38 : Waiting 25 seconds!
+Y2015M4D5S43 : Waiting 20 seconds!
+Y2015M4D5S48 : Waiting 15 seconds!
+Y2015M4D5S53 : Waiting 10 seconds!
+Y2015M4D5S58 : Waiting 5 seconds!
+Y2015M4D5S5 : (Attempt 2) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D5S14 : Units bought
+Y2015M4D5S26 : BuyUnits() - success
+Y2015M4D5S26 : BuyUnits()
+  - Chemical plant : 600
+Y2015M4D5S26 : Buying 600units for the Chemical plant sector
+Y2015M4D5S30 : navigating to : businessgame.be/sector/Chemical%20plant
+Y2015M4D5S44 : Units bought
+Y2015M4D5S15 : BuyUnits() - success
+Y2015M4D5S16 : BuyUnits()
+  - Silica mine : 11
+Y2015M4D5S16 : Buying 11units for the Silica mine sector
+Y2015M4D5S20 : navigating to : businessgame.be/sector/Silica%20mine
+Y2015M4D5S34 : Units bought
+Y2015M4D5S37 : BuyUnits() - success
+Y2015M4D5S37 : BuyUnits()
+  - Sewage treatment plant : 114
+Y2015M4D5S37 : Buying 114units for the Sewage treatment plant sector
+Y2015M4D5S42 : navigating to : businessgame.be/sector/Sewage%20treatment%20plant
+Y2015M4D5S55 : Units bought
+Y2015M4D5S7 : BuyUnits() - success
+Y2015M4D5S7 : BuyUnits()
+  - Uranium mine : 718
+Y2015M4D5S7 : Buying 718units for the Uranium mine sector
+Y2015M4D5S12 : navigating to : businessgame.be/sector/Uranium%20mine
+Y2015M4D5S25 : Units bought
+Y2015M4D5S36 : BuyUnits() - success
+Y2015M4D5S36 : BuyUnits()
+  - Uranium mill : 38
+Y2015M4D5S36 : Buying 38units for the Uranium mill sector
+Y2015M4D5S40 : navigating to : businessgame.be/sector/Uranium%20mill
+Y2015M4D5S54 : Units bought
+Y2015M4D5S57 : BuyUnits() - success
+Y2015M4D5S57 : BuyUnits()
+  - Uranium enrichment plant : 70
+Y2015M4D5S57 : Buying 70units for the Uranium enrichment plant sector
+Y2015M4D5S1 : navigating to : businessgame.be/sector/Uranium%20enrichment%20plant
+Y2015M4D5S15 : Units bought
+Y2015M4D5S29 : BuyUnits() - success
+Y2015M4D5S29 : BuyUnits()
+  - Nuclear power plant : 96
+Y2015M4D5S29 : Buying 96units for the Nuclear power plant sector
+Y2015M4D5S34 : navigating to : businessgame.be/sector/Nuclear%20power%20plant
+Y2015M4D5S47 : Units bought
+Y2015M4D5S8 : BuyUnits() - success
+Y2015M4D5S11 : BuyUnitsAndProducts() - complete
+Y2015M4D5S10 : starting to load user data
+Y2015M4D5S24 : (1/4) units loaded
+  - Iron mine : 147
+  - Waste plant : 395
+  - Petrol power plant : 280
+  - Water well : 1630
+  - Sawmill : 7
+  - Oil well : 4637
+  - Chemical plant : 5848
+  - Oil refinery : 126
+  - Silica mine : 107
+  - Sewage treatment plant : 1276
+  - Solar power plant : 133
+  - Uranium mine : 6898
+  - Uranium mill : 365
+  - Uranium enrichment plant : 674
+  - Nuclear power plant : 874
+Y2015M4D5S26 : (2/4) cash loaded
+  - 48784263
+Y2015M4D5S5 : New Player: 0 - Wind turbines assembly
+Y2015M4D5S5 : market object created
+Y2015M4D5S53 : starting to load user data
+Y2015M4D5S4 : (1/4) units loaded
+  - Iron mine : 147
+  - Waste plant : 395
+  - Petrol power plant : 280
+  - Water well : 1630
+  - Sawmill : 7
+  - Oil well : 4637
+  - Chemical plant : 5848
+  - Oil refinery : 126
+  - Silica mine : 107
+  - Sewage treatment plant : 1276
+  - Solar power plant : 133
+  - Uranium mine : 6898
+  - Uranium mill : 365
+  - Uranium enrichment plant : 674
+  - Nuclear power plant : 874
+Y2015M4D5S6 : (2/4) cash loaded
+  - 6973922
+Y2015M4D5S9 : (3/4) remaining warehouse space loaded
+  - 18466573
+Y2015M4D5S9 : (4/4) warehouse contents loaded
+  - Water 567687
+  - Iron 41085
+  - Steel 844572
+  - Energy 334150
+  - Trash 229004
+  - Wood 572381
+  - Crude oil 136258
+  - Gasoline 22336
+  - Chemicals 334991
+  - Silica 464543
+  - Wastewater 125822
+  - Enriched uranium 1440805
+  - Uranium ore 73900
+  - Uranium 17905
+  - Radioactive waste 327979
+Y2015M4D5S10 : load private data complete
+Y2015M4D5S12 : New Player: 0 - Wind turbines assembly
+Y2015M4D5S12 : market object created
+Y2015M4D5S10 : New Player: 0 - Wind turbines assembly
+Y2015M4D5S10 : market object created
+Y2015M4D5S6 : New Player: 0 - Wind turbines assembly
+Y2015M4D5S6 : market object created
+Y2015M4D5S6 : starting to load user data
+Y2015M4D5S11 : (1/4) units loaded
+  - Iron mine : 147
+  - Waste plant : 395
+  - Petrol power plant : 280
+  - Water well : 1630
+  - Sawmill : 7
+  - Oil well : 4637
+  - Chemical plant : 5848
+  - Oil refinery : 126
+  - Silica mine : 107
+  - Sewage treatment plant : 1276
+  - Solar power plant : 133
+  - Uranium mine : 6898
+  - Uranium mill : 365
+  - Uranium enrichment plant : 674
+  - Nuclear power plant : 874
+Y2015M4D5S13 : (2/4) cash loaded
+  - 202885
+Y2015M4D5S16 : (3/4) remaining warehouse space loaded
+  - 18289188
+Y2015M4D5S16 : (4/4) warehouse contents loaded
+  - Water 573725
+  - Iron 42269
+  - Steel 877021
+  - Energy 339111
+  - Trash 241739
+  - Wood 595691
+  - Crude oil 136552
+  - Gasoline 22983
+  - Chemicals 335065
+  - Silica 478985
+  - Wastewater 126470
+  - Enriched uranium 1506100
+  - Uranium ore 74041
+  - Uranium 18522
+  - Radioactive waste 342532
+Y2015M4D5S17 : load private data complete
+Y2015M4D6S20 : New Player: 0 - Wind turbines assembly
+Y2015M4D6S20 : market object created
+Y2015M4D7S54 : New Player: 0 - Wind turbines assembly
+Y2015M4D7S54 : market object created
+Y2015M4D7S4 : starting to load user data
+Y2015M4D7S12 : (1/4) units loaded
+  - Iron mine : 147
+  - Waste plant : 395
+  - Petrol power plant : 280
+  - Water well : 1630
+  - Sawmill : 7
+  - Oil well : 4637
+  - Chemical plant : 5848
+  - Oil refinery : 126
+  - Silica mine : 107
+  - Sewage treatment plant : 1276
+  - Solar power plant : 133
+  - Uranium mine : 6898
+  - Uranium mill : 365
+  - Uranium enrichment plant : 674
+  - Nuclear power plant : 874
+Y2015M4D7S14 : (2/4) cash loaded
+  - 897697209
+Y2015M4D7S16 : (3/4) remaining warehouse space loaded
+  - 141167694
+Y2015M4D7S16 : (4/4) warehouse contents loaded
+  - Water 817940
+  - Iron 91274
+  - Steel 2219734
+  - Energy 468080
+  - Trash 768795
+  - Wood 7560
+  - Crude oil 148695
+  - Gasoline 43748
+  - Chemicals 332669
+  - Silica 1076029
+  - Wastewater 158024
+  - Enriched uranium 21176
+  - Uranium ore 77749
+  - Uranium 38782
+  - Radioactive waste 4719
+Y2015M4D7S17 : load private data complete
+Y2015M4D7S1 : New Player: 0 - Wind turbines assembly
+Y2015M4D7S1 : market object created
+Y2015M4D7S35 : New Player: 0 - Wind turbines assembly
+Y2015M4D7S35 : market object created
+Y2015M4D7S8 : New Player: 0 - Wind turbines assembly
+Y2015M4D7S8 : market object created
+Y2015M4D7S15 : starting to load user data
+Y2015M4D7S18 : (1/4) units loaded
+  - Iron mine : 147
+  - Waste plant : 395
+  - Petrol power plant : 280
+  - Water well : 1630
+  - Sawmill : 7
+  - Oil well : 4637
+  - Chemical plant : 5848
+  - Oil refinery : 126
+  - Silica mine : 107
+  - Sewage treatment plant : 1276
+  - Solar power plant : 133
+  - Uranium mine : 6898
+  - Uranium mill : 365
+  - Uranium enrichment plant : 674
+  - Nuclear power plant : 874
+Y2015M4D7S21 : (2/4) cash loaded
+  - 896093891
+Y2015M4D7S23 : (3/4) remaining warehouse space loaded
+  - 142619752
+Y2015M4D7S23 : (4/4) warehouse contents loaded
+  - Water 819572
+  - Iron 91594
+  - Steel 2228504
+  - Energy 469421
+  - Trash 772237
+  - Wood 13860
+  - Crude oil 148775
+  - Gasoline 43923
+  - Chemicals 332689
+  - Silica 1079933
+  - Wastewater 158199
+  - Enriched uranium 38824
+  - Uranium ore 77787
+  - Uranium 38949
+  - Radioactive waste 8652
+Y2015M4D7S24 : load private data complete
+Y2015M4D7S58 : New Player: 0 - Wind turbines assembly
+Y2015M4D7S58 : market object created
+Y2015M4D7S52 : New Player: 0 - Wind turbines assembly
+Y2015M4D7S52 : market object created
+Y2015M4D7S10 : New Player: 0 - Wind turbines assembly
+Y2015M4D7S10 : market object created
+Y2015M4D7S25 : New Player: 0 - Wind turbines assembly
+Y2015M4D7S25 : market object created
+Y2015M4D7S14 : New Player: 0 - Wind turbines assembly
+Y2015M4D7S14 : market object created
+Y2015M4D7S47 : New Player: 0 - Wind turbines assembly
+Y2015M4D7S47 : market object created
+Y2015M4D7S22 : New Player: 0 - Wind turbines assembly
+Y2015M4D7S22 : market object created
+Y2015M4D7S46 : New Player: 0 - Wind turbines assembly
+Y2015M4D7S46 : market object created
+Y2015M4D7S8 : New Player: 0 - Wind turbines assembly
+Y2015M4D7S8 : market object created
+Y2015M4D7S48 : New Player: 0 - Wind turbines assembly
+Y2015M4D7S48 : market object created
+Y2015M4D7S13 : New Player: 0 - Wind turbines assembly
+Y2015M4D7S13 : market object created
+Y2015M4D7S43 : New Player: 0 - Wind turbines assembly
+Y2015M4D7S43 : market object created
+Y2015M4D7S1 : New Player: 0 - Wind turbines assembly
+Y2015M4D7S1 : market object created
+Y2015M4D7S10 : starting to load user data
+Y2015M4D7S13 : (1/4) units loaded
+  - Iron mine : 147
+  - Waste plant : 395
+  - Petrol power plant : 280
+  - Water well : 1630
+  - Sawmill : 7
+  - Oil well : 4637
+  - Chemical plant : 5848
+  - Oil refinery : 126
+  - Silica mine : 107
+  - Sewage treatment plant : 1276
+  - Solar power plant : 133
+  - Uranium mine : 6898
+  - Uranium mill : 365
+  - Uranium enrichment plant : 674
+  - Nuclear power plant : 874
+Y2015M4D7S16 : (2/4) cash loaded
+  - 894009579
+Y2015M4D7S18 : (3/4) remaining warehouse space loaded
+  - 143614751
+Y2015M4D7S18 : (4/4) warehouse contents loaded
+  - Water 821693
+  - Iron 92010
+  - Steel 2239905
+  - Energy 471164
+  - Trash 776711
+  - Wood 22050
+  - Crude oil 148878
+  - Gasoline 44150
+  - Chemicals 332715
+  - Silica 1085007
+  - Wastewater 158427
+  - Enriched uranium 61765
+  - Uranium ore 77837
+  - Uranium 39166
+  - Radioactive waste 13765
+Y2015M4D7S19 : load private data complete
+Y2015M4D7S34 : PerformActionBuyUnits()
+  - Pumps : 3562540
+  - Industrial drills : 794090
+  - Conveyer systems : 755200
+  - Robotics : 1587500
+  - Pipes : 3833740
+  - Furnaces : 283600
+  - Machines : 5490100
+  - Electric motors : 101500
+  - Water : 2030000
+  - Enriched uranium : 81200
+  - Iron mine : 31
+  - Waste plant : 80
+  - Water well : 313
+  - Oil well : 909
+  - Chemical plant : 1248
+  - Silica mine : 22
+  - Sewage treatment plant : 236
+  - Uranium mine : 1493
+  - Uranium mill : 79
+  - Uranium enrichment plant : 146
+Y2015M4D7S34 : BuyUnitsAndProducts()
+Y2015M4D7S37 : BuyProduct() - starting
+Y2015M4D7S40 : Buying 3562540CBMs of Pumps, 794090CBMs of Industrial drills, 755200CBMs of Conveyer systems, 1587500CBMs of Robotics, 3833740CBMs of Pipes, 283600CBMs of Furnaces, 5490100CBMs of Machines, 101500CBMs of Electric motors, 1208307CBMs of Water, 19435CBMs of Enriched uraniu 
+Y2015M4D7S8 : BuyProduct() - complete. Beginning success check.
+Y2015M4D7S11 : BuyProduct() - successful
+Y2015M4D7S11 : BuyUnits()
+  - Iron mine : 31
+Y2015M4D7S11 : Buying 31units for the Iron mine sector
+Y2015M4D7S16 : navigating to : businessgame.be/sector/Iron%20mine
+Y2015M4D7S30 : Units bought
+Y2015M4D7S32 : Waiting 60 seconds!
+Y2015M4D7S38 : Waiting 55 seconds!
+Y2015M4D7S43 : Waiting 50 seconds!
+Y2015M4D7S48 : Waiting 45 seconds!
+Y2015M4D7S53 : Waiting 40 seconds!
+Y2015M4D7S58 : Waiting 35 seconds!
+Y2015M4D7S3 : Waiting 30 seconds!
+Y2015M4D7S8 : Waiting 25 seconds!
+Y2015M4D7S13 : Waiting 20 seconds!
+Y2015M4D7S18 : Waiting 15 seconds!
+Y2015M4D7S23 : Waiting 10 seconds!
+Y2015M4D7S28 : Waiting 5 seconds!
+Y2015M4D7S35 : (Attempt 1) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D7S47 : Units bought
+Y2015M4D7S50 : BuyUnits() - success
+Y2015M4D7S50 : BuyUnits()
+  - Waste plant : 80
+Y2015M4D7S50 : Buying 80units for the Waste plant sector
+Y2015M4D7S54 : navigating to : businessgame.be/sector/Waste%20plant
+Y2015M4D7S8 : Units bought
+Y2015M4D7S11 : BuyUnits() - success
+Y2015M4D7S11 : BuyUnits()
+  - Water well : 313
+Y2015M4D7S11 : Buying 313units for the Water well sector
+Y2015M4D7S15 : navigating to : businessgame.be/sector/Water%20well
+Y2015M4D7S29 : Units bought
+Y2015M4D7S32 : Waiting 60 seconds!
+Y2015M4D7S37 : Waiting 55 seconds!
+Y2015M4D7S42 : Waiting 50 seconds!
+Y2015M4D7S47 : Waiting 45 seconds!
+Y2015M4D7S52 : Waiting 40 seconds!
+Y2015M4D7S57 : Waiting 35 seconds!
+Y2015M4D7S2 : Waiting 30 seconds!
+Y2015M4D7S7 : Waiting 25 seconds!
+Y2015M4D7S12 : Waiting 20 seconds!
+Y2015M4D7S17 : Waiting 15 seconds!
+Y2015M4D7S22 : Waiting 10 seconds!
+Y2015M4D7S27 : Waiting 5 seconds!
+Y2015M4D7S34 : (Attempt 1) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D7S43 : Units bought
+Y2015M4D7S46 : BuyUnits() - success
+Y2015M4D7S46 : BuyUnits()
+  - Oil well : 909
+Y2015M4D7S46 : Buying 909units for the Oil well sector
+Y2015M4D7S51 : navigating to : businessgame.be/sector/Oil%20well
+Y2015M4D7S4 : Units bought
+Y2015M4D7S7 : Waiting 60 seconds!
+Y2015M4D7S12 : Waiting 55 seconds!
+Y2015M4D7S17 : Waiting 50 seconds!
+Y2015M4D7S22 : Waiting 45 seconds!
+Y2015M4D7S27 : Waiting 40 seconds!
+Y2015M4D7S32 : Waiting 35 seconds!
+Y2015M4D7S37 : Waiting 30 seconds!
+Y2015M4D7S42 : Waiting 25 seconds!
+Y2015M4D7S47 : Waiting 20 seconds!
+Y2015M4D7S52 : Waiting 15 seconds!
+Y2015M4D7S57 : Waiting 10 seconds!
+Y2015M4D7S2 : Waiting 5 seconds!
+Y2015M4D7S9 : (Attempt 1) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D7S18 : Units bought
+Y2015M4D7S21 : Waiting 60 seconds!
+Y2015M4D7S26 : Waiting 55 seconds!
+Y2015M4D7S31 : Waiting 50 seconds!
+Y2015M4D7S36 : Waiting 45 seconds!
+Y2015M4D7S41 : Waiting 40 seconds!
+Y2015M4D7S46 : Waiting 35 seconds!
+Y2015M4D7S51 : Waiting 30 seconds!
+Y2015M4D7S56 : Waiting 25 seconds!
+Y2015M4D7S1 : Waiting 20 seconds!
+Y2015M4D7S6 : Waiting 15 seconds!
+Y2015M4D7S11 : Waiting 10 seconds!
+Y2015M4D7S16 : Waiting 5 seconds!
+Y2015M4D7S24 : (Attempt 2) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D7S33 : Units bought
+Y2015M4D7S36 : Waiting 60 seconds!
+Y2015M4D7S41 : Waiting 55 seconds!
+Y2015M4D7S46 : Waiting 50 seconds!
+Y2015M4D7S51 : Waiting 45 seconds!
+Y2015M4D7S56 : Waiting 40 seconds!
+Y2015M4D7S1 : Waiting 35 seconds!
+Y2015M4D7S6 : Waiting 30 seconds!
+Y2015M4D7S11 : Waiting 25 seconds!
+Y2015M4D7S16 : Waiting 20 seconds!
+Y2015M4D7S21 : Waiting 15 seconds!
+Y2015M4D7S26 : Waiting 10 seconds!
+Y2015M4D7S31 : Waiting 5 seconds!
+Y2015M4D7S38 : (Attempt 3) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D7S47 : Units bought
+Y2015M4D7S50 : Waiting 60 seconds!
+Y2015M4D7S55 : Waiting 55 seconds!
+Y2015M4D7S0 : Waiting 50 seconds!
+Y2015M4D7S5 : Waiting 45 seconds!
+Y2015M4D7S10 : Waiting 40 seconds!
+Y2015M4D7S15 : Waiting 35 seconds!
+Y2015M4D7S20 : Waiting 30 seconds!
+Y2015M4D7S25 : Waiting 25 seconds!
+Y2015M4D7S30 : Waiting 20 seconds!
+Y2015M4D7S35 : Waiting 15 seconds!
+Y2015M4D7S40 : Waiting 10 seconds!
+Y2015M4D7S45 : Waiting 5 seconds!
+Y2015M4D7S53 : (Attempt 4) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D7S2 : Units bought
+Y2015M4D7S4 : Waiting 60 seconds!
+Y2015M4D7S9 : Waiting 55 seconds!
+Y2015M4D7S14 : Waiting 50 seconds!
+Y2015M4D7S19 : Waiting 45 seconds!
+Y2015M4D7S24 : Waiting 40 seconds!
+Y2015M4D7S29 : Waiting 35 seconds!
+Y2015M4D7S34 : Waiting 30 seconds!
+Y2015M4D7S39 : Waiting 25 seconds!
+Y2015M4D7S44 : Waiting 20 seconds!
+Y2015M4D7S49 : Waiting 15 seconds!
+Y2015M4D7S54 : Waiting 10 seconds!
+Y2015M4D7S59 : Waiting 5 seconds!
+Y2015M4D7S7 : (Attempt 5) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D7S16 : Units bought
+Y2015M4D7S19 : Waiting 60 seconds!
+Y2015M4D7S24 : Waiting 55 seconds!
+Y2015M4D7S29 : Waiting 50 seconds!
+Y2015M4D7S34 : Waiting 45 seconds!
+Y2015M4D7S39 : Waiting 40 seconds!
+Y2015M4D7S44 : Waiting 35 seconds!
+Y2015M4D7S49 : Waiting 30 seconds!
+Y2015M4D7S54 : Waiting 25 seconds!
+Y2015M4D7S59 : Waiting 20 seconds!
+Y2015M4D7S4 : Waiting 15 seconds!
+Y2015M4D7S9 : Waiting 10 seconds!
+Y2015M4D7S14 : Waiting 5 seconds!
+Y2015M4D7S21 : (Attempt 6) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D7S30 : Units bought
+Y2015M4D7S33 : BuyUnits() - success
+Y2015M4D7S33 : BuyUnits()
+  - Chemical plant : 1248
+Y2015M4D7S33 : Buying 1248units for the Chemical plant sector
+Y2015M4D7S37 : navigating to : businessgame.be/sector/Chemical%20plant
+Y2015M4D7S51 : Units bought
+Y2015M4D7S54 : Waiting 60 seconds!
+Y2015M4D7S59 : Waiting 55 seconds!
+Y2015M4D7S4 : Waiting 50 seconds!
+Y2015M4D7S9 : Waiting 45 seconds!
+Y2015M4D7S14 : Waiting 40 seconds!
+Y2015M4D7S19 : Waiting 35 seconds!
+Y2015M4D7S24 : Waiting 30 seconds!
+Y2015M4D7S29 : Waiting 25 seconds!
+Y2015M4D7S34 : Waiting 20 seconds!
+Y2015M4D7S39 : Waiting 15 seconds!
+Y2015M4D7S44 : Waiting 10 seconds!
+Y2015M4D7S49 : Waiting 5 seconds!
+Y2015M4D7S56 : (Attempt 1) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D7S6 : Units bought
+Y2015M4D7S9 : BuyUnits() - success
+Y2015M4D7S9 : BuyUnits()
+  - Silica mine : 22
+Y2015M4D7S9 : Buying 22units for the Silica mine sector
+Y2015M4D7S13 : navigating to : businessgame.be/sector/Silica%20mine
+Y2015M4D7S27 : Units bought
+Y2015M4D7S32 : BuyUnits() - success
+Y2015M4D7S32 : BuyUnits()
+  - Sewage treatment plant : 236
+Y2015M4D7S32 : Buying 236units for the Sewage treatment plant sector
+Y2015M4D7S36 : navigating to : businessgame.be/sector/Sewage%20treatment%20plant
+Y2015M4D7S50 : Units bought
+Y2015M4D7S53 : BuyUnits() - success
+Y2015M4D7S53 : BuyUnits()
+  - Uranium mine : 1493
+Y2015M4D7S53 : Buying 1493units for the Uranium mine sector
+Y2015M4D7S57 : navigating to : businessgame.be/sector/Uranium%20mine
+Y2015M4D7S11 : Units bought
+Y2015M4D7S14 : BuyUnits() - success
+Y2015M4D7S14 : BuyUnits()
+  - Uranium mill : 79
+Y2015M4D7S14 : Buying 79units for the Uranium mill sector
+Y2015M4D7S18 : navigating to : businessgame.be/sector/Uranium%20mill
+Y2015M4D7S32 : Units bought
+Y2015M4D7S35 : BuyUnits() - success
+Y2015M4D7S35 : BuyUnits()
+  - Uranium enrichment plant : 146
+Y2015M4D7S35 : Buying 146units for the Uranium enrichment plant sector
+Y2015M4D7S40 : navigating to : businessgame.be/sector/Uranium%20enrichment%20plant
+Y2015M4D7S53 : Units bought
+Y2015M4D7S58 : BuyUnits() - success
+Y2015M4D7S58 : BuyUnits()
+  - Nuclear power plant : 203
+Y2015M4D7S58 : Buying 203units for the Nuclear power plant sector
+Y2015M4D7S3 : navigating to : businessgame.be/sector/Nuclear%20power%20plant
+Y2015M4D7S16 : Units bought
+Y2015M4D7S19 : BuyUnits() - success
+Y2015M4D7S23 : BuyUnitsAndProducts() - complete
+Y2015M4D7S29 : starting to load user data
+Y2015M4D7S39 : (1/4) units loaded
+  - Iron mine : 178
+  - Waste plant : 475
+  - Petrol power plant : 280
+  - Water well : 1943
+  - Sawmill : 7
+  - Oil well : 5546
+  - Chemical plant : 7096
+  - Oil refinery : 126
+  - Silica mine : 129
+  - Sewage treatment plant : 1512
+  - Solar power plant : 133
+  - Uranium mine : 8391
+  - Uranium mill : 444
+  - Uranium enrichment plant : 820
+  - Nuclear power plant : 1077
+Y2015M4D7S43 : (2/4) cash loaded
+  - 133226681
+Y2015M4D7S45 : (3/4) remaining warehouse space loaded
+  - 144651398
+Y2015M4D7S45 : (4/4) warehouse contents loaded
+  - Water 134203
+  - Iron 107414
+  - Steel 2258120
+  - Energy 301834
+  - Trash 487041
+  - Wood 32674
+  - Crude oil 198959
+  - Gasoline 43121
+  - Chemicals 365693
+  - Machines -5490100
+  - Silica 1095740
+  - Pumps -3562540
+  - Industrial drills -794090
+  - Wastewater 157960
+  - Furnaces -283600
+  - Electric motors -101500
+  - Conveyer systems -755200
+  - Robotics -1587500
+  - Pipes -3833740
+  - Enriched uranium 30477
+  - Uranium ore 76801
+  - Uranium 38107
+  - Radioactive waste 20451
+Y2015M4D7S46 : load private data complete
+Y2015M4D9S59 : New Player: 0 - Wind turbines assembly
+Y2015M4D9S59 : market object created
+Y2015M4D10S57 : New Player: 0 - Wind turbines assembly
+Y2015M4D10S57 : market object created
+Y2015M4D10S50 : starting to load user data
+Y2015M4D10S0 : (1/4) units loaded
+  - Iron mine : 178
+  - Waste plant : 475
+  - Petrol power plant : 280
+  - Water well : 1943
+  - Sawmill : 7
+  - Oil well : 5546
+  - Chemical plant : 7096
+  - Oil refinery : 126
+  - Silica mine : 129
+  - Sewage treatment plant : 1512
+  - Solar power plant : 133
+  - Uranium mine : 8391
+  - Uranium mill : 444
+  - Uranium enrichment plant : 820
+  - Nuclear power plant : 1077
+Y2015M4D10S2 : (2/4) cash loaded
+  - 3137391027
+Y2015M4D10S5 : (3/4) remaining warehouse space loaded
+  - 127730768
+Y2015M4D10S5 : (4/4) warehouse contents loaded
+  - Water 798910
+  - Iron 234428
+  - Silicon 2
+  - Steel 4993000
+  - Energy 455761
+  - Trash 1403004
+  - Wood 1828260
+  - Crude oil 415979
+  - Gasoline 129926
+  - Plastic 341
+  - Chemicals 402369
+  - Machines 2300000
+  - Silica 210131
+  - Pumps 2225000
+  - Industrial drills 160000
+  - Wastewater 289991
+  - Electric motors 250000
+  - Conveyer systems 250000
+  - Robotics 500000
+  - Pipes 1200000
+  - Enriched uranium 102140
+  - Uranium ore 200073
+  - Uranium 101414
+  - Fertilizer 42
+  - Radioactive waste 484
+Y2015M4D10S6 : load private data complete
+Y2015M4D10S31 : PerformActionBuyUnits()
+  - Pumps : 6819000
+  - Industrial drills : 1519620
+  - Conveyer systems : 1446000
+  - Robotics : 3038800
+  - Pipes : 7335920
+  - Furnaces : 542250
+  - Machines : 10513100
+  - Electric motors : 195000
+  - Water : 3900000
+  - Enriched uranium : 156000
+  - Iron mine : 60
+  - Waste plant : 152
+  - Water well : 602
+  - Oil well : 1737
+  - Chemical plant : 2386
+  - Silica mine : 44
+  - Sewage treatment plant : 452
+  - Uranium mine : 2854
+  - Uranium mill : 151
+  - Uranium enrichment plant : 280
+Y2015M4D10S32 : BuyUnitsAndProducts()
+Y2015M4D10S35 : BuyProduct() - starting
+Y2015M4D10S37 : Buying 4594000CBMs of Pumps, 1359620CBMs of Industrial drills, 1196000CBMs of Conveyer systems, 2538800CBMs of Robotics, 6135920CBMs of Pipes, 542250CBMs of Furnaces, 8213100CBMs of Machines, 0CBMs of Electric motors, 3101090CBMs of Water, 53860CBMs of Enriched uraniu 
+Y2015M4D10S6 : BuyProduct() - complete. Beginning success check.
+Y2015M4D10S11 : BuyProduct() - successful
+Y2015M4D10S11 : BuyUnits()
+  - Iron mine : 60
+Y2015M4D10S11 : Buying 60units for the Iron mine sector
+Y2015M4D10S16 : navigating to : businessgame.be/sector/Iron%20mine
+Y2015M4D10S29 : Units bought
+Y2015M4D10S32 : BuyUnits() - success
+Y2015M4D10S32 : BuyUnits()
+  - Waste plant : 152
+Y2015M4D10S32 : Buying 152units for the Waste plant sector
+Y2015M4D10S37 : navigating to : businessgame.be/sector/Waste%20plant
+Y2015M4D10S50 : Units bought
+Y2015M4D10S53 : Waiting 60 seconds!
+Y2015M4D10S59 : Waiting 55 seconds!
+Y2015M4D10S4 : Waiting 50 seconds!
+Y2015M4D10S9 : Waiting 45 seconds!
+Y2015M4D10S14 : Waiting 40 seconds!
+Y2015M4D10S19 : Waiting 35 seconds!
+Y2015M4D10S24 : Waiting 30 seconds!
+Y2015M4D10S29 : Waiting 25 seconds!
+Y2015M4D10S34 : Waiting 20 seconds!
+Y2015M4D10S39 : Waiting 15 seconds!
+Y2015M4D10S44 : Waiting 10 seconds!
+Y2015M4D10S49 : Waiting 5 seconds!
+Y2015M4D10S56 : (Attempt 1) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D10S5 : Units bought
+Y2015M4D10S8 : BuyUnits() - success
+Y2015M4D10S8 : BuyUnits()
+  - Water well : 602
+Y2015M4D10S8 : Buying 602units for the Water well sector
+Y2015M4D10S14 : navigating to : businessgame.be/sector/Water%20well
+Y2015M4D10S28 : Units bought
+Y2015M4D10S31 : BuyUnits() - success
+Y2015M4D10S31 : BuyUnits()
+  - Oil well : 1737
+Y2015M4D10S31 : Buying 1737units for the Oil well sector
+Y2015M4D10S35 : navigating to : businessgame.be/sector/Oil%20well
+Y2015M4D10S49 : Units bought
+Y2015M4D10S52 : Waiting 60 seconds!
+Y2015M4D10S57 : Waiting 55 seconds!
+Y2015M4D10S2 : Waiting 50 seconds!
+Y2015M4D10S7 : Waiting 45 seconds!
+Y2015M4D10S12 : Waiting 40 seconds!
+Y2015M4D10S17 : Waiting 35 seconds!
+Y2015M4D10S22 : Waiting 30 seconds!
+Y2015M4D10S27 : Waiting 25 seconds!
+Y2015M4D10S32 : Waiting 20 seconds!
+Y2015M4D10S37 : Waiting 15 seconds!
+Y2015M4D10S42 : Waiting 10 seconds!
+Y2015M4D10S47 : Waiting 5 seconds!
+Y2015M4D10S54 : (Attempt 1) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D10S3 : Units bought
+Y2015M4D10S6 : Waiting 60 seconds!
+Y2015M4D10S11 : Waiting 55 seconds!
+Y2015M4D10S16 : Waiting 50 seconds!
+Y2015M4D10S21 : Waiting 45 seconds!
+Y2015M4D10S26 : Waiting 40 seconds!
+Y2015M4D10S31 : Waiting 35 seconds!
+Y2015M4D10S36 : Waiting 30 seconds!
+Y2015M4D10S41 : Waiting 25 seconds!
+Y2015M4D10S46 : Waiting 20 seconds!
+Y2015M4D10S51 : Waiting 15 seconds!
+Y2015M4D10S56 : Waiting 10 seconds!
+Y2015M4D10S1 : Waiting 5 seconds!
+Y2015M4D10S9 : (Attempt 2) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D10S18 : Units bought
+Y2015M4D10S20 : Waiting 60 seconds!
+Y2015M4D10S25 : Waiting 55 seconds!
+Y2015M4D10S30 : Waiting 50 seconds!
+Y2015M4D10S35 : Waiting 45 seconds!
+Y2015M4D10S40 : Waiting 40 seconds!
+Y2015M4D10S45 : Waiting 35 seconds!
+Y2015M4D10S50 : Waiting 30 seconds!
+Y2015M4D10S55 : Waiting 25 seconds!
+Y2015M4D10S0 : Waiting 20 seconds!
+Y2015M4D10S5 : Waiting 15 seconds!
+Y2015M4D10S10 : Waiting 10 seconds!
+Y2015M4D10S16 : Waiting 5 seconds!
+Y2015M4D10S23 : (Attempt 3) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D10S32 : Units bought
+Y2015M4D10S35 : Waiting 60 seconds!
+Y2015M4D10S40 : Waiting 55 seconds!
+Y2015M4D10S45 : Waiting 50 seconds!
+Y2015M4D10S50 : Waiting 45 seconds!
+Y2015M4D10S55 : Waiting 40 seconds!
+Y2015M4D10S0 : Waiting 35 seconds!
+Y2015M4D10S5 : Waiting 30 seconds!
+Y2015M4D10S10 : Waiting 25 seconds!
+Y2015M4D10S15 : Waiting 20 seconds!
+Y2015M4D10S20 : Waiting 15 seconds!
+Y2015M4D10S25 : Waiting 10 seconds!
+Y2015M4D10S30 : Waiting 5 seconds!
+Y2015M4D10S37 : (Attempt 4) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D10S46 : Units bought
+Y2015M4D10S50 : Waiting 60 seconds!
+Y2015M4D10S55 : Waiting 55 seconds!
+Y2015M4D10S0 : Waiting 50 seconds!
+Y2015M4D10S5 : Waiting 45 seconds!
+Y2015M4D10S10 : Waiting 40 seconds!
+Y2015M4D10S15 : Waiting 35 seconds!
+Y2015M4D10S20 : Waiting 30 seconds!
+Y2015M4D10S25 : Waiting 25 seconds!
+Y2015M4D10S30 : Waiting 20 seconds!
+Y2015M4D10S35 : Waiting 15 seconds!
+Y2015M4D10S40 : Waiting 10 seconds!
+Y2015M4D10S45 : Waiting 5 seconds!
+Y2015M4D10S52 : (Attempt 5) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D10S1 : Units bought
+Y2015M4D10S4 : Waiting 60 seconds!
+Y2015M4D10S9 : Waiting 55 seconds!
+Y2015M4D10S14 : Waiting 50 seconds!
+Y2015M4D10S19 : Waiting 45 seconds!
+Y2015M4D10S24 : Waiting 40 seconds!
+Y2015M4D10S29 : Waiting 35 seconds!
+Y2015M4D10S34 : Waiting 30 seconds!
+Y2015M4D10S39 : Waiting 25 seconds!
+Y2015M4D10S44 : Waiting 20 seconds!
+Y2015M4D10S49 : Waiting 15 seconds!
+Y2015M4D10S54 : Waiting 10 seconds!
+Y2015M4D10S59 : Waiting 5 seconds!
+Y2015M4D10S6 : (Attempt 6) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D10S15 : Units bought
+Y2015M4D10S18 : BuyUnits() - success
+Y2015M4D10S18 : BuyUnits()
+  - Chemical plant : 2386
+Y2015M4D10S18 : Buying 2386units for the Chemical plant sector
+Y2015M4D10S23 : navigating to : businessgame.be/sector/Chemical%20plant
+Y2015M4D10S37 : Units bought
+Y2015M4D10S39 : Waiting 60 seconds!
+Y2015M4D10S44 : Waiting 55 seconds!
+Y2015M4D10S49 : Waiting 50 seconds!
+Y2015M4D10S54 : Waiting 45 seconds!
+Y2015M4D10S59 : Waiting 40 seconds!
+Y2015M4D10S4 : Waiting 35 seconds!
+Y2015M4D10S9 : Waiting 30 seconds!
+Y2015M4D10S14 : Waiting 25 seconds!
+Y2015M4D10S19 : Waiting 20 seconds!
+Y2015M4D10S24 : Waiting 15 seconds!
+Y2015M4D10S29 : Waiting 10 seconds!
+Y2015M4D10S34 : Waiting 5 seconds!
+Y2015M4D10S44 : (Attempt 1) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D10S53 : Units bought
+Y2015M4D10S56 : BuyUnits() - success
+Y2015M4D10S56 : BuyUnits()
+  - Silica mine : 44
+Y2015M4D10S56 : Buying 44units for the Silica mine sector
+Y2015M4D10S1 : navigating to : businessgame.be/sector/Silica%20mine
+Y2015M4D10S14 : Units bought
+Y2015M4D10S18 : BuyUnits() - success
+Y2015M4D10S18 : BuyUnits()
+  - Sewage treatment plant : 452
+Y2015M4D10S18 : Buying 452units for the Sewage treatment plant sector
+Y2015M4D10S23 : navigating to : businessgame.be/sector/Sewage%20treatment%20plant
+Y2015M4D10S36 : Units bought
+Y2015M4D10S39 : BuyUnits() - success
+Y2015M4D10S39 : BuyUnits()
+  - Uranium mine : 2854
+Y2015M4D10S39 : Buying 2854units for the Uranium mine sector
+Y2015M4D10S44 : navigating to : businessgame.be/sector/Uranium%20mine
+Y2015M4D10S57 : Units bought
+Y2015M4D10S0 : Waiting 60 seconds!
+Y2015M4D10S5 : Waiting 55 seconds!
+Y2015M4D10S10 : Waiting 50 seconds!
+Y2015M4D10S15 : Waiting 45 seconds!
+Y2015M4D10S20 : Waiting 40 seconds!
+Y2015M4D10S25 : Waiting 35 seconds!
+Y2015M4D10S30 : Waiting 30 seconds!
+Y2015M4D10S35 : Waiting 25 seconds!
+Y2015M4D10S40 : Waiting 20 seconds!
+Y2015M4D10S45 : Waiting 15 seconds!
+Y2015M4D10S50 : Waiting 10 seconds!
+Y2015M4D10S55 : Waiting 5 seconds!
+Y2015M4D10S2 : (Attempt 1) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D10S11 : Units bought
+Y2015M4D10S14 : BuyUnits() - success
+Y2015M4D10S14 : BuyUnits()
+  - Uranium mill : 151
+Y2015M4D10S14 : Buying 151units for the Uranium mill sector
+Y2015M4D10S20 : navigating to : businessgame.be/sector/Uranium%20mill
+Y2015M4D10S34 : Units bought
+Y2015M4D10S37 : BuyUnits() - success
+Y2015M4D10S37 : BuyUnits()
+  - Uranium enrichment plant : 280
+Y2015M4D10S37 : Buying 280units for the Uranium enrichment plant sector
+Y2015M4D10S41 : navigating to : businessgame.be/sector/Uranium%20enrichment%20plant
+Y2015M4D10S55 : Units bought
+Y2015M4D10S58 : BuyUnits() - success
+Y2015M4D10S58 : BuyUnits()
+  - Nuclear power plant : 390
+Y2015M4D10S58 : Buying 390units for the Nuclear power plant sector
+Y2015M4D10S2 : navigating to : businessgame.be/sector/Nuclear%20power%20plant
+Y2015M4D10S16 : Units bought
+Y2015M4D10S19 : BuyUnits() - success
+Y2015M4D10S22 : BuyUnitsAndProducts() - complete
+Y2015M4D10S44 : starting to load user data
+Y2015M4D10S47 : (1/4) units loaded
+  - Iron mine : 238
+  - Waste plant : 627
+  - Petrol power plant : 280
+  - Water well : 2545
+  - Sawmill : 7
+  - Oil well : 7283
+  - Chemical plant : 9482
+  - Oil refinery : 126
+  - Silica mine : 173
+  - Sewage treatment plant : 1964
+  - Solar power plant : 133
+  - Uranium mine : 11245
+  - Uranium mill : 595
+  - Uranium enrichment plant : 1100
+  - Nuclear power plant : 1467
+Y2015M4D10S50 : (2/4) cash loaded
+  - 1764098851
+Y2015M4D10S52 : (3/4) remaining warehouse space loaded
+  - 139672742
+Y2015M4D10S52 : (4/4) warehouse contents loaded
+  - Water 177379
+  - Iron 260836
+  - Silicon 2
+  - Steel 5017286
+  - Energy 437165
+  - Trash 903287
+  - Wood 1839470
+  - Crude oil 458183
+  - Gasoline 119302
+  - Plastic 341
+  - Chemicals 325134
+  - Machines -8213100
+  - Silica 184975
+  - Pumps -4594000
+  - Industrial drills -1359620
+  - Wastewater 306320
+  - Furnaces -542250
+  - Electric motors 55000
+  - Conveyer systems -1196000
+  - Robotics -2538800
+  - Pipes -6135920
+  - Enriched uranium 42363
+  - Uranium ore 90034
+  - Uranium 100323
+  - Fertilizer 42
+  - Radioactive waste 9809
+Y2015M4D10S53 : load private data complete
+Y2015M4D14S1 : New Player: 0 - Wind turbines assembly
+Y2015M4D14S1 : market object created
+Y2015M4D14S16 : starting to load user data
+Y2015M4D14S23 : (1/4) units loaded
+  - Iron mine : 238
+  - Waste plant : 627
+  - Petrol power plant : 280
+  - Water well : 2545
+  - Sawmill : 7
+  - Oil well : 7283
+  - Chemical plant : 9482
+  - Oil refinery : 126
+  - Silica mine : 173
+  - Sewage treatment plant : 1964
+  - Solar power plant : 133
+  - Uranium mine : 11245
+  - Uranium mill : 595
+  - Uranium enrichment plant : 1100
+  - Nuclear power plant : 1467
+Y2015M4D14S28 : (2/4) cash loaded
+  - 1784257674
+Y2015M4D14S35 : (3/4) remaining warehouse space loaded
+  - 99560268
+Y2015M4D14S35 : (4/4) warehouse contents loaded
+  - Water 15724537
+  - Iron 439137
+  - Silicon 2
+  - Steel 11470754
+  - Energy 1290081
+  - Trash 2490477
+  - Wood 4808429
+  - Crude oil 481324
+  - Gasoline 200470
+  - Plastic 341
+  - Chemicals 496827
+  - Machines 6000000
+  - Silica 1234679
+  - Pumps 75000
+  - Wastewater 533818
+  - Electric motors 805000
+  - Conveyer systems 750000
+  - Robotics 1500000
+  - Enriched uranium 1492831
+  - Uranium ore 164073
+  - Uranium 137303
+  - Fertilizer 42
+  - Radioactive waste 344598
+Y2015M4D14S36 : load private data complete
+Y2015M4D14S35 : PerformActionBuyUnits()
+  - Pumps : 7685680
+  - Industrial drills : 1709910
+  - Conveyer systems : 1626600
+  - Robotics : 3419100
+  - Pipes : 8261610
+  - Furnaces : 610750
+  - Machines : 11829700
+  - Electric motors : 219000
+  - Water : 4380000
+  - Enriched uranium : 175200
+  - Iron mine : 67
+  - Waste plant : 172
+  - Water well : 681
+  - Oil well : 1956
+  - Chemical plant : 2686
+  - Silica mine : 49
+  - Sewage treatment plant : 509
+  - Uranium mine : 3212
+  - Uranium mill : 170
+  - Uranium enrichment plant : 315
+Y2015M4D14S35 : BuyUnitsAndProducts()
+Y2015M4D14S38 : BuyProduct() - starting
+Y2015M4D14S40 : Buying 7610680CBMs of Pumps, 1709910CBMs of Industrial drills, 876600CBMs of Conveyer systems, 1919100CBMs of Robotics, 8261610CBMs of Pipes, 610750CBMs of Furnaces, 5829700CBMs of Machines, 0CBMs of Electric motors, 0CBMs of Water, 0CBMs of Enriched uraniu 
+Y2015M4D14S8 : BuyProduct() - complete. Beginning success check.
+Y2015M4D14S11 : BuyProduct() - successful
+Y2015M4D14S11 : BuyUnits()
+  - Iron mine : 67
+Y2015M4D14S11 : Buying 67units for the Iron mine sector
+Y2015M4D14S16 : navigating to : businessgame.be/sector/Iron%20mine
+Y2015M4D14S30 : Units bought
+Y2015M4D14S32 : Waiting 60 seconds!
+Y2015M4D14S37 : Waiting 55 seconds!
+Y2015M4D14S42 : Waiting 50 seconds!
+Y2015M4D14S47 : Waiting 45 seconds!
+Y2015M4D14S52 : Waiting 40 seconds!
+Y2015M4D14S57 : Waiting 35 seconds!
+Y2015M4D14S2 : Waiting 30 seconds!
+Y2015M4D14S7 : Waiting 25 seconds!
+Y2015M4D14S12 : Waiting 20 seconds!
+Y2015M4D14S17 : Waiting 15 seconds!
+Y2015M4D14S22 : Waiting 10 seconds!
+Y2015M4D14S27 : Waiting 5 seconds!
+Y2015M4D14S35 : (Attempt 1) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D14S44 : Units bought
+Y2015M4D14S47 : BuyUnits() - success
+Y2015M4D14S47 : BuyUnits()
+  - Waste plant : 172
+Y2015M4D14S47 : Buying 172units for the Waste plant sector
+Y2015M4D14S52 : navigating to : businessgame.be/sector/Waste%20plant
+Y2015M4D14S5 : Units bought
+Y2015M4D14S8 : BuyUnits() - success
+Y2015M4D14S8 : BuyUnits()
+  - Water well : 681
+Y2015M4D14S8 : Buying 681units for the Water well sector
+Y2015M4D14S14 : navigating to : businessgame.be/sector/Water%20well
+Y2015M4D14S27 : Units bought
+Y2015M4D14S31 : BuyUnits() - success
+Y2015M4D14S31 : BuyUnits()
+  - Oil well : 1956
+Y2015M4D14S31 : Buying 1956units for the Oil well sector
+Y2015M4D14S35 : navigating to : businessgame.be/sector/Oil%20well
+Y2015M4D14S49 : Units bought
+Y2015M4D14S52 : Waiting 60 seconds!
+Y2015M4D14S57 : Waiting 55 seconds!
+Y2015M4D14S2 : Waiting 50 seconds!
+Y2015M4D14S7 : Waiting 45 seconds!
+Y2015M4D14S12 : Waiting 40 seconds!
+Y2015M4D14S17 : Waiting 35 seconds!
+Y2015M4D14S22 : Waiting 30 seconds!
+Y2015M4D14S27 : Waiting 25 seconds!
+Y2015M4D14S32 : Waiting 20 seconds!
+Y2015M4D14S37 : Waiting 15 seconds!
+Y2015M4D14S42 : Waiting 10 seconds!
+Y2015M4D14S47 : Waiting 5 seconds!
+Y2015M4D14S54 : (Attempt 1) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D14S3 : Units bought
+Y2015M4D14S6 : Waiting 60 seconds!
+Y2015M4D14S11 : Waiting 55 seconds!
+Y2015M4D14S16 : Waiting 50 seconds!
+Y2015M4D14S21 : Waiting 45 seconds!
+Y2015M4D14S26 : Waiting 40 seconds!
+Y2015M4D14S31 : Waiting 35 seconds!
+Y2015M4D14S36 : Waiting 30 seconds!
+Y2015M4D14S41 : Waiting 25 seconds!
+Y2015M4D14S46 : Waiting 20 seconds!
+Y2015M4D14S51 : Waiting 15 seconds!
+Y2015M4D14S56 : Waiting 10 seconds!
+Y2015M4D14S1 : Waiting 5 seconds!
+Y2015M4D14S8 : (Attempt 2) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D14S17 : Units bought
+Y2015M4D14S20 : Waiting 60 seconds!
+Y2015M4D14S25 : Waiting 55 seconds!
+Y2015M4D14S30 : Waiting 50 seconds!
+Y2015M4D14S35 : Waiting 45 seconds!
+Y2015M4D14S40 : Waiting 40 seconds!
+Y2015M4D14S45 : Waiting 35 seconds!
+Y2015M4D14S50 : Waiting 30 seconds!
+Y2015M4D14S55 : Waiting 25 seconds!
+Y2015M4D14S0 : Waiting 20 seconds!
+Y2015M4D14S5 : Waiting 15 seconds!
+Y2015M4D14S10 : Waiting 10 seconds!
+Y2015M4D14S15 : Waiting 5 seconds!
+Y2015M4D14S22 : (Attempt 3) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D14S31 : Units bought
+Y2015M4D14S34 : Waiting 60 seconds!
+Y2015M4D14S39 : Waiting 55 seconds!
+Y2015M4D14S44 : Waiting 50 seconds!
+Y2015M4D14S49 : Waiting 45 seconds!
+Y2015M4D14S54 : Waiting 40 seconds!
+Y2015M4D14S59 : Waiting 35 seconds!
+Y2015M4D14S4 : Waiting 30 seconds!
+Y2015M4D14S9 : Waiting 25 seconds!
+Y2015M4D14S14 : Waiting 20 seconds!
+Y2015M4D14S19 : Waiting 15 seconds!
+Y2015M4D14S24 : Waiting 10 seconds!
+Y2015M4D14S29 : Waiting 5 seconds!
+Y2015M4D14S37 : (Attempt 4) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D14S46 : Units bought
+Y2015M4D14S49 : BuyUnits() - success
+Y2015M4D14S49 : BuyUnits()
+  - Chemical plant : 2686
+Y2015M4D14S49 : Buying 2686units for the Chemical plant sector
+Y2015M4D14S54 : navigating to : businessgame.be/sector/Chemical%20plant
+Y2015M4D14S8 : Units bought
+Y2015M4D14S10 : BuyUnits() - success
+Y2015M4D14S10 : BuyUnits()
+  - Silica mine : 49
+Y2015M4D14S10 : Buying 49units for the Silica mine sector
+Y2015M4D14S15 : navigating to : businessgame.be/sector/Silica%20mine
+Y2015M4D14S28 : Units bought
+Y2015M4D14S31 : BuyUnits() - success
+Y2015M4D14S31 : BuyUnits()
+  - Sewage treatment plant : 509
+Y2015M4D14S31 : Buying 509units for the Sewage treatment plant sector
+Y2015M4D14S36 : navigating to : businessgame.be/sector/Sewage%20treatment%20plant
+Y2015M4D14S50 : Units bought
+Y2015M4D14S53 : BuyUnits() - success
+Y2015M4D14S53 : BuyUnits()
+  - Uranium mine : 3212
+Y2015M4D14S53 : Buying 3212units for the Uranium mine sector
+Y2015M4D14S58 : navigating to : businessgame.be/sector/Uranium%20mine
+Y2015M4D14S11 : Units bought
+Y2015M4D14S14 : BuyUnits() - success
+Y2015M4D14S14 : BuyUnits()
+  - Uranium mill : 170
+Y2015M4D14S14 : Buying 170units for the Uranium mill sector
+Y2015M4D14S19 : navigating to : businessgame.be/sector/Uranium%20mill
+Y2015M4D14S32 : Units bought
+Y2015M4D14S36 : BuyUnits() - success
+Y2015M4D14S36 : BuyUnits()
+  - Uranium enrichment plant : 315
+Y2015M4D14S36 : Buying 315units for the Uranium enrichment plant sector
+Y2015M4D14S40 : navigating to : businessgame.be/sector/Uranium%20enrichment%20plant
+Y2015M4D14S54 : Units bought
+Y2015M4D14S57 : BuyUnits() - success
+Y2015M4D14S57 : BuyUnits()
+  - Nuclear power plant : 438
+Y2015M4D14S57 : Buying 438units for the Nuclear power plant sector
+Y2015M4D14S1 : navigating to : businessgame.be/sector/Nuclear%20power%20plant
+Y2015M4D14S15 : Units bought
+Y2015M4D14S18 : BuyUnits() - success
+Y2015M4D14S22 : BuyUnitsAndProducts() - complete
+Y2015M4D14S4 : starting to load user data
+Y2015M4D14S8 : (1/4) units loaded
+  - Iron mine : 305
+  - Waste plant : 799
+  - Petrol power plant : 280
+  - Water well : 3226
+  - Sawmill : 7
+  - Oil well : 9239
+  - Chemical plant : 12168
+  - Oil refinery : 126
+  - Silica mine : 222
+  - Sewage treatment plant : 2473
+  - Solar power plant : 133
+  - Uranium mine : 14457
+  - Uranium mill : 765
+  - Uranium enrichment plant : 1415
+  - Nuclear power plant : 1905
+Y2015M4D14S10 : (2/4) cash loaded
+  - 363618101
+Y2015M4D14S13 : (3/4) remaining warehouse space loaded
+  - 112921504
+Y2015M4D14S13 : (4/4) warehouse contents loaded
+  - Water 11546309
+  - Iron 458469
+  - Silicon 2
+  - Steel 11498709
+  - Energy 932268
+  - Trash 2138526
+  - Wood 4818509
+  - Crude oil 535153
+  - Gasoline 200750
+  - Plastic 341
+  - Chemicals 573663
+  - Machines -5829700
+  - Silica 1249065
+  - Pumps -7610680
+  - Industrial drills -1709910
+  - Wastewater 515453
+  - Furnaces -610750
+  - Electric motors 586000
+  - Conveyer systems -876600
+  - Robotics -1919100
+  - Pipes -8261610
+  - Enriched uranium 1367657
+  - Uranium ore 164195
+  - Uranium 137430
+  - Fertilizer 42
+  - Radioactive waste 355949
+Y2015M4D14S14 : load private data complete
+Y2015M4D19S7 : New Player: 0 - Wind turbines assembly
+Y2015M4D19S7 : market object created
+Y2015M4D19S6 : starting to load user data
+Y2015M4D19S10 : (1/4) units loaded
+Y2015M4D19S12 : (2/4) cash loaded
+  - -1
+Y2015M4D19S27 : New Player: 0 - Wind turbines assembly
+Y2015M4D19S27 : market object created
+Y2015M4D19S31 : starting to load user data
+Y2015M4D19S38 : New Player: 0 - Wind turbines assembly
+Y2015M4D19S38 : market object created
+Y2015M4D19S59 : starting to load user data
+Y2015M4D19S6 : (1/4) units loaded
+  - Iron mine : 305
+  - Waste plant : 799
+  - Petrol power plant : 280
+  - Water well : 3226
+  - Sawmill : 7
+  - Oil well : 9239
+  - Chemical plant : 12168
+  - Oil refinery : 126
+  - Silica mine : 222
+  - Sewage treatment plant : 2473
+  - Solar power plant : 133
+  - Uranium mine : 14457
+  - Uranium mill : 765
+  - Uranium enrichment plant : 1415
+  - Nuclear power plant : 1905
+Y2015M4D19S9 : (2/4) cash loaded
+  - 8002178696
+Y2015M4D19S11 : (3/4) remaining warehouse space loaded
+  - 25774799
+Y2015M4D19S12 : (4/4) warehouse contents loaded
+  - Water 1955866
+  - Iron 1158998
+  - Silicon 4
+  - Steel 37121164
+  - Energy 2402483
+  - Trash 1301372
+  - Wood 14766479
+  - Crude oil 1163649
+  - Gasoline 543987
+  - Plastic 682
+  - Chemicals 699463
+  - Machines 11500000
+  - Silica 3956021
+  - Pumps 13750000
+  - Industrial drills 3600000
+  - Wastewater 1283378
+  - Furnaces 625000
+  - Electric motors 1172000
+  - Conveyer systems 2100000
+  - Robotics 3900000
+  - Pipes 13660000
+  - Enriched uranium 22971
+  - Uranium ore 355291
+  - Uranium 273329
+  - Fertilizer 84
+  - Radioactive waste 4286
+Y2015M4D19S13 : load private data complete
+Y2015M4D19S2 : PerformActionBuyUnits()
+  - Pumps : 17099360
+  - Industrial drills : 3811350
+  - Conveyer systems : 3625800
+  - Robotics : 7621100
+  - Pipes : 18400010
+  - Furnaces : 1359375
+  - Machines : 26343200
+  - Electric motors : 488000
+  - Water : 9760000
+  - Enriched uranium : 390400
+  - Iron mine : 149
+  - Waste plant : 382
+  - Water well : 1505
+  - Oil well : 4360
+  - Chemical plant : 5987
+  - Silica mine : 109
+  - Sewage treatment plant : 1134
+  - Uranium mine : 7162
+  - Uranium mill : 379
+  - Uranium enrichment plant : 700
+Y2015M4D19S2 : BuyUnitsAndProducts()
+Y2015M4D19S5 : BuyProduct() - starting
+Y2015M4D19S7 : Buying 3349360CBMs of Pumps, 211350CBMs of Industrial drills, 1525800CBMs of Conveyer systems, 3721100CBMs of Robotics, 4740010CBMs of Pipes, 734375CBMs of Furnaces, 14843200CBMs of Machines, 0CBMs of Electric motors, 7804134CBMs of Water, 367429CBMs of Enriched uraniu 
+Y2015M4D19S36 : BuyProduct() - complete. Beginning success check.
+Y2015M4D19S39 : BuyProduct() - successful
+Y2015M4D19S39 : BuyUnits()
+  - Iron mine : 149
+Y2015M4D19S39 : Buying 149units for the Iron mine sector
+Y2015M4D19S44 : navigating to : businessgame.be/sector/Iron%20mine
+Y2015M4D19S58 : Units bought
+Y2015M4D19S2 : BuyUnits() - success
+Y2015M4D19S2 : BuyUnits()
+  - Waste plant : 382
+Y2015M4D19S2 : Buying 382units for the Waste plant sector
+Y2015M4D19S7 : navigating to : businessgame.be/sector/Waste%20plant
+Y2015M4D19S20 : Units bought
+Y2015M4D19S23 : BuyUnits() - success
+Y2015M4D19S23 : BuyUnits()
+  - Water well : 1505
+Y2015M4D19S23 : Buying 1505units for the Water well sector
+Y2015M4D19S30 : navigating to : businessgame.be/sector/Water%20well
+Y2015M4D19S43 : Units bought
+Y2015M4D19S46 : BuyUnits() - success
+Y2015M4D19S46 : BuyUnits()
+  - Oil well : 4360
+Y2015M4D19S46 : Buying 4360units for the Oil well sector
+Y2015M4D19S51 : navigating to : businessgame.be/sector/Oil%20well
+Y2015M4D19S4 : Units bought
+Y2015M4D19S7 : BuyUnits() - success
+Y2015M4D19S7 : BuyUnits()
+  - Chemical plant : 5987
+Y2015M4D19S7 : Buying 5987units for the Chemical plant sector
+Y2015M4D19S12 : navigating to : businessgame.be/sector/Chemical%20plant
+Y2015M4D19S26 : Units bought
+Y2015M4D19S28 : Waiting 60 seconds!
+Y2015M4D19S33 : Waiting 55 seconds!
+Y2015M4D19S38 : Waiting 50 seconds!
+Y2015M4D19S43 : Waiting 45 seconds!
+Y2015M4D19S48 : Waiting 40 seconds!
+Y2015M4D19S53 : Waiting 35 seconds!
+Y2015M4D19S58 : Waiting 30 seconds!
+Y2015M4D19S3 : Waiting 25 seconds!
+Y2015M4D19S8 : Waiting 20 seconds!
+Y2015M4D19S13 : Waiting 15 seconds!
+Y2015M4D19S18 : Waiting 10 seconds!
+Y2015M4D19S23 : Waiting 5 seconds!
+Y2015M4D19S31 : (Attempt 1) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D19S40 : Units bought
+Y2015M4D19S43 : Waiting 60 seconds!
+Y2015M4D19S48 : Waiting 55 seconds!
+Y2015M4D19S53 : Waiting 50 seconds!
+Y2015M4D19S58 : Waiting 45 seconds!
+Y2015M4D19S3 : Waiting 40 seconds!
+Y2015M4D19S8 : Waiting 35 seconds!
+Y2015M4D19S13 : Waiting 30 seconds!
+Y2015M4D19S18 : Waiting 25 seconds!
+Y2015M4D19S23 : Waiting 20 seconds!
+Y2015M4D19S28 : Waiting 15 seconds!
+Y2015M4D19S33 : Waiting 10 seconds!
+Y2015M4D19S38 : Waiting 5 seconds!
+Y2015M4D19S45 : (Attempt 2) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D19S54 : Units bought
+Y2015M4D19S57 : Waiting 60 seconds!
+Y2015M4D19S2 : Waiting 55 seconds!
+Y2015M4D19S7 : Waiting 50 seconds!
+Y2015M4D19S12 : Waiting 45 seconds!
+Y2015M4D19S17 : Waiting 40 seconds!
+Y2015M4D19S22 : Waiting 35 seconds!
+Y2015M4D19S27 : Waiting 30 seconds!
+Y2015M4D19S32 : Waiting 25 seconds!
+Y2015M4D19S37 : Waiting 20 seconds!
+Y2015M4D19S42 : Waiting 15 seconds!
+Y2015M4D19S47 : Waiting 10 seconds!
+Y2015M4D19S52 : Waiting 5 seconds!
+Y2015M4D19S59 : (Attempt 3) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D19S8 : Units bought
+Y2015M4D19S11 : BuyUnits() - success
+Y2015M4D19S11 : BuyUnits()
+  - Silica mine : 109
+Y2015M4D19S11 : Buying 109units for the Silica mine sector
+Y2015M4D19S16 : navigating to : businessgame.be/sector/Silica%20mine
+Y2015M4D19S30 : Units bought
+Y2015M4D19S33 : BuyUnits() - success
+Y2015M4D19S33 : BuyUnits()
+  - Sewage treatment plant : 1134
+Y2015M4D19S33 : Buying 1134units for the Sewage treatment plant sector
+Y2015M4D19S37 : navigating to : businessgame.be/sector/Sewage%20treatment%20plant
+Y2015M4D19S51 : Units bought
+Y2015M4D19S54 : BuyUnits() - success
+Y2015M4D19S54 : BuyUnits()
+  - Uranium mine : 7162
+Y2015M4D19S54 : Buying 7162units for the Uranium mine sector
+Y2015M4D19S0 : navigating to : businessgame.be/sector/Uranium%20mine
+Y2015M4D19S13 : Units bought
+Y2015M4D19S16 : Waiting 60 seconds!
+Y2015M4D19S21 : Waiting 55 seconds!
+Y2015M4D19S26 : Waiting 50 seconds!
+Y2015M4D19S31 : Waiting 45 seconds!
+Y2015M4D19S36 : Waiting 40 seconds!
+Y2015M4D19S41 : Waiting 35 seconds!
+Y2015M4D19S46 : Waiting 30 seconds!
+Y2015M4D19S51 : Waiting 25 seconds!
+Y2015M4D19S56 : Waiting 20 seconds!
+Y2015M4D19S1 : Waiting 15 seconds!
+Y2015M4D19S6 : Waiting 10 seconds!
+Y2015M4D19S11 : Waiting 5 seconds!
+Y2015M4D19S18 : (Attempt 1) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D19S27 : Units bought
+Y2015M4D19S30 : Waiting 60 seconds!
+Y2015M4D19S35 : Waiting 55 seconds!
+Y2015M4D19S40 : Waiting 50 seconds!
+Y2015M4D19S45 : Waiting 45 seconds!
+Y2015M4D19S50 : Waiting 40 seconds!
+Y2015M4D19S55 : Waiting 35 seconds!
+Y2015M4D19S0 : Waiting 30 seconds!
+Y2015M4D19S5 : Waiting 25 seconds!
+Y2015M4D19S10 : Waiting 20 seconds!
+Y2015M4D19S15 : Waiting 15 seconds!
+Y2015M4D19S20 : Waiting 10 seconds!
+Y2015M4D19S25 : Waiting 5 seconds!
+Y2015M4D19S32 : (Attempt 2) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D19S41 : Units bought
+Y2015M4D19S45 : Waiting 60 seconds!
+Y2015M4D19S50 : Waiting 55 seconds!
+Y2015M4D19S55 : Waiting 50 seconds!
+Y2015M4D19S0 : Waiting 45 seconds!
+Y2015M4D19S5 : Waiting 40 seconds!
+Y2015M4D19S10 : Waiting 35 seconds!
+Y2015M4D19S15 : Waiting 30 seconds!
+Y2015M4D19S20 : Waiting 25 seconds!
+Y2015M4D19S25 : Waiting 20 seconds!
+Y2015M4D19S30 : Waiting 15 seconds!
+Y2015M4D19S35 : Waiting 10 seconds!
+Y2015M4D19S40 : Waiting 5 seconds!
+Y2015M4D19S47 : (Attempt 3) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D19S57 : Units bought
+Y2015M4D19S0 : Waiting 60 seconds!
+Y2015M4D19S5 : Waiting 55 seconds!
+Y2015M4D19S10 : Waiting 50 seconds!
+Y2015M4D19S15 : Waiting 45 seconds!
+Y2015M4D19S20 : Waiting 40 seconds!
+Y2015M4D19S25 : Waiting 35 seconds!
+Y2015M4D19S30 : Waiting 30 seconds!
+Y2015M4D19S35 : Waiting 25 seconds!
+Y2015M4D19S40 : Waiting 20 seconds!
+Y2015M4D19S45 : Waiting 15 seconds!
+Y2015M4D19S50 : Waiting 10 seconds!
+Y2015M4D19S55 : Waiting 5 seconds!
+Y2015M4D19S2 : (Attempt 4) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M4D19S11 : Units bought
+Y2015M4D19S16 : BuyUnits() - success
+Y2015M4D19S16 : BuyUnits()
+  - Uranium mill : 379
+Y2015M4D19S16 : Buying 379units for the Uranium mill sector
+Y2015M4D19S21 : navigating to : businessgame.be/sector/Uranium%20mill
+Y2015M4D19S34 : Units bought
+Y2015M4D19S37 : BuyUnits() - success
+Y2015M4D19S37 : BuyUnits()
+  - Uranium enrichment plant : 700
+Y2015M4D19S37 : Buying 700units for the Uranium enrichment plant sector
+Y2015M4D19S42 : navigating to : businessgame.be/sector/Uranium%20enrichment%20plant
+Y2015M4D19S55 : Units bought
+Y2015M4D19S59 : BuyUnits() - success
+Y2015M4D19S59 : BuyUnits()
+  - Nuclear power plant : 976
+Y2015M4D19S59 : Buying 976units for the Nuclear power plant sector
+Y2015M4D19S3 : navigating to : businessgame.be/sector/Nuclear%20power%20plant
+Y2015M4D19S17 : Units bought
+Y2015M4D19S21 : BuyUnits() - success
+Y2015M4D19S25 : BuyUnitsAndProducts() - complete
+Y2015M4D19S36 : starting to load user data
+Y2015M4D19S40 : (1/4) units loaded
+  - Iron mine : 454
+  - Waste plant : 1181
+  - Petrol power plant : 280
+  - Water well : 4731
+  - Sawmill : 7
+  - Oil well : 13599
+  - Chemical plant : 18155
+  - Oil refinery : 126
+  - Silica mine : 331
+  - Sewage treatment plant : 3607
+  - Solar power plant : 133
+  - Uranium mine : 21619
+  - Uranium mill : 1144
+  - Uranium enrichment plant : 2115
+  - Nuclear power plant : 2881
+Y2015M4D19S42 : (2/4) cash loaded
+  - 4815314978
+Y2015M4D19S44 : (3/4) remaining warehouse space loaded
+  - 398704741
+Y2015M4D19S44 : (4/4) warehouse contents loaded
+  - Water 837809
+  - Iron 1195179
+  - Silicon 4
+  - Steel 37169852
+  - Energy 903934
+  - Trash 606199
+  - Wood 12242
+  - Crude oil 1642962
+  - Gasoline 538760
+  - Plastic 682
+  - Chemicals 1430174
+  - Machines -14843200
+  - Silica 4063938
+  - Pumps -3349360
+  - Industrial drills -211350
+  - Wastewater 936115
+  - Furnaces -734375
+  - Electric motors 684000
+  - Conveyer systems -1525800
+  - Robotics -3721100
+  - Pipes -4740010
+  - Enriched uranium 77482
+  - Uranium ore 225374
+  - Uranium 273426
+  - Fertilizer 84
+  - Radioactive waste 21870
+Y2015M4D19S45 : load private data complete
+Y2015M5D23S19 : New Player: 0 - Wind turbines assembly
+Y2015M5D23S19 : market object created
+Y2015M5D23S56 : starting to load user data
+Y2015M5D23S2 : (1/4) units loaded
+  - Solar power plant : 50
+  - Wind farm : 610
+Y2015M5D23S6 : (2/4) cash loaded
+  - 48849354
+Y2015M5D23S15 : (3/4) remaining warehouse space loaded
+  - 7509120
+Y2015M5D23S15 : (4/4) warehouse contents loaded
+  - Energy 67040
+  - Radioactive waste 260000
+Y2015M5D23S16 : load private data complete
+Y2015M5D23S59 : New Player: 0 - Wind turbines assembly
+Y2015M5D23S59 : market object created
+Y2015M5D23S3 : starting to load user data
+Y2015M5D23S7 : (1/4) units loaded
+  - Solar power plant : 50
+  - Wind farm : 610
+Y2015M5D23S9 : (2/4) cash loaded
+  - 48831216
+Y2015M5D23S12 : (3/4) remaining warehouse space loaded
+  - 7888560
+Y2015M5D23S12 : (4/4) warehouse contents loaded
+  - Energy 167600
+  - Radioactive waste 260000
+Y2015M5D23S13 : load private data complete
+Y2015M5D23S45 : PerformActionBuyUnits()
+  - Furnaces : 500
+  - Robotics : 400
+  - Conveyer systems : 500
+  - Machines : 500
+  - Pumps : 3350
+  - Industrial drills : 450
+  - Pipes : 3380
+  - Waste plant : 1
+  - Water well : 1
+  - Sewage treatment plant : 1
+  - Uranium mine : 1
+Y2015M5D23S45 : BuyUnitsAndProducts()
+Y2015M5D23S48 : BuyProduct() - starting
+Y2015M5D23S52 : Buying 500CBMs of Furnaces, 400CBMs of Robotics, 500CBMs of Conveyer systems, 500CBMs of Machines, 3350CBMs of Pumps, 450CBMs of Industrial drills, 3380CBMs of Pipe 
+Y2015M5D23S13 : BuyProduct() - complete. Beginning success check.
+Y2015M5D23S16 : BuyProduct() - successful
+Y2015M5D23S16 : BuyUnits()
+  - Waste plant : 1
+Y2015M5D23S16 : Buying 1units for the Waste plant sector
+Y2015M5D23S21 : navigating to : businessgame.be/sector/Waste%20plant
+Y2015M5D23S26 : Unlocking sector
+Y2015M5D23S26 : Sector unlocked
+Y2015M5D23S16 : New Player: 0 - Wind turbines assembly
+Y2015M5D23S16 : market object created
+Y2015M5D23S37 : starting to load user data
+Y2015M5D23S40 : (1/4) units loaded
+  - Solar power plant : 50
+  - Wind farm : 610
+Y2015M5D23S44 : (2/4) cash loaded
+  - 48662735
+Y2015M5D23S51 : New Player: 0 - Wind turbines assembly
+Y2015M5D23S51 : market object created
+Y2015M5D23S56 : starting to load user data
+Y2015M5D23S0 : (1/4) units loaded
+  - Solar power plant : 50
+  - Wind farm : 610
+Y2015M5D23S2 : (2/4) cash loaded
+  - 48656689
+Y2015M5D23S4 : (3/4) remaining warehouse space loaded
+  - 8195680
+Y2015M5D23S4 : (4/4) warehouse contents loaded
+  - Energy 251400
+  - Machines 500
+  - Pumps 3350
+  - Industrial drills 450
+  - Furnaces 500
+  - Conveyer systems 500
+  - Robotics 400
+  - Pipes 3380
+  - Radioactive waste 260000
+Y2015M5D23S5 : load private data complete
+Y2015M5D23S31 : PerformActionBuyUnits()
+  - Furnaces : 500
+  - Robotics : 400
+  - Conveyer systems : 500
+  - Machines : 500
+  - Pumps : 3350
+  - Industrial drills : 450
+  - Pipes : 3380
+  - Waste plant : 1
+  - Water well : 1
+  - Sewage treatment plant : 1
+  - Uranium mine : 1
+Y2015M5D23S31 : BuyUnitsAndProducts()
+Y2015M5D23S34 : BuyProduct() - starting
+Y2015M5D23S34 : BuyProduct() - complete. Beginning success check.
+Y2015M5D23S37 : BuyProduct() - successful
+Y2015M5D23S37 : BuyUnits()
+  - Waste plant : 1
+Y2015M5D23S37 : Buying 1units for the Waste plant sector
+Y2015M5D23S42 : navigating to : businessgame.be/sector/Waste%20plant
+Y2015M5D23S56 : Units bought
+Y2015M5D23S59 : BuyUnits() - success
+Y2015M5D23S59 : BuyUnits()
+  - Water well : 1
+Y2015M5D23S59 : Buying 1units for the Water well sector
+Y2015M5D23S3 : navigating to : businessgame.be/sector/Water%20well
+Y2015M5D23S17 : Units bought
+Y2015M5D23S21 : BuyUnits() - success
+Y2015M5D23S21 : BuyUnits()
+  - Sewage treatment plant : 1
+Y2015M5D23S21 : Buying 1units for the Sewage treatment plant sector
+Y2015M5D23S26 : navigating to : businessgame.be/sector/Sewage%20treatment%20plant
+Y2015M5D23S9 : New Player: 0 - Wind turbines assembly
+Y2015M5D23S9 : market object created
+Y2015M5D23S16 : starting to load user data
+Y2015M5D23S23 : (1/4) units loaded
+  - Waste plant : 1
+  - Water well : 1
+  - Sewage treatment plant : 1
+  - Solar power plant : 50
+  - Wind farm : 610
+  - Uranium mine : 1
+Y2015M5D28S37 : New Player: 0 - Wind turbines assembly
+Y2015M5D28S40 : market object created
+Y2015M5D28S45 : starting to load user data
+Y2015M5D28S51 : (1/4) units loaded
+Y2015M5D28S54 : (2/4) cash loaded
+  - 81214305
+Y2015M5D28S57 : (3/4) remaining warehouse space loaded
+  - 16631755
+Y2015M5D28S57 : (4/4) warehouse contents loaded
+  - Energy 28200
+  - Chemicals 756532
+  - Radioactive waste 300000
+Y2015M5D28S58 : load private data complete
+Y2015M5D28S9 : starting to load user data
+Y2015M5D28S12 : (1/4) units loaded
+  - Waste plant : 18
+  - Water well : 92
+  - Sewage treatment plant : 82
+  - Solar power plant : 50
+  - Wind farm : 1050
+  - Uranium mine : 801
+Y2015M5D28S14 : (2/4) cash loaded
+  - 81207891
+Y2015M5D28S16 : (3/4) remaining warehouse space loaded
+  - 16700565
+Y2015M5D28S16 : (4/4) warehouse contents loaded
+  - Water 3680
+  - Energy 55250
+  - Trash 460
+  - Chemicals 1156532
+  - Radioactive waste 300000
+Y2015M5D28S17 : load private data complete
+Y2015M5D28S30 : PerformActionBuyUnits()
+  - Furnaces : 7000
+  - Robotics : 135900
+  - Conveyer systems : 194800
+  - Machines : 19500
+  - Pumps : 199000
+  - Pipes : 373200
+  - Industrial drills : 256000
+  - Waste plant : 14
+  - Sewage treatment plant : 65
+  - Uranium mine : 640
+Y2015M5D28S30 : BuyUnitsAndProducts()
+Y2015M5D28S33 : BuyProduct() - starting
+Y2015M5D28S35 : Buying 7000CBMs of Furnaces, 135900CBMs of Robotics, 194800CBMs of Conveyer systems, 19500CBMs of Machines, 199000CBMs of Pumps, 373200CBMs of Pipes, 256000CBMs of Industrial drill 
+Y2015M5D28S58 : BuyProduct() - complete. Beginning success check.
+Y2015M5D28S25 : ERROR! NOT ENOUGH CASH.
+Y2015M5D28S30 : BuyUnitsAndProducts() - complete
+Y2015M5D28S3 : starting to load user data
+Y2015M5D28S6 : (1/4) units loaded
+  - Waste plant : 18
+  - Water well : 92
+  - Sewage treatment plant : 82
+  - Solar power plant : 50
+  - Wind farm : 1050
+  - Uranium mine : 801
+Y2015M5D28S9 : (2/4) cash loaded
+  - 53147629
+Y2015M5D28S11 : (3/4) remaining warehouse space loaded
+  - 15726419
+Y2015M5D28S11 : (4/4) warehouse contents loaded
+  - Water 8179
+  - Steel 88
+  - Energy 108668
+  - Trash 6643
+  - Chemicals 1891650
+  - Machines 7632
+  - Pumps 77894
+  - Industrial drills 100205
+  - Wastewater 5438
+  - Furnaces 2740
+  - Conveyer systems 76250
+  - Robotics 53195
+  - Pipes 146081
+  - Uranium ore 19999
+  - Radioactive waste 300000
+Y2015M5D28S12 : load private data complete
+Y2015M5D28S3 : New Player: 0 - Wind turbines assembly
+Y2015M5D28S3 : market object created
+Y2015M5D28S9 : starting to load user data
+Y2015M5D28S13 : (1/4) units loaded
+  - Waste plant : 18
+  - Water well : 92
+  - Sewage treatment plant : 82
+  - Solar power plant : 50
+  - Wind farm : 1050
+  - Uranium mine : 801
+Y2015M5D28S17 : (2/4) cash loaded
+  - 53078694
+Y2015M5D28S19 : (3/4) remaining warehouse space loaded
+  - 16024159
+Y2015M5D28S19 : (4/4) warehouse contents loaded
+  - Water 19564
+  - Steel 339
+  - Energy 166724
+  - Trash 7863
+  - Chemicals 1889030
+  - Machines 19500
+  - Pumps 199000
+  - Industrial drills 256000
+  - Wastewater 5497
+  - Furnaces 7000
+  - Conveyer systems 194800
+  - Robotics 135900
+  - Pipes 373200
+  - Uranium ore 53908
+  - Radioactive waste 300000
+Y2015M5D28S20 : load private data complete
+Y2015M5D28S44 : PerformActionBuyUnits()
+  - Furnaces : 7000
+  - Robotics : 127500
+  - Conveyer systems : 182800
+  - Machines : 24500
+  - Pumps : 264100
+  - Industrial drills : 241550
+  - Pipes : 381000
+  - Waste plant : 14
+  - Water well : 31
+  - Sewage treatment plant : 61
+  - Uranium mine : 600
+Y2015M5D28S44 : BuyUnitsAndProducts()
+Y2015M5D28S47 : BuyProduct() - starting
+Y2015M5D28S50 : Buying 0CBMs of Furnaces, 0CBMs of Robotics, 0CBMs of Conveyer systems, 5000CBMs of Machines, 65100CBMs of Pumps, 0CBMs of Industrial drills, 7800CBMs of Pipe 
+Y2015M5D28S24 : BuyProduct() - complete. Beginning success check.
+Y2015M5D28S28 : BuyProduct() - successful
+Y2015M5D28S28 : BuyUnits()
+  - Waste plant : 14
+Y2015M5D28S28 : Buying 14units for the Waste plant sector
+Y2015M5D28S33 : navigating to : businessgame.be/sector/Waste%20plant
+Y2015M5D28S47 : Units bought
+Y2015M5D28S50 : BuyUnits() - success
+Y2015M5D28S50 : BuyUnits()
+  - Water well : 31
+Y2015M5D28S50 : Buying 31units for the Water well sector
+Y2015M5D28S54 : navigating to : businessgame.be/sector/Water%20well
+Y2015M5D28S8 : Units bought
+Y2015M5D28S10 : BuyUnits() - success
+Y2015M5D28S11 : BuyUnits()
+  - Sewage treatment plant : 61
+Y2015M5D28S11 : Buying 61units for the Sewage treatment plant sector
+Y2015M5D28S15 : navigating to : businessgame.be/sector/Sewage%20treatment%20plant
+Y2015M5D28S29 : Units bought
+Y2015M5D28S31 : Waiting 60 seconds!
+Y2015M5D28S36 : Waiting 55 seconds!
+Y2015M5D28S41 : Waiting 50 seconds!
+Y2015M5D28S46 : Waiting 45 seconds!
+Y2015M5D28S51 : Waiting 40 seconds!
+Y2015M5D28S56 : Waiting 35 seconds!
+Y2015M5D28S1 : Waiting 30 seconds!
+Y2015M5D28S6 : Waiting 25 seconds!
+Y2015M5D28S11 : Waiting 20 seconds!
+Y2015M5D28S16 : Waiting 15 seconds!
+Y2015M5D28S21 : Waiting 10 seconds!
+Y2015M5D28S26 : Waiting 5 seconds!
+Y2015M5D28S34 : (Attempt 1) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M5D28S5 : Units bought
+Y2015M5D28S8 : Waiting 60 seconds!
+Y2015M5D28S20 : New Player: 0 - Wind turbines assembly
+Y2015M5D28S20 : market object created
+Y2015M5D28S25 : starting to load user data
+Y2015M5D28S29 : (1/4) units loaded
+  - Waste plant : 32
+  - Water well : 123
+  - Sewage treatment plant : 82
+  - Solar power plant : 50
+  - Wind farm : 1050
+  - Uranium mine : 801
+Y2015M5D28S4 : New Player: 0 - Wind turbines assembly
+Y2015M5D28S4 : market object created
+Y2015M5D28S10 : starting to load user data
+Y2015M5D28S13 : (1/4) units loaded
+  - Waste plant : 32
+  - Water well : 123
+  - Sewage treatment plant : 82
+  - Solar power plant : 50
+  - Wind farm : 1050
+  - Uranium mine : 801
+Y2015M5D28S15 : (2/4) cash loaded
+  - 51290227
+Y2015M5D28S18 : (3/4) remaining warehouse space loaded
+  - 16590642
+Y2015M5D28S18 : (4/4) warehouse contents loaded
+  - Water 40337
+  - Steel 743
+  - Energy 252358
+  - Trash 7185
+  - Chemicals 1885094
+  - Machines 13300
+  - Pumps 121500
+  - Industrial drills 254450
+  - Wastewater 5604
+  - Conveyer systems 192000
+  - Robotics 134500
+  - Pipes 350000
+  - Uranium ore 104771
+  - Radioactive waste 300000
+Y2015M5D28S19 : load private data complete
+Y2015M5D28S47 : PerformActionBuyUnits()
+  - Machines : 18300
+  - Pumps : 186350
+  - Robotics : 125900
+  - Pipes : 349620
+  - Conveyer systems : 179700
+  - Industrial drills : 239600
+  - Sewage treatment plant : 61
+  - Uranium mine : 599
+Y2015M5D28S47 : BuyUnitsAndProducts()
+Y2015M5D28S50 : BuyProduct() - starting
+Y2015M5D28S53 : Buying 5000CBMs of Machines, 64850CBMs of Pumps, 0CBMs of Robotics, 0CBMs of Pipes, 0CBMs of Conveyer systems, 0CBMs of Industrial drill 
+Y2015M5D28S11 : BuyProduct() - complete. Beginning success check.
+Y2015M5D28S6 : ERROR! NOT ENOUGH CASH.
+Y2015M5D28S10 : BuyUnitsAndProducts() - complete
+Y2015M5D28S13 : starting to load user data
+Y2015M5D28S16 : (1/4) units loaded
+  - Waste plant : 32
+  - Water well : 123
+  - Sewage treatment plant : 82
+  - Solar power plant : 50
+  - Wind farm : 1050
+  - Uranium mine : 801
+Y2015M5D28S18 : (2/4) cash loaded
+  - 50616578
+Y2015M5D28S29 : (3/4) remaining warehouse space loaded
+  - 16742582
+Y2015M5D28S29 : (4/4) warehouse contents loaded
+  - Water 52586
+  - Steel 944
+  - Energy 294604
+  - Trash 7185
+  - Chemicals 1883126
+  - Machines 18300
+  - Pumps 186350
+  - Industrial drills 254450
+  - Wastewater 5655
+  - Conveyer systems 192000
+  - Robotics 134500
+  - Pipes 350000
+  - Uranium ore 130203
+  - Radioactive waste 300000
+Y2015M5D28S30 : load private data complete
+Y2015M5D28S1 : PerformActionBuyUnits()
+  - Machines : 18300
+  - Pumps : 186600
+  - Robotics : 126100
+  - Pipes : 350000
+  - Conveyer systems : 180000
+  - Industrial drills : 240000
+  - Sewage treatment plant : 61
+  - Uranium mine : 600
+Y2015M5D28S1 : BuyUnitsAndProducts()
+Y2015M5D28S4 : BuyProduct() - starting
+Y2015M5D28S7 : Buying 0CBMs of Machines, 250CBMs of Pumps, 0CBMs of Robotics, 0CBMs of Pipes, 0CBMs of Conveyer systems, 0CBMs of Industrial drill 
+Y2015M5D28S23 : BuyProduct() - complete. Beginning success check.
+Y2015M5D28S27 : BuyProduct() - successful
+Y2015M5D28S27 : BuyUnits()
+  - Sewage treatment plant : 61
+Y2015M5D28S27 : Buying 61units for the Sewage treatment plant sector
+Y2015M5D28S32 : navigating to : businessgame.be/sector/Sewage%20treatment%20plant
+Y2015M5D28S32 : Units bought
+Y2015M5D28S35 : BuyUnits() - success
+Y2015M5D28S35 : BuyUnits()
+  - Uranium mine : 600
+Y2015M5D28S35 : Buying 600units for the Uranium mine sector
+Y2015M5D28S24 : navigating to : businessgame.be/sector/Uranium%20mine
+Y2015M5D28S38 : Units bought
+Y2015M5D28S41 : BuyUnits() - success
+Y2015M5D28S45 : BuyUnitsAndProducts() - complete
+Y2015M5D28S53 : starting to load user data
+Y2015M5D28S56 : (1/4) units loaded
+  - Waste plant : 32
+  - Water well : 123
+  - Sewage treatment plant : 143
+  - Solar power plant : 50
+  - Wind farm : 1050
+  - Uranium mine : 1401
+Y2015M5D28S58 : (2/4) cash loaded
+  - 6952713
+Y2015M5D28S0 : (3/4) remaining warehouse space loaded
+  - 18213108
+Y2015M5D28S0 : (4/4) warehouse contents loaded
+  - Water 73218
+  - Steel 1280
+  - Energy 364951
+  - Trash 7188
+  - Chemicals 1879815
+  - Pumps -250
+  - Industrial drills 14450
+  - Wastewater 5484
+  - Conveyer systems 12000
+  - Robotics 8400
+  - Uranium ore 172589
+  - Radioactive waste 300000
+Y2015M5D28S1 : load private data complete
+Y2015M6D7S45 : New Player: 0 - Wind turbines assembly
+Y2015M6D7S45 : market object created
+Y2015M6D7S56 : starting to load user data
+Y2015M6D7S0 : (1/4) units loaded
+Y2015M6D7S2 : (2/4) cash loaded
+  - -1
+Y2015M6D7S50 : New Player: 0 - Wind turbines assembly
+Y2015M6D7S50 : market object created
+Y2015M6D7S0 : starting to load user data
+Y2015M6D7S3 : (1/4) units loaded
+Y2015M6D7S5 : (2/4) cash loaded
+  - -1
+Y2015M6D7S10 : (4/4) warehouse contents loaded
+Y2015M6D7S11 : load private data complete
+Y2015M6D7S44 : starting to load user data
+Y2015M6D7S51 : (1/4) units loaded
+  - Iron mine : 1
+  - Waste plant : 32
+  - Water well : 123
+  - Oil well : 1
+  - Chemical plant : 1
+  - Silica mine : 1
+  - Sewage treatment plant : 143
+  - Solar power plant : 50
+  - Wind farm : 3450
+  - Uranium mine : 1401
+Y2015M6D7S53 : (2/4) cash loaded
+  - 169888921
+Y2015M6D7S8 : New Player: 0 - Wind turbines assembly
+Y2015M6D7S9 : market object created
+Y2015M6D7S14 : starting to load user data
+Y2015M6D7S24 : (1/4) units loaded
+  - Iron mine : 1
+  - Waste plant : 32
+  - Water well : 123
+  - Oil well : 1
+  - Chemical plant : 1
+  - Silica mine : 1
+  - Sewage treatment plant : 143
+  - Solar power plant : 50
+  - Wind farm : 3450
+  - Uranium mine : 1401
+  - Uranium mill : 1
+Y2015M6D7S26 : (2/4) cash loaded
+  - 169040077
+Y2015M6D7S29 : (3/4) remaining warehouse space loaded
+  - 34472240
+Y2015M6D7S29 : (4/4) warehouse contents loaded
+  - Water 5009
+  - Steel 1070
+  - Energy 1916621
+  - Trash 5352
+  - Wastewater 108150
+  - Uranium ore 168049
+Y2015M6D7S30 : load private data complete
+Y2015M6D7S52 : PerformActionBuyUnits()
+  - Pumps : 836240
+  - Industrial drills : 64760
+  - Conveyer systems : 65800
+  - Robotics : 369400
+  - Pipes : 895750
+  - Furnaces : 63500
+  - Machines : 1105300
+  - Iron mine : 11
+  - Waste plant : 15
+  - Water well : 6
+  - Oil well : 326
+  - Chemical plant : 448
+  - Silica mine : 7
+  - Sewage treatment plant : 21
+  - Uranium mill : 26
+Y2015M6D7S53 : BuyUnitsAndProducts()
+Y2015M6D7S56 : BuyProduct() - starting
+Y2015M6D7S0 : Buying 836240CBMs of Pumps, 64760CBMs of Industrial drills, 65800CBMs of Conveyer systems, 369400CBMs of Robotics, 895750CBMs of Pipes, 63500CBMs of Furnaces, 1105300CBMs of Machine 
+Y2015M6D7S20 : BuyProduct() - complete. Beginning success check.
+Y2015M6D7S7 : New Player: 0 - Wind turbines assembly
+Y2015M6D7S7 : market object created
+Y2015M6D7S13 : starting to load user data
+Y2015M6D7S8 : New Player: 0 - Wind turbines assembly
+Y2015M6D7S8 : market object created
+Y2015M6D7S28 : starting to load user data
+Y2015M6D7S47 : (1/4) units loaded
+  - Iron mine : 1
+  - Waste plant : 32
+  - Water well : 123
+  - Oil well : 1
+  - Chemical plant : 1
+  - Silica mine : 1
+  - Sewage treatment plant : 143
+  - Solar power plant : 50
+  - Wind farm : 3450
+  - Uranium mine : 1401
+  - Uranium mill : 1
+Y2015M6D7S50 : (2/4) cash loaded
+  - 112819029
+Y2015M6D7S52 : (3/4) remaining warehouse space loaded
+  - 40965944
+Y2015M6D7S52 : (4/4) warehouse contents loaded
+  - Water 5012
+  - Steel 2234
+  - Energy 3732092
+  - Trash 5426
+  - Machines 1105300
+  - Pumps 836240
+  - Industrial drills 64760
+  - Wastewater 221307
+  - Furnaces 63500
+  - Conveyer systems 65800
+  - Robotics 369400
+  - Pipes 895750
+  - Uranium ore 343725
+Y2015M6D7S38 : New Player: 0 - Wind turbines assembly
+Y2015M6D7S38 : market object created
+Y2015M6D7S1 : starting to load user data
+Y2015M6D7S5 : (1/4) units loaded
+  - Iron mine : 1
+  - Waste plant : 32
+  - Water well : 123
+  - Oil well : 1
+  - Chemical plant : 1
+  - Silica mine : 1
+  - Sewage treatment plant : 143
+  - Solar power plant : 50
+  - Wind farm : 3450
+  - Uranium mine : 1401
+  - Uranium mill : 1
+Y2015M6D7S8 : (2/4) cash loaded
+  - 109231863
+Y2015M6D7S10 : (3/4) remaining warehouse space loaded
+  - 81990865
+Y2015M6D7S10 : (4/4) warehouse contents loaded
+  - Water 5012
+  - Steel 8970
+  - Energy 14230192
+  - Trash 5426
+  - Machines 1105300
+  - Pumps 836240
+  - Industrial drills 64760
+  - Wastewater 875667
+  - Furnaces 63500
+  - Conveyer systems 65800
+  - Robotics 369400
+  - Pipes 895750
+  - Uranium ore 1359607
+Y2015M6D7S11 : load private data complete
+Y2015M6D7S40 : PerformActionBuyUnits()
+  - Pumps : 571280
+  - Industrial drills : 44420
+  - Conveyer systems : 43200
+  - Robotics : 250900
+  - Pipes : 617250
+  - Furnaces : 43875
+  - Machines : 762300
+  - Iron mine : 7
+  - Waste plant : 10
+  - Oil well : 227
+  - Chemical plant : 311
+  - Silica mine : 5
+  - Sewage treatment plant : 14
+  - Uranium mill : 17
+Y2015M6D7S40 : BuyUnitsAndProducts()
+Y2015M6D7S43 : BuyProduct() - starting
+Y2015M6D7S43 : BuyProduct() - complete. Beginning success check.
+Y2015M6D7S46 : BuyProduct() - successful
+Y2015M6D7S46 : BuyUnits()
+  - Iron mine : 7
+Y2015M6D7S46 : Buying 7units for the Iron mine sector
+Y2015M6D7S51 : navigating to : businessgame.be/sector/Iron%20mine
+Y2015M6D7S8 : Activating sector
+Y2015M6D7S8 : Sector activated
+Y2015M6D7S40 : New Player: 0 - Wind turbines assembly
+Y2015M6D7S40 : market object created
+Y2015M6D7S44 : starting to load user data
+Y2015M6D7S48 : (1/4) units loaded
+  - Iron mine : 8
+  - Waste plant : 32
+  - Water well : 123
+  - Oil well : 1
+  - Chemical plant : 1
+  - Silica mine : 1
+  - Sewage treatment plant : 143
+  - Solar power plant : 50
+  - Wind farm : 3450
+  - Uranium mine : 1401
+  - Uranium mill : 1
+Y2015M6D7S50 : (2/4) cash loaded
+  - 108547921
+Y2015M6D7S53 : (3/4) remaining warehouse space loaded
+  - 82623461
+Y2015M6D7S53 : (4/4) warehouse contents loaded
+  - Water 5012
+  - Steel 9072
+  - Energy 14388058
+  - Trash 5426
+  - Machines 1105300
+  - Pumps 835960
+  - Industrial drills 59160
+  - Wastewater 885507
+  - Furnaces 63500
+  - Conveyer systems 61600
+  - Robotics 365900
+  - Pipes 893650
+  - Uranium ore 1374883
+Y2015M6D7S54 : load private data complete
+Y2015M6D7S8 : PerformActionBuyUnits()
+  - Furnaces : 39625
+  - Robotics : 221300
+  - Conveyer systems : 34200
+  - Machines : 687400
+  - Pumps : 515800
+  - Industrial drills : 34800
+  - Pipes : 556000
+  - Waste plant : 9
+  - Oil well : 205
+  - Chemical plant : 281
+  - Silica mine : 4
+  - Sewage treatment plant : 13
+  - Uranium mill : 15
+Y2015M6D7S9 : BuyUnitsAndProducts()
+Y2015M6D7S12 : BuyProduct() - starting
+Y2015M6D7S12 : BuyProduct() - complete. Beginning success check.
+Y2015M6D7S15 : BuyProduct() - successful
+Y2015M6D7S15 : BuyUnits()
+  - Waste plant : 9
+Y2015M6D7S15 : Buying 9units for the Waste plant sector
+Y2015M6D7S19 : navigating to : businessgame.be/sector/Waste%20plant
+Y2015M6D7S13 : Units bought
+Y2015M6D7S16 : BuyUnits() - success
+Y2015M6D7S16 : BuyUnits()
+  - Oil well : 205
+Y2015M6D7S16 : Buying 205units for the Oil well sector
+Y2015M6D7S0 : navigating to : businessgame.be/sector/Oil%20well
+Y2015M6D7S16 : Units bought
+Y2015M6D7S19 : BuyUnits() - success
+Y2015M6D7S19 : BuyUnits()
+  - Chemical plant : 281
+Y2015M6D7S19 : Buying 281units for the Chemical plant sector
+Y2015M6D7S24 : navigating to : businessgame.be/sector/Chemical%20plant
+Y2015M6D7S38 : Units bought
+Y2015M6D7S42 : BuyUnits() - success
+Y2015M6D7S42 : BuyUnits()
+  - Silica mine : 4
+Y2015M6D7S42 : Buying 4units for the Silica mine sector
+Y2015M6D7S6 : navigating to : businessgame.be/sector/Silica%20mine
+Y2015M6D7S20 : Units bought
+Y2015M6D7S23 : BuyUnits() - success
+Y2015M6D7S23 : BuyUnits()
+  - Sewage treatment plant : 13
+Y2015M6D7S23 : Buying 13units for the Sewage treatment plant sector
+Y2015M6D7S28 : navigating to : businessgame.be/sector/Sewage%20treatment%20plant
+Y2015M6D7S1 : Units bought
+Y2015M6D7S4 : BuyUnits() - success
+Y2015M6D7S4 : BuyUnits()
+  - Uranium mill : 15
+Y2015M6D7S4 : Buying 15units for the Uranium mill sector
+Y2015M6D7S8 : navigating to : businessgame.be/sector/Uranium%20mill
+Y2015M6D7S22 : Units bought
+Y2015M6D7S25 : BuyUnits() - success
+Y2015M6D7S29 : BuyUnitsAndProducts() - complete
+Y2015M6D7S31 : starting to load user data
+Y2015M6D7S35 : (1/4) units loaded
+  - Iron mine : 8
+  - Waste plant : 50
+  - Water well : 123
+  - Oil well : 206
+  - Chemical plant : 282
+  - Silica mine : 5
+  - Sewage treatment plant : 156
+  - Solar power plant : 50
+  - Wind farm : 3450
+  - Uranium mine : 1401
+  - Uranium mill : 16
+Y2015M6D7S37 : (2/4) cash loaded
+  - 51732068
+Y2015M6D7S39 : (3/4) remaining warehouse space loaded
+  - 86189635
+Y2015M6D7S39 : (4/4) warehouse contents loaded
+  - Water 13780
+  - Iron 636
+  - Steel 9351
+  - Energy 14770718
+  - Trash 10920
+  - Crude oil 8022
+  - Chemicals 72156
+  - Machines 417900
+  - Silica 1062
+  - Pumps 320160
+  - Industrial drills 24360
+  - Wastewater 899403
+  - Furnaces 19375
+  - Conveyer systems 25600
+  - Robotics 143700
+  - Pipes 337650
+  - Uranium ore 1412046
+  - Uranium 12
+Y2015M6D7S40 : load private data complete
+Y2015M6D14S26 : New Player: 0 - Wind turbines assembly
+Y2015M6D14S26 : market object created
+Y2015M6D14S10 : starting to load user data
+Y2015M6D14S23 : (1/4) units loaded
+  - Iron mine : 8
+  - Waste plant : 50
+  - Water well : 123
+  - Oil well : 206
+  - Chemical plant : 282
+  - Silica mine : 5
+  - Sewage treatment plant : 156
+  - Solar power plant : 50
+  - Wind farm : 7600
+  - Uranium mine : 1401
+  - Uranium mill : 16
+  - Uranium enrichment plant : 1
+Y2015M6D14S25 : (2/4) cash loaded
+  - 193927462
+Y2015M6D14S27 : (3/4) remaining warehouse space loaded
+  - 45119763
+Y2015M6D14S27 : (4/4) warehouse contents loaded
+  - Water 10406
+  - Iron 261
+  - Steel 497
+  - Energy 71088382
+  - Trash 2988331
+  - Crude oil 20945
+  - Chemicals 6635
+  - Silica 2077
+  - Wastewater 13324
+  - Enriched uranium 3
+  - Uranium ore 37382
+  - Uranium 587
+Y2015M6D14S28 : load private data complete
+Y2015M6D14S7 : PerformActionBuyUnits()
+  - Pumps : 941800
+  - Industrial drills : 64800
+  - Conveyer systems : 68000
+  - Robotics : 367900
+  - Pipes : 976200
+  - Furnaces : 103650
+  - Machines : 1866100
+  - Iron mine : 10
+  - Waste plant : 6
+  - Water well : 64
+  - Oil well : 310
+  - Chemical plant : 426
+  - Silica mine : 8
+  - Sewage treatment plant : 21
+  - Uranium mill : 28
+  - Uranium enrichment plant : 79
+Y2015M6D14S8 : BuyUnitsAndProducts()
+Y2015M6D14S11 : BuyProduct() - starting
+Y2015M6D14S15 : Buying 941800CBMs of Pumps, 64800CBMs of Industrial drills, 68000CBMs of Conveyer systems, 367900CBMs of Robotics, 976200CBMs of Pipes, 103650CBMs of Furnaces, 1866100CBMs of Machine 
+Y2015M6D14S50 : BuyProduct() - complete. Beginning success check.
+Y2015M6D14S16 : ERROR! NOT ENOUGH CASH.
+Y2015M6D14S19 : BuyUnitsAndProducts() - complete
+Y2015M6D14S56 : starting to load user data
+Y2015M6D14S3 : (1/4) units loaded
+  - Iron mine : 18
+  - Waste plant : 56
+  - Water well : 187
+  - Oil well : 516
+  - Chemical plant : 282
+  - Silica mine : 13
+  - Sewage treatment plant : 177
+  - Solar power plant : 50
+  - Wind farm : 7600
+  - Uranium mine : 1401
+  - Uranium mill : 44
+  - Uranium enrichment plant : 80
+Y2015M6D14S5 : (2/4) cash loaded
+  - 80588280
+Y2015M6D14S8 : (3/4) remaining warehouse space loaded
+  - 46358788
+Y2015M6D14S8 : (4/4) warehouse contents loaded
+  - Water 19551
+  - Iron 1270
+  - Steel 2648
+  - Energy 73262860
+  - Trash 6358987
+  - Crude oil 33383
+  - Chemicals 6488
+  - Machines 852000
+  - Silica 6800
+  - Pumps 85200
+  - Industrial drills -64800
+  - Wastewater 29348
+  - Furnaces 53250
+  - Conveyer systems -68000
+  - Robotics 213000
+  - Pipes 426000
+  - Enriched uranium 561
+  - Uranium ore 186747
+  - Uranium 3262
+Y2015M6D14S9 : load private data complete
+Y2015M6D14S54 : PerformActionBuyUnits()
+  - Pipes : 426000
+  - Machines : 852000
+  - Pumps : 85200
+  - Robotics : 213000
+  - Furnaces : 53250
+  - Chemical plant : 426
+Y2015M6D14S54 : BuyUnitsAndProducts()
+Y2015M6D14S57 : BuyProduct() - starting
+Y2015M6D14S57 : BuyProduct() - complete. Beginning success check.
+Y2015M6D14S0 : BuyProduct() - successful
+Y2015M6D14S0 : BuyUnits()
+  - Chemical plant : 426
+Y2015M6D14S0 : Buying 426units for the Chemical plant sector
+Y2015M6D14S5 : navigating to : businessgame.be/sector/Chemical%20plant
+Y2015M6D14S58 : Units bought
+Y2015M6D14S1 : Waiting 60 seconds!
+Y2015M6D17S14 : New Player: 0 - Wind turbines assembly
+Y2015M6D17S14 : market object created
+Y2015M6D17S33 : starting to load user data
+Y2015M6D17S40 : (1/4) units loaded
+  - Iron mine : 18
+  - Waste plant : 56
+  - Water well : 187
+  - Oil well : 516
+  - Chemical plant : 708
+  - Silica mine : 13
+  - Sewage treatment plant : 177
+  - Solar power plant : 50
+  - Wind farm : 9700
+  - Uranium mine : 1401
+  - Uranium mill : 44
+  - Uranium enrichment plant : 80
+Y2015M6D17S44 : (2/4) cash loaded
+  - 1138248758
+Y2015M6D17S46 : (3/4) remaining warehouse space loaded
+  - 71140835
+Y2015M6D17S46 : (4/4) warehouse contents loaded
+  - Water 16440
+  - Iron 658
+  - Steel 838
+  - Energy 2031996
+  - Trash 22925
+  - Crude oil 53577
+  - Chemicals 18955
+  - Silica 7447
+  - Wastewater 17925
+  - Enriched uranium 660
+  - Uranium ore 45794
+  - Uranium 925
+Y2015M6D17S47 : load private data complete
+Y2015M6D17S30 : PerformActionBuyUnits()
+  - Pumps : 2477260
+  - Industrial drills : 382970
+  - Conveyer systems : 332000
+  - Robotics : 937000
+  - Pipes : 2537020
+  - Furnaces : 207875
+  - Machines : 3513200
+  - Iron mine : 24
+  - Waste plant : 48
+  - Water well : 225
+  - Oil well : 687
+  - Chemical plant : 943
+  - Silica mine : 18
+  - Sewage treatment plant : 107
+  - Uranium mine : 584
+  - Uranium mill : 61
+  - Uranium enrichment plant : 110
+Y2015M6D17S30 : BuyUnitsAndProducts()
+Y2015M6D17S33 : BuyProduct() - starting
+Y2015M6D17S36 : Buying 2477260CBMs of Pumps, 382970CBMs of Industrial drills, 332000CBMs of Conveyer systems, 937000CBMs of Robotics, 2537020CBMs of Pipes, 207875CBMs of Furnaces, 3513200CBMs of Machine 
+Y2015M6D17S55 : BuyProduct() - complete. Beginning success check.
+Y2015M6D17S48 : New Player: 0 - Wind turbines assembly
+Y2015M6D17S48 : market object created
+Y2015M6D17S58 : starting to load user data
+Y2015M6D17S2 : (1/4) units loaded
+  - Iron mine : 18
+  - Waste plant : 56
+  - Water well : 187
+  - Oil well : 516
+  - Chemical plant : 708
+  - Silica mine : 13
+  - Sewage treatment plant : 177
+  - Solar power plant : 50
+  - Wind farm : 9700
+  - Uranium mine : 1401
+  - Uranium mill : 44
+  - Uranium enrichment plant : 80
+Y2015M6D17S4 : (2/4) cash loaded
+  - 268149732
+Y2015M6D17S7 : (3/4) remaining warehouse space loaded
+  - 64952069
+Y2015M6D17S7 : (4/4) warehouse contents loaded
+  - Water 19053
+  - Iron 937
+  - Steel 3959
+  - Energy 6864590
+  - Trash 31659
+  - Crude oil 55814
+  - Chemicals 21672
+  - Machines 2841047
+  - Silica 9573
+  - Pumps 2003305
+  - Industrial drills 309699
+  - Wastewater 19727
+  - Furnaces 168103
+  - Conveyer systems 268481
+  - Robotics 757731
+  - Pipes 2051631
+  - Enriched uranium 6591
+  - Uranium ore 184591
+  - Uranium 1416
+Y2015M6D17S8 : load private data complete
+Y2015M6D17S12 : New Player: 0 - Wind turbines assembly
+Y2015M6D17S12 : market object created
+Y2015M6D17S21 : starting to load user data
+Y2015M6D17S25 : (1/4) units loaded
+  - Iron mine : 18
+  - Waste plant : 56
+  - Water well : 187
+  - Oil well : 516
+  - Chemical plant : 708
+  - Silica mine : 13
+  - Sewage treatment plant : 177
+  - Solar power plant : 50
+  - Wind farm : 9700
+  - Uranium mine : 1401
+  - Uranium mill : 44
+  - Uranium enrichment plant : 80
+Y2015M6D17S27 : (2/4) cash loaded
+  - 267795455
+Y2015M6D17S32 : (3/4) remaining warehouse space loaded
+  - 65867275
+Y2015M6D17S32 : (4/4) warehouse contents loaded
+  - Water 19492
+  - Iron 997
+  - Steel 4639
+  - Energy 7914215
+  - Trash 33384
+  - Crude oil 55878
+  - Chemicals 21792
+  - Machines 3513200
+  - Silica 9966
+  - Pumps 2477260
+  - Industrial drills 382970
+  - Wastewater 19877
+  - Furnaces 207875
+  - Conveyer systems 332000
+  - Robotics 937000
+  - Pipes 2537020
+  - Enriched uranium 7898
+  - Uranium ore 214727
+  - Uranium 1509
+Y2015M6D17S33 : load private data complete
+Y2015M6D17S34 : PerformActionBuyUnits()
+  - Pumps : 2377120
+  - Industrial drills : 362190
+  - Conveyer systems : 315000
+  - Robotics : 901700
+  - Pipes : 2438930
+  - Furnaces : 203000
+  - Machines : 3432100
+  - Iron mine : 23
+  - Waste plant : 46
+  - Water well : 213
+  - Oil well : 664
+  - Chemical plant : 912
+  - Silica mine : 17
+  - Sewage treatment plant : 101
+  - Uranium mine : 546
+  - Uranium mill : 59
+  - Uranium enrichment plant : 110
+Y2015M6D17S35 : BuyUnitsAndProducts()
+Y2015M6D17S38 : BuyProduct() - starting
+Y2015M6D17S38 : BuyProduct() - complete. Beginning success check.
+Y2015M6D17S50 : BuyProduct() - successful
+Y2015M6D17S50 : BuyUnits()
+  - Iron mine : 23
+Y2015M6D17S50 : Buying 23units for the Iron mine sector
+Y2015M6D17S57 : navigating to : businessgame.be/sector/Iron%20mine
+Y2015M6D17S11 : Units bought
+Y2015M6D17S17 : BuyUnits() - success
+Y2015M6D17S17 : BuyUnits()
+  - Waste plant : 46
+Y2015M6D17S17 : Buying 46units for the Waste plant sector
+Y2015M6D17S27 : navigating to : businessgame.be/sector/Waste%20plant
+Y2015M6D17S59 : Units bought
+Y2015M6D17S5 : BuyUnits() - success
+Y2015M6D17S5 : BuyUnits()
+  - Water well : 213
+Y2015M6D17S5 : Buying 213units for the Water well sector
+Y2015M6D17S13 : navigating to : businessgame.be/sector/Water%20well
+Y2015M6D17S39 : Units bought
+Y2015M6D17S42 : BuyUnits() - success
+Y2015M6D17S42 : BuyUnits()
+  - Oil well : 664
+Y2015M6D17S42 : Buying 664units for the Oil well sector
+Y2015M6D17S47 : navigating to : businessgame.be/sector/Oil%20well
+Y2015M6D17S0 : Units bought
+Y2015M6D17S3 : BuyUnits() - success
+Y2015M6D17S3 : BuyUnits()
+  - Chemical plant : 912
+Y2015M6D17S3 : Buying 912units for the Chemical plant sector
+Y2015M6D17S7 : navigating to : businessgame.be/sector/Chemical%20plant
+Y2015M6D17S39 : Units bought
+Y2015M6D17S42 : BuyUnits() - success
+Y2015M6D17S42 : BuyUnits()
+  - Silica mine : 17
+Y2015M6D17S42 : Buying 17units for the Silica mine sector
+Y2015M6D17S47 : navigating to : businessgame.be/sector/Silica%20mine
+Y2015M6D17S3 : Units bought
+Y2015M6D17S6 : BuyUnits() - success
+Y2015M6D17S6 : BuyUnits()
+  - Sewage treatment plant : 101
+Y2015M6D17S6 : Buying 101units for the Sewage treatment plant sector
+Y2015M6D17S14 : navigating to : businessgame.be/sector/Sewage%20treatment%20plant
+Y2015M6D17S30 : Units bought
+Y2015M6D17S33 : BuyUnits() - success
+Y2015M6D17S33 : BuyUnits()
+  - Uranium mine : 546
+Y2015M6D17S33 : Buying 546units for the Uranium mine sector
+Y2015M6D17S41 : navigating to : businessgame.be/sector/Uranium%20mine
+Y2015M6D17S12 : Units bought
+Y2015M6D17S18 : BuyUnits() - success
+Y2015M6D17S18 : BuyUnits()
+  - Uranium mill : 59
+Y2015M6D17S18 : Buying 59units for the Uranium mill sector
+Y2015M6D17S26 : navigating to : businessgame.be/sector/Uranium%20mill
+Y2015M6D17S51 : Units bought
+Y2015M6D17S54 : BuyUnits() - success
+Y2015M6D17S54 : BuyUnits()
+  - Uranium enrichment plant : 110
+Y2015M6D17S54 : Buying 110units for the Uranium enrichment plant sector
+Y2015M6D17S59 : navigating to : businessgame.be/sector/Uranium%20enrichment%20plant
+Y2015M6D17S15 : Units bought
+Y2015M6D17S22 : BuyUnits() - success
+Y2015M6D17S25 : BuyUnitsAndProducts() - complete
+Y2015M6D17S30 : starting to load user data
+Y2015M6D17S34 : (1/4) units loaded
+  - Iron mine : 41
+  - Waste plant : 102
+  - Water well : 400
+  - Oil well : 1180
+  - Chemical plant : 1620
+  - Silica mine : 30
+  - Sewage treatment plant : 278
+  - Solar power plant : 50
+  - Wind farm : 9700
+  - Uranium mine : 1947
+  - Uranium mill : 103
+  - Uranium enrichment plant : 190
+Y2015M6D17S36 : (2/4) cash loaded
+  - 37949266
+Y2015M6D17S38 : (3/4) remaining warehouse space loaded
+  - 77406302
+Y2015M6D17S38 : (4/4) warehouse contents loaded
+  - Water 19492
+  - Iron 997
+  - Steel 4639
+  - Energy 9453179
+  - Trash 33384
+  - Crude oil 55878
+  - Chemicals 21792
+  - Machines 81100
+  - Silica 9966
+  - Pumps 100140
+  - Industrial drills 20780
+  - Wastewater 19877
+  - Furnaces 4875
+  - Conveyer systems 17000
+  - Robotics 35300
+  - Pipes 98090
+  - Enriched uranium 7898
+  - Uranium ore 214727
+  - Uranium 1509
+Y2015M6D17S40 : load private data complete
+Y2015M6D17S7 : PerformActionBuyUnits()
+  - Machines : 4000
+  - Conveyer systems : 500
+  - Robotics : 1000
+  - Electric motors : 500
+  - Pumps : 50
+  - Water : 10000
+  - Enriched uranium : 400
+  - Nuclear power plant : 1
+Y2015M6D17S8 : BuyUnitsAndProducts()
+Y2015M6D17S11 : BuyProduct() - starting
+Y2015M6D17S13 : Buying 0CBMs of Machines, 0CBMs of Conveyer systems, 0CBMs of Robotics, 500CBMs of Electric motors, 0CBMs of Pumps, 0CBMs of Water, 0CBMs of Enriched uraniu 
+Y2015M6D17S54 : BuyProduct() - complete. Beginning success check.
+Y2015M6D17S57 : BuyProduct() - successful
+Y2015M6D17S57 : BuyUnits()
+  - Nuclear power plant : 1
+Y2015M6D17S57 : Buying 1units for the Nuclear power plant sector
+Y2015M6D17S1 : navigating to : businessgame.be/sector/Nuclear%20power%20plant
+Y2015M6D17S12 : Unlocking sector
+Y2015M6D17S12 : Sector unlocked
+Y2015M6D17S34 : Units bought
+Y2015M6D17S37 : Waiting 60 seconds!
+Y2015M6D17S42 : Waiting 55 seconds!
+Y2015M6D17S47 : Waiting 50 seconds!
+Y2015M6D17S52 : Waiting 45 seconds!
+Y2015M6D17S57 : Waiting 40 seconds!
+Y2015M6D17S2 : Waiting 35 seconds!
+Y2015M6D17S7 : Waiting 30 seconds!
+Y2015M6D17S12 : Waiting 25 seconds!
+Y2015M6D17S17 : Waiting 20 seconds!
+Y2015M6D17S22 : Waiting 15 seconds!
+Y2015M6D17S27 : Waiting 10 seconds!
+Y2015M6D17S32 : Waiting 5 seconds!
+Y2015M6D17S39 : (Attempt 1) Waiting for required goods to arrive. Retrying every 60s for up to 1 hour.
+Y2015M6D17S54 : Units bought
+Y2015M6D17S57 : Waiting 60 seconds!
+Y2015M6D17S2 : Waiting 55 seconds!
+Y2015M6D17S7 : Waiting 50 seconds!
+Y2015M6D17S12 : Waiting 45 seconds!
+Y2015M6D17S44 : New Player: 0 - Wind turbines assembly
+Y2015M6D17S44 : market object created
+Y2015M6D17S34 : New Player: 0 - Wind turbines assembly
+Y2015M6D17S34 : market object created
+Y2015M6D17S40 : starting to load user data
+Y2015M6D17S47 : (1/4) units loaded
+  - Iron mine : 41
+  - Waste plant : 102
+  - Water well : 400
+  - Oil well : 1180
+  - Chemical plant : 1620
+  - Silica mine : 30
+  - Sewage treatment plant : 278
+  - Solar power plant : 50
+  - Wind farm : 9700
+  - Uranium mine : 1947
+  - Uranium mill : 103
+  - Uranium enrichment plant : 190
+Y2015M6D17S51 : (2/4) cash loaded
+  - 37219356
+Y2015M6D17S53 : (3/4) remaining warehouse space loaded
+  - 79006252
+Y2015M6D17S53 : (4/4) warehouse contents loaded
+  - Water 31849
+  - Iron 1661
+  - Steel 1862
+  - Energy 11142795
+  - Trash 38478
+  - Crude oil 94209
+  - Chemicals 48626
+  - Silica 19234
+  - Wastewater 28994
+  - Electric motors 500
+  - Enriched uranium 2550
+  - Uranium ore 39928
+  - Uranium 2540
+Y2015M6D17S54 : load private data complete
+Y2015M6D17S17 : PerformActionBuyUnits()
+  - Machines : 4000
+  - Conveyer systems : 500
+  - Robotics : 1000
+  - Electric motors : 500
+  - Pumps : 50
+  - Water : 10000
+  - Enriched uranium : 400
+  - Nuclear power plant : 1
+Y2015M6D17S17 : BuyUnitsAndProducts()
+Y2015M6D17S20 : BuyProduct() - starting
+Y2015M6D17S23 : Buying 4000CBMs of Machines, 500CBMs of Conveyer systems, 1000CBMs of Robotics, 0CBMs of Electric motors, 50CBMs of Pumps, 0CBMs of Water, 0CBMs of Enriched uraniu 
+Y2015M6D17S4 : BuyProduct() - complete. Beginning success check.
+Y2015M6D17S11 : BuyProduct() - successful
+Y2015M6D17S11 : BuyUnits()
+  - Nuclear power plant : 1
+Y2015M6D17S11 : Buying 1units for the Nuclear power plant sector
+Y2015M6D17S19 : navigating to : businessgame.be/sector/Nuclear%20power%20plant
+Y2015M6D17S44 : Units bought
+Y2015M6D17S48 : BuyUnits() - success
+Y2015M6D17S52 : BuyUnitsAndProducts() - complete

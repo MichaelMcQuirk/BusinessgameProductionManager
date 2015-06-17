@@ -49,6 +49,8 @@ namespace WindowsFormsApplication1
         {
             int BeginPos = XML.IndexOf('<' + Field + '>');
             int EndPos = XML.IndexOf("</" + Field + '>');
+            if (BeginPos < 0)
+                throw new Exception("Oh shiet, we can't find " + '<' + Field + '>' + " in the downloaded xml file...");
             return (XML.Substring(BeginPos + Field.Length + 2, EndPos - (BeginPos + Field.Length + 2)));
         }
         public static void Remove(string Field, ref string XML)
